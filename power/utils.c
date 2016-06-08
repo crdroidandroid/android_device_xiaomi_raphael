@@ -50,6 +50,9 @@ char scaling_gov_path[4][80] ={
     "sys/devices/system/cpu/cpu3/cpufreq/scaling_governor"
 };
 
+#define USINSEC 1000000L
+#define NSINUS 1000L
+
 #define PERF_HAL_PATH "libqti-perfd-client.so"
 static void *qcopt_handle;
 static int (*perf_lock_acq)(unsigned long handle, int duration,
@@ -371,4 +374,11 @@ void undo_initial_hint_action()
             perf_lock_rel(1);
         }
     }
+}
+
+long long calc_timespan_us(struct timespec start, struct timespec end) {
+    long long diff_in_us = 0;
+    diff_in_us += (end.tv_sec - start.tv_sec) * USINSEC;
+    diff_in_us += (end.tv_nsec - start.tv_nsec) / NSINUS;
+    return diff_in_us;
 }
