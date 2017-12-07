@@ -46,6 +46,11 @@ PRODUCT_PACKAGES += \
     libqcomfm_jni \
     qcom.fmradio
 
+# HIDL
+PRODUCT_PACKAGES += \
+    android.hidl.base@1.0 \
+    android.hidl.manager@1.0
+
 # Init
 PRODUCT_PACKAGES += \
     init.mi_thermald.rc
