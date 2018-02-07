@@ -143,6 +143,9 @@ lib/vendor.qti.hardware.iop@1.0.so
 lib/vendor.qti.hardware.iop@2.0.so
 lib/vendor.qti.hardware.perf@1.0.so
 
+# Power-off charging daemon
+-sbin/charger:sbin/chargeonlymode;rootfs|5c7740f54abb4fc2f8a150f0e49598191ec24939
+
 # RIL
 -app/atfwd/atfwd.apk
 -app/QtiTelephonyService/QtiTelephonyService.apk
