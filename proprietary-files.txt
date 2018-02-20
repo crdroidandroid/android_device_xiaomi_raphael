@@ -51,6 +51,7 @@ lib64/libdpmtcm.so
 -priv-app/dpmserviceapp/dpmserviceapp.apk
 
 # Display postprocessing
+lib64/libsdm-disp-apis.so
 lib64/vendor.display.color@1.0.so
 
 # FM
