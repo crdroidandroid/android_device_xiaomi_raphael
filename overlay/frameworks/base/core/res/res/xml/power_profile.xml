@@ -8,8 +8,8 @@
     <item name="wifi.on">8</item>
     <item name="wifi.active">157</item>
     <item name="wifi.scan">127</item>
-    <item name="dsp.audio">43</item>
-    <item name="dsp.video">62</item>
+    <item name="audio">43</item>
+    <item name="video">62</item>
     <item name="camera.flashlight">118</item>
     <item name="camera.avg">547</item>
     <item name="radio.active">103</item>
