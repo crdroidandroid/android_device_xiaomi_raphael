@@ -140,5 +140,9 @@ BOARD_PLAT_PUBLIC_SEPOLICY_DIR += device/qcom/sepolicy/public
 BOARD_VNDK_VERSION := current
 PRODUCT_FULL_TREBLE_OVERRIDE := true
 
+# Verified Boot
+BOARD_AVB_ENABLE := true
+BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flag 2
+
 # Inherit from the proprietary version
 -include vendor/xiaomi/raphael/BoardConfigVendor.mk
