@@ -51,7 +51,7 @@ PRODUCT_ENFORCE_RRO_TARGETS := *
 
 PRODUCT_PACKAGES += \
     ApertureOverlay \
-    DialerConfigOverlay \
+    DialerResXiaomi \
     FrameworksResRaphael \
     LineageSDKOverlay \
     SettingsLibRaphael \
