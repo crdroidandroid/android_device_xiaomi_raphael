@@ -57,7 +57,8 @@ PRODUCT_COPY_FILES += \
 
 # Init
 PRODUCT_PACKAGES += \
-    init.mi_thermald.rc
+    init.mi_thermald.rc \
+    init.qcom.rc
 
 # Input
 PRODUCT_COPY_FILES += \
