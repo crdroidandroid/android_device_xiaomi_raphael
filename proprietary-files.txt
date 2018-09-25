@@ -1,3 +1,7 @@
+# Audio
+vendor/lib64/soundfx/libvolumelistener.so:lib64/soundfx/libvolumelistener.so|5e47ee679a500e3452160e390a42f210b415a039
+vendor/lib/soundfx/libvolumelistener.so:lib/soundfx/libvolumelistener.so|74bd1983958010a74b66d46018b033498202bf19
+
 # Bluetooth (aptX)
 lib64/libaptX_encoder.so|0cebad28afcf29f931bdc2d24fce2730dc882ecf
 lib64/libaptXHD_encoder.so|90f47f10af28b3ead143200cb4370b847c513127
