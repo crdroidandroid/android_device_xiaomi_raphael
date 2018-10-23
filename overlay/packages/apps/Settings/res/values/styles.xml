@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2009 The Android Open Source Project
+<!-- Copyright (C) 2006 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -15,8 +15,10 @@
 -->
 
 <resources>
-    <item name="fingerprint_sensor_location_fraction_y" type="fraction">78%</item>
-    <dimen name="fingerprint_dot_radius">8dp</dimen>
-    <dimen name="search_bar_corner_radius">24.0dip</dimen>
-    <dimen name="suggestion_card_corner_radius">8.0dip</dimen>
+
+    <style name="TextAppearance.SearchBar" parent="@*android:style/TextAppearance.Material.Widget.Toolbar.Subtitle">
+        <item name="android:textSize">16dp</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
 </resources>
