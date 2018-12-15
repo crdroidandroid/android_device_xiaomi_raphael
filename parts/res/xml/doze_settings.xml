@@ -19,6 +19,7 @@
 
     <SwitchPreference
         android:disableDependentsState="true"
+        android:icon="@drawable/ic_display"
         android:key="always_on_display"
         android:persistent="false"
         android:summary="@string/ambient_display_always_on_summary"
