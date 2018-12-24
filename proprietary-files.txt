@@ -160,6 +160,9 @@ framework/qti-telephony-common.jar|4c5c554855eae7f8b1fcb0573b5425c87452c8b6
 framework/QtiTelephonyServicelibrary.jar
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 
+# Soter
+-app/SoterService/SoterService.apk
+
 # WiFi Display
 bin/wfdservice
 etc/init/wfdservice.rc
