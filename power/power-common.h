@@ -52,6 +52,8 @@ extern "C" {
 #define HINT_HANDLED (0)
 #define HINT_NONE (-1)
 
+#define CHECK_HANDLE(x) ((x) > 0)
+
 #include <hardware/power.h>
 
 enum CPU_GOV_CHECK {
