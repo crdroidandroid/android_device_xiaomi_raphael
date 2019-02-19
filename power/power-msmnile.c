@@ -94,12 +94,33 @@ int set_interactive_override(int on)
     return HINT_HANDLED;
 }
 
+const int kMaxLaunchDuration = 5000;      /* ms */
 const int kMaxInteractiveDuration = 5000; /* ms */
 const int kMinInteractiveDuration = 100;  /* ms */
 const int kMinFlingDuration = 1500;       /* ms */
 
 static int process_activity_launch_hint(void* data __unused) {
-    perf_hint_enable_with_type(VENDOR_HINT_LAUNCH_BOOST, -1, LAUNCH_BOOST_V1);
+    static int launch_handle = -1;
+    static int launch_mode = 0;
+
+    // release lock early if launch has finished
+    if (!data) {
+        if (CHECK_HANDLE(launch_handle)) {
+            release_request(launch_handle);
+            launch_handle = -1;
+        }
+        launch_mode = 0;
+        return HINT_HANDLED;
+    }
+
+    launch_handle = perf_hint_enable_with_type(VENDOR_HINT_LAUNCH_BOOST, kMaxLaunchDuration,
+                                               LAUNCH_BOOST_V1);
+    if (!CHECK_HANDLE(launch_handle)) {
+        ALOGE("Failed to perform launch boost");
+        return HINT_NONE;
+    }
+    launch_mode = 1;
+
     return HINT_HANDLED;
 }
 
