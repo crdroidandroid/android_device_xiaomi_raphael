@@ -1,0 +1,5 @@
+package vendor.xiaomi.hardware.fingerprintextension@1.0;
+
+interface IXiaomiFingerprint {
+    extCmd(int32_t cmd, int32_t param) generates (int32_t result);
+};
