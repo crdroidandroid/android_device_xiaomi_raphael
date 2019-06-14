@@ -27,6 +27,10 @@ LOCAL_STATIC_ANDROID_LIBRARIES := \
     android-support-v7-appcompat \
     android-support-v14-preference
 
+LOCAL_STATIC_JAVA_LIBRARIES := \
+    org.lineageos.platform.internal \
+    vendor.xiaomi.hardware.motor-V1.0-java
+
 LOCAL_RESOURCE_DIR := \
     $(LOCAL_PATH)/res \
     $(TOP)/packages/resources/devicesettings/res
