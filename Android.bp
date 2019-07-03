@@ -1,7 +1,2 @@
 soong_namespace {
 }
-
-hidl_package_root {
-    name: "vendor.xiaomi",
-    path: "device/xiaomi/raphael/interfaces",
-}
