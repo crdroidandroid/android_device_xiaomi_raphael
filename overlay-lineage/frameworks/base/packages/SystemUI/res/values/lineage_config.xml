@@ -15,7 +15,7 @@
 -->
 <resources>
     <!-- Color of the FOD view -->
-    <color name="config_fodColor">#00ffff</color>
+    <color name="config_fodColor">#00ff00</color>
 
     <!-- Smart replies in notifications: Whether we disable the feature unless the app targets P -->
     <bool name="config_smart_replies_in_notifications_requires_targeting_p">false</bool>
