@@ -24,9 +24,9 @@ import android.hardware.display.AmbientDisplayConfiguration;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.os.UserHandle;
-import android.support.v7.preference.PreferenceManager;
 import android.provider.Settings;
 import android.util.Log;
+import androidx.preference.PreferenceManager;
 
 import vendor.xiaomi.hardware.displayfeature.V1_0.IDisplayFeature;
 
