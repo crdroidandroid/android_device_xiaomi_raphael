@@ -262,6 +262,9 @@ ro.incremental.enable=1
 # Keystore
 ro.hardware.keystore_desede=true
 
+# Media
+debug.stagefright.c2inputsurface=-1
+
 # Netmgr
 ro.telephony.iwlan_operation_mode=default
 ro.vendor.use_data_netmgrd=true
