@@ -112,13 +112,15 @@ static int process_activity_launch_hint(void* data __unused) {
         return HINT_HANDLED;
     }
 
-    launch_handle = perf_hint_enable_with_type(VENDOR_HINT_LAUNCH_BOOST, kMaxLaunchDuration,
-                                               LAUNCH_BOOST_V1);
-    if (!CHECK_HANDLE(launch_handle)) {
-        ALOGE("Failed to perform launch boost");
-        return HINT_NONE;
+    if (!launch_mode) {
+        launch_handle = perf_hint_enable_with_type(VENDOR_HINT_LAUNCH_BOOST,
+                kMaxLaunchDuration, LAUNCH_BOOST_V1);
+        if (!CHECK_HANDLE(launch_handle)) {
+            ALOGE("Failed to perform launch boost");
+            return HINT_NONE;
+        }
+        launch_mode = 1;
     }
-    launch_mode = 1;
 
     return HINT_HANDLED;
 }
