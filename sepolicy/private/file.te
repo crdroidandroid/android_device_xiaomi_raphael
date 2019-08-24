@@ -8,6 +8,8 @@ type firmware_file, file_type;
 type persist_file, file_type;
 
 # socket
+type sysfs_battery_supply, sysfs_type, fs_type;
+type sysfs_usb_supply, sysfs_type, fs_type;
 type pps_socket, file_type;
 
 #sysfs
