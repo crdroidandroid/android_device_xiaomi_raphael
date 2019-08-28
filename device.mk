@@ -32,6 +32,9 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 PRODUCT_PACKAGES += \
     audio.a2dp.default
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/audio/audio_policy_configuration.xml:system/etc/audio_policy_configuration.xml
+
 # Camera
 PRODUCT_PACKAGES += \
     Snap
