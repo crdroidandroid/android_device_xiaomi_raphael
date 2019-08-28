@@ -1,2 +1,5 @@
 # Allow init to bind mount over vendor file
 allow init vendor_file:file mounton;
+
+# Allow init to mount vendor configs
+allow init vendor_configs_file:file mounton;
