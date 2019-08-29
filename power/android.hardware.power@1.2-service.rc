@@ -1,0 +1,5 @@
+service vendor.power-hal-1-2 /vendor/bin/hw/android.hardware.power@1.2-service
+    override
+    class hal
+    user system
+    group system
