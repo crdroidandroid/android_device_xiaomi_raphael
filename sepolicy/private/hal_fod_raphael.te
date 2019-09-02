@@ -1,0 +1,5 @@
+type hal_fod_raphael, coredomain, domain;
+hal_server_domain(hal_fod_raphael, hal_lineage_fod)
+
+type hal_fod_raphael_exec, exec_type, file_type;
+init_daemon_domain(hal_fod_raphael)
