@@ -47,8 +47,6 @@
         <device name="SND_DEVICE_IN_USB_HEADSET_HEX_MIC_AEC" acdb_id="162"/>
         <device name="SND_DEVICE_IN_UNPROCESSED_USB_HEADSET_HEX_MIC" acdb_id="162"/>
         <device name="SND_DEVICE_IN_VOCE_RECOG_USB_HEADSET_HEX_MIC" acdb_id="162"/>
-        <device name="SND_DEVICE_IN_USB_HEADSET_MIC" acdb_id="10009"/>
-        <device name="SND_DEVICE_IN_HEADSET_MIC" acdb_id="10008"/>
         <device name="SND_DEVICE_OUT_HEADPHONES" acdb_id="10012"/>
         <device name="SND_DEVICE_OUT_HEADPHONES_44_1" acdb_id="10012"/>
         <device name="SND_DEVICE_OUT_HEADPHONES_HIFI" acdb_id="10026"/>
