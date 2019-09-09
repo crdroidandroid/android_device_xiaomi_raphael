@@ -29,6 +29,7 @@ LOCAL_STATIC_ANDROID_LIBRARIES := \
 
 LOCAL_STATIC_JAVA_LIBRARIES := \
     org.lineageos.platform.internal \
+    vendor.xiaomi.hardware.displayfeature-V1.0-java \
     vendor.xiaomi.hardware.motor-V1.0-java
 
 LOCAL_RESOURCE_DIR := \

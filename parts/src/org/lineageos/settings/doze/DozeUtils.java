@@ -29,6 +29,8 @@ import android.util.Log;
 
 import com.android.internal.hardware.AmbientDisplayConfiguration;
 
+import vendor.xiaomi.hardware.displayfeature.V1_0.IDisplayFeature;
+
 import static android.provider.Settings.Secure.DOZE_ALWAYS_ON;
 import static android.provider.Settings.Secure.DOZE_ENABLED;
 
@@ -47,6 +49,10 @@ public final class DozeUtils {
     protected static final String GESTURE_PICK_UP_KEY = "gesture_pick_up";
     protected static final String GESTURE_HAND_WAVE_KEY = "gesture_hand_wave";
     protected static final String GESTURE_POCKET_KEY = "gesture_pocket";
+
+    protected static final String DC_DIMMING_ENABLE_KEY = "dc_dimming_enable";
+
+    private static IDisplayFeature mDisplayFeature;
 
     public static void startService(Context context) {
         if (DEBUG) Log.d(TAG, "Starting service");
@@ -142,5 +148,13 @@ public final class DozeUtils {
             }
         }
         return null;
+    }
+
+    public static void enableDcDimming(int enable) {
+        try {
+            mDisplayFeature = IDisplayFeature.getService();
+            mDisplayFeature.setFeature(0, 20, enable, 255);
+        } catch(Exception e) {
+        }
     }
 }
