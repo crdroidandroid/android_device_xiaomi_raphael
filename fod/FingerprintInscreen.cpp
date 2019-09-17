@@ -25,7 +25,8 @@
 #define FINGERPRINT_ACQUIRED_VENDOR 6
 
 #define COMMAND_NIT 10
-#define PARAM_NIT_FOD 3
+#define PARAM_NIT_630_FOD 1
+#define PARAM_NIT_300_FOD 4
 #define PARAM_NIT_NONE 0
 
 #define FOD_STATUS_PATH "/sys/devices/virtual/touch/tp_dev/fod_status"
@@ -89,19 +90,23 @@ Return<void> FingerprintInscreen::onFinishEnroll() {
     return Void();
 }
 
-Return<void> FingerprintInscreen::onPress() {
-    if (get(BRIGHTNESS_PATH, 0) != 0) {
-        xiaomiDisplayFeatureService->setFeature(0, 11, 1, 4);
+Return<void> FingerprintInscreen::onPress(int32_t ambientLight) {
+    xiaomiDisplayFeatureService->setFeature(0, 11, 1, 4);
+    if (get(BRIGHTNESS_PATH, 0) != 0 && ambientLight < 12) {
         xiaomiDisplayFeatureService->setFeature(0, 11, 1, 5);
+        xiaomiFingerprintService->extCmd(COMMAND_NIT, PARAM_NIT_300_FOD);
+    } else {
+        xiaomiDisplayFeatureService->setFeature(0, 11, 1, 3);
+        xiaomiFingerprintService->extCmd(COMMAND_NIT, PARAM_NIT_630_FOD);
     }
-    xiaomiFingerprintService->extCmd(COMMAND_NIT, PARAM_NIT_FOD);
     return Void();
 }
 
 Return<void> FingerprintInscreen::onRelease() {
+    xiaomiDisplayFeatureService->setFeature(0, 11, 1, 4);
     if (get(BRIGHTNESS_PATH, 0) != 0) {
-        xiaomiDisplayFeatureService->setFeature(0, 11, 1, 4);
         xiaomiDisplayFeatureService->setFeature(0, 11, 0, 5);
+        xiaomiDisplayFeatureService->setFeature(0, 11, 0, 3);
     }
     xiaomiFingerprintService->extCmd(COMMAND_NIT, PARAM_NIT_NONE);
     return Void();
@@ -114,9 +119,10 @@ Return<void> FingerprintInscreen::onShowFODView() {
 
 Return<void> FingerprintInscreen::onHideFODView() {
     set(FOD_STATUS_PATH, FOD_STATUS_OFF);
+    xiaomiDisplayFeatureService->setFeature(0, 11, 1, 4);
     if (get(BRIGHTNESS_PATH, 0) != 0) {
-        xiaomiDisplayFeatureService->setFeature(0, 11, 1, 4);
         xiaomiDisplayFeatureService->setFeature(0, 11, 0, 5);
+        xiaomiDisplayFeatureService->setFeature(0, 11, 0, 3);
     }
     xiaomiFingerprintService->extCmd(COMMAND_NIT, PARAM_NIT_NONE);
     return Void();
