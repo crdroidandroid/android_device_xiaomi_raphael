@@ -1,12 +1,3 @@
-on post-fs
-    mount none /system/bin/hw/android.hardware.power@1.2-service /vendor/bin/hw/android.hardware.power@1.2-service bind
-    mount none /system/etc/audio_platform_info.xml /vendor/etc/audio_platform_info.xml bind
-    mount none /system/etc/audio_policy_configuration.xml /vendor/etc/audio_policy_configuration.xml bind
-    mount none /system/etc/audio_policy_configuration.xml /vendor/etc/audio/audio_policy_configuration.xml bind
-    mount none /system/etc/libnfc-nci.conf /vendor/etc/libnfc-nci.conf bind
-    mount none /system/lib/soundfx/libvolumelistener.so /vendor/lib/soundfx/libvolumelistener.so bind
-    mount none /system/lib64/soundfx/libvolumelistener.so /vendor/lib64/soundfx/libvolumelistener.so bind
-
 on boot
     write /sys/class/thermal/thermal_message/sconfig 10
 

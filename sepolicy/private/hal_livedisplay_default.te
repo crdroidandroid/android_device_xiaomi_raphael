@@ -1,7 +1,7 @@
 type shal_livedisplay_default, coredomain, domain;
 hal_server_domain(shal_livedisplay_default, hal_lineage_livedisplay)
 
-type shal_livedisplay_default_exec, exec_type, file_type;
+type shal_livedisplay_default_exec, exec_type, system_file_type, file_type;
 init_daemon_domain(shal_livedisplay_default)
 
 # Allow LiveDisplay to perform binder IPC to vendor.display.color::IDisplayColor
