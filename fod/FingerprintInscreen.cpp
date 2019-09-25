@@ -22,8 +22,6 @@
 #include <cmath>
 #include <fstream>
 
-#define FINGERPRINT_ACQUIRED_VENDOR 6
-
 #define COMMAND_NIT 10
 #define PARAM_NIT_630_FOD 1
 #define PARAM_NIT_300_FOD 4
@@ -68,6 +66,7 @@ namespace implementation {
 FingerprintInscreen::FingerprintInscreen() {
     xiaomiDisplayFeatureService = IDisplayFeature::getService();
     xiaomiFingerprintService = IXiaomiFingerprint::getService();
+    ambient = 0;
 }
 
 Return<int32_t> FingerprintInscreen::getPositionX() {
@@ -92,39 +91,45 @@ Return<void> FingerprintInscreen::onFinishEnroll() {
 
 Return<void> FingerprintInscreen::onPress(int32_t ambientLight) {
     xiaomiDisplayFeatureService->setFeature(0, 11, 1, 4);
-    if (get(BRIGHTNESS_PATH, 0) != 0 && ambientLight < 12) {
-        xiaomiDisplayFeatureService->setFeature(0, 11, 1, 5);
-        xiaomiFingerprintService->extCmd(COMMAND_NIT, PARAM_NIT_300_FOD);
-    } else {
-        xiaomiDisplayFeatureService->setFeature(0, 11, 1, 3);
+    if (ambientLight > 12) {
         xiaomiFingerprintService->extCmd(COMMAND_NIT, PARAM_NIT_630_FOD);
+        xiaomiDisplayFeatureService->setFeature(0, 11, 1, 3);
+    } else if (get(BRIGHTNESS_PATH, 0) != 0) {
+        xiaomiFingerprintService->extCmd(COMMAND_NIT, PARAM_NIT_300_FOD);
+        xiaomiDisplayFeatureService->setFeature(0, 11, 1, 5);
     }
+
+    ambient = ambientLight;
     return Void();
 }
 
 Return<void> FingerprintInscreen::onRelease() {
     xiaomiDisplayFeatureService->setFeature(0, 11, 1, 4);
-    if (get(BRIGHTNESS_PATH, 0) != 0) {
-        xiaomiDisplayFeatureService->setFeature(0, 11, 0, 5);
-        xiaomiDisplayFeatureService->setFeature(0, 11, 0, 3);
-    }
     xiaomiFingerprintService->extCmd(COMMAND_NIT, PARAM_NIT_NONE);
+    if (ambient > 12) {
+        xiaomiDisplayFeatureService->setFeature(0, 11, 0, 3);
+    } else if (get(BRIGHTNESS_PATH, 0) != 0) {
+        xiaomiDisplayFeatureService->setFeature(0, 11, 0, 5);
+    }
     return Void();
 }
 
 Return<void> FingerprintInscreen::onShowFODView() {
     set(FOD_STATUS_PATH, FOD_STATUS_ON);
+    xiaomiDisplayFeatureService->setFeature(0, 17, 1, 255);
     return Void();
 }
 
 Return<void> FingerprintInscreen::onHideFODView() {
     set(FOD_STATUS_PATH, FOD_STATUS_OFF);
-    xiaomiDisplayFeatureService->setFeature(0, 11, 1, 4);
-    if (get(BRIGHTNESS_PATH, 0) != 0) {
-        xiaomiDisplayFeatureService->setFeature(0, 11, 0, 5);
-        xiaomiDisplayFeatureService->setFeature(0, 11, 0, 3);
-    }
+    xiaomiDisplayFeatureService->setFeature(0, 17, 0, 255);
     xiaomiFingerprintService->extCmd(COMMAND_NIT, PARAM_NIT_NONE);
+    if (ambient > 12) {
+        xiaomiDisplayFeatureService->setFeature(0, 11, 0, 3);
+    } else if (get(BRIGHTNESS_PATH, 0) != 0) {
+        xiaomiDisplayFeatureService->setFeature(0, 11, 0, 5);
+    }
+    xiaomiDisplayFeatureService->setFeature(0, 11, 1, 4);
     return Void();
 }
 
@@ -144,15 +149,15 @@ Return<void> FingerprintInscreen::setLongPressEnabled(bool) {
 
 Return<int32_t> FingerprintInscreen::getDimAmount(int32_t brightness) {
     float alpha;
-    (void) brightness;
     int realBrightness = get(BRIGHTNESS_PATH, 0);
-
-    alpha = 1.0 - pow(realBrightness / 1680.0, 0.455);
 
     if (realBrightness > 500) {
         alpha = 1.0 - pow(realBrightness / 2047.0 * 430.0 / 600.0, 0.455);
+    } else {
+        alpha = 1.0 - pow(realBrightness / 1680.0, 0.455);
     }
 
+    (void) brightness;
     return 255 * alpha;
 }
 
