@@ -48,10 +48,8 @@
         <device name="SND_DEVICE_IN_UNPROCESSED_USB_HEADSET_HEX_MIC" acdb_id="162"/>
         <device name="SND_DEVICE_IN_VOCE_RECOG_USB_HEADSET_HEX_MIC" acdb_id="162"/>
         <device name="SND_DEVICE_OUT_HEADPHONES" acdb_id="10012"/>
-        <device name="SND_DEVICE_OUT_HEADPHONES_44_1" acdb_id="10012"/>
-        <device name="SND_DEVICE_OUT_HEADPHONES_HIFI" acdb_id="10026"/>
-        <device name="SND_DEVICE_OUT_HEADPHONES_44_1_HIFI" acdb_id="10026"/>
         <device name="SND_DEVICE_OUT_GAME_HEADPHONES" acdb_id="10022"/>
+        <device name="SND_DEVICE_OUT_HEADPHONES_44_1" acdb_id="10012"/>
         <device name="SND_DEVICE_OUT_USB_HEADSET" acdb_id="10012"/>
         <device name="SND_DEVICE_OUT_GAME_USB_HEADSET" acdb_id="10022"/>
         <device name="SND_DEVICE_OUT_USB_HEADPHONES" acdb_id="10012"/>
@@ -140,8 +138,6 @@
     </gain_db_to_level_mapping>
     <backend_names>
         <device name="SND_DEVICE_OUT_HEADPHONES" backend="headphones" interface="SLIMBUS_6_RX"/>
-        <device name="SND_DEVICE_OUT_HEADPHONES_HIFI" backend="headphones" interface="SLIMBUS_6_RX"/>
-        <device name="SND_DEVICE_OUT_HEADPHONES_44_1_HIFI" backend="headphones-44.1" interface="SLIMBUS_5_RX"/>
         <device name="SND_DEVICE_OUT_GAME_HEADPHONES" backend="headphones" interface="SLIMBUS_6_RX"/>
         <device name="SND_DEVICE_OUT_BT_SCO_WB" backend="bt-sco-wb" interface="SLIMBUS_7_RX"/>
         <device name="SND_DEVICE_OUT_BT_SCO" backend="bt-sco" interface="SLIMBUS_7_RX"/>
@@ -164,6 +160,7 @@
         <device name="SND_DEVICE_OUT_VOICE_TTY_VCO_HEADPHONES" backend="headphones" interface="SLIMBUS_6_RX"/>
         <device name="SND_DEVICE_OUT_SPEAKER_AND_BT_SCO" backend="speaker-and-bt-sco" interface="QUAT_MI2S_RX-and-SLIMBUS_7_RX"/>
         <device name="SND_DEVICE_OUT_SPEAKER_AND_BT_SCO_WB" backend="speaker-and-bt-sco-wb" interface="QUAT_MI2S_RX-and-SLIMBUS_7_RX"/>
+        <device name="SND_DEVICE_OUT_SPEAKER_AND_BT_A2DP" backend="speaker-and-bt-a2dp" interface="QUAT_MI2S_RX-and-SLIMBUS_7_RX"/>
         <device name="SND_DEVICE_OUT_HEADPHONES_KARA" backend="headphones" interface="SLIMBUS_6_RX"/>
         <device name="SND_DEVICE_OUT_USB_HEADSET_KARA" backend="usb-headset" interface="USB_AUDIO_RX"/>
 
@@ -360,13 +357,13 @@
                         <mic_info mic_device_id="builtin_mic_4"
                             channel_mapping="AUDIO_MICROPHONE_CHANNEL_MAPPING_PROCESSED"/>
                     </snd_dev>
-                    <snd_dev in_snd_device="SND_DEVICE_IN_HANDSET_STEREO_DMIC">
+                    <snd_dev in_snd_device="SND_DEVICE_IN_HANDSET_DMIC_STEREO">
                         <mic_info mic_device_id="builtin_mic_1"
                             channel_mapping="AUDIO_MICROPHONE_CHANNEL_MAPPING_PROCESSED"/>
                         <mic_info mic_device_id="builtin_mic_2"
                             channel_mapping="AUDIO_MICROPHONE_CHANNEL_MAPPING_PROCESSED"/>
                     </snd_dev>
-                    <snd_dev in_snd_device="SND_DEVICE_IN_SPEAKER_STEREO_DMIC">
+                    <snd_dev in_snd_device="SND_DEVICE_IN_SPEAKER_DMIC_STEREO">
                         <mic_info mic_device_id="builtin_mic_1"
                             channel_mapping="AUDIO_MICROPHONE_CHANNEL_MAPPING_PROCESSED"/>
                         <mic_info mic_device_id="builtin_mic_2"
