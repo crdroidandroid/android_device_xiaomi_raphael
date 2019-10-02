@@ -118,6 +118,9 @@ PRODUCT_PACKAGES += \
     SecureElement \
     Tag
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/libnfc-nci.conf:system/etc/libnfc-nci.conf
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.2-service
