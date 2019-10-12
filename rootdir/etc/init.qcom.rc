@@ -6,3 +6,11 @@ service citsensor-hal-1-1  /vendor/bin/hw/vendor.xiaomi.hardware.citsensorservic
     class late_start
     user system
     group system input
+
+service vendor.imsdatadaemon /vendor/bin/imsdatadaemon
+    override
+    class main
+    user radio
+    socket ims_datad stream 0660 system radio
+    group radio wifi inet vendor_qti_diag log
+    disabled
