@@ -80,6 +80,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.dbg.volte_avail_ovr=1 \
     persist.dbg.vt_avail_ovr=1 \
     persist.radio.NO_STAPA=1 \
+    persist.sys.fflag.override.settings_network_and_internet_v2=true \
     persist.radio.VT_CAM_INTERFACE=1 \
     persist.vendor.data.iwlan.enable=true \
     persist.vendor.radio.data_con_rprt=1 \
