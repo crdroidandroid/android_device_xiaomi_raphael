@@ -157,8 +157,10 @@ product/etc/permissions/telephony_product_privapp-permissions-qti.xml
 product/etc/permissions/telephonyservice.xml
 product/framework/QtiTelephonyServicelibrary.jar
 product/framework/qcrilhook.jar
-product/framework/qti-telephony-common.jar
 -product/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
+
+# Telephony (qti-telephony-common) - from DRG - QKQ1.190828.002
+product/framework/qti-telephony-common.jar|b4d187700f279cdbd40e74b4c3be4504f10d8b29
 
 # Soter
 -app/SoterService/SoterService.apk
