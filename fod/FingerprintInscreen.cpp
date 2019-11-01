@@ -104,11 +104,11 @@ Return<void> FingerprintInscreen::onPress(int32_t ambientLight) {
 }
 
 Return<void> FingerprintInscreen::onRelease() {
-    xiaomiDisplayFeatureService->setFeature(0, 11, 1, 4);
     xiaomiFingerprintService->extCmd(COMMAND_NIT, PARAM_NIT_NONE);
     if (ambient > 12) {
         xiaomiDisplayFeatureService->setFeature(0, 11, 0, 3);
     } else if (get(BRIGHTNESS_PATH, 0) != 0) {
+        xiaomiDisplayFeatureService->setFeature(0, 11, 1, 4);
         xiaomiDisplayFeatureService->setFeature(0, 11, 0, 5);
     }
     return Void();
@@ -117,6 +117,7 @@ Return<void> FingerprintInscreen::onRelease() {
 Return<void> FingerprintInscreen::onShowFODView() {
     set(FOD_STATUS_PATH, FOD_STATUS_ON);
     xiaomiDisplayFeatureService->setFeature(0, 17, 1, 255);
+    xiaomiDisplayFeatureService->setFeature(0, 11, 1, 4);
     return Void();
 }
 
@@ -127,13 +128,25 @@ Return<void> FingerprintInscreen::onHideFODView() {
     if (ambient > 12) {
         xiaomiDisplayFeatureService->setFeature(0, 11, 0, 3);
     } else if (get(BRIGHTNESS_PATH, 0) != 0) {
+        xiaomiDisplayFeatureService->setFeature(0, 11, 1, 4);
         xiaomiDisplayFeatureService->setFeature(0, 11, 0, 5);
     }
-    xiaomiDisplayFeatureService->setFeature(0, 11, 1, 4);
     return Void();
 }
 
 Return<bool> FingerprintInscreen::handleAcquired(int32_t acquiredInfo, int32_t vendorCode) {
+    if (acquiredInfo == 0) {
+        if (vendorCode == 0) {
+            if (ambient > 12) {
+                xiaomiDisplayFeatureService->setFeature(0, 11, 0, 3);
+            } else if (get(BRIGHTNESS_PATH, 0) != 0) {
+                xiaomiDisplayFeatureService->setFeature(0, 11, 1, 4);
+                xiaomiDisplayFeatureService->setFeature(0, 11, 0, 5);
+            }
+            return true;
+        }
+    }
+
     LOG(ERROR) << "acquiredInfo: " << acquiredInfo << ", vendorCode: " << vendorCode << "\n";
     return false;
 }

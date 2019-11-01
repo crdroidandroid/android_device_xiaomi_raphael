@@ -34,6 +34,7 @@ import android.util.Log;
 import java.util.List;
 
 import org.lineageos.internal.util.FileUtils;
+import vendor.xiaomi.hardware.displayfeature.V1_0.IDisplayFeature;
 import vendor.xiaomi.hardware.motor.V1_0.IMotor;
 
 public class PopupCameraService extends Service {
@@ -101,6 +102,13 @@ public class PopupCameraService extends Service {
             if (lineageos.content.Intent.ACTION_CAMERA_STATUS_CHANGED.equals(action)) {
                mCameraState = intent.getExtras().getString(lineageos.content.Intent.EXTRA_CAMERA_STATE);
                updateMotor(mCameraState);
+            } else if (Intent.ACTION_SCREEN_ON.equals(action)) {
+                try {
+                    IDisplayFeature mDisplayFeature = IDisplayFeature.getService();
+                    mDisplayFeature.setFeature(0, 0, 2, 255);
+                    mDisplayFeature.setFeature(0, 3, 0, 255);
+                } catch(Exception e) {
+                }
             }
         }
     };
