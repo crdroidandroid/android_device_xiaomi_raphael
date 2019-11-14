@@ -114,7 +114,7 @@ public class DiracSettingsFragment extends PreferenceFragment implements
                 }
                 return true;
             case PREF_PRESET:
-                DiracUtils.setLevel((String) newValue);
+                DiracUtils.setLevel(String.valueOf(newValue));
                 return true;
             default:
                 return false;
@@ -123,10 +123,10 @@ public class DiracSettingsFragment extends PreferenceFragment implements
 
     @Override
     public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+        DiracUtils.setMusic(isChecked);
+
         mTextView.setText(getString(isChecked ? R.string.switch_bar_on : R.string.switch_bar_off));
         mSwitchBar.setActivated(isChecked);
-
-        DiracUtils.setMusic(isChecked);
 
         if (!DiracUtils.getHifiMode()) {
             mHeadsetType.setEnabled(isChecked);
