@@ -58,6 +58,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
+    media.stagefright.thumbnail.prefer_hw_codecs=true \
     media.settings.xml=/system/etc/media_profiles_vendor.xml \
     vendor.mm.enable.qcom_parser=63963135
 
@@ -82,6 +83,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.VT_CAM_INTERFACE=1 \
     persist.vendor.data.iwlan.enable=true \
     persist.vendor.radio.data_con_rprt=1 \
+    persist.vendor.radio.enable_temp_dds=true \
     persist.vendor.radio.force_on_dc=true \
     persist.vendor.radio.redir_party_num=1 \
     persist.vendor.radio.report_codec=1 \
@@ -98,3 +100,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Subsystem ramdump
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.ssr.restart_level=ALL_ENABLE
+
+# Vendor
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.qti.va_aosp.support=1
