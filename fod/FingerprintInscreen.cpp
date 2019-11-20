@@ -66,7 +66,6 @@ namespace implementation {
 FingerprintInscreen::FingerprintInscreen() {
     xiaomiDisplayFeatureService = IDisplayFeature::getService();
     xiaomiFingerprintService = IXiaomiFingerprint::getService();
-    ambient = 0;
 }
 
 Return<int32_t> FingerprintInscreen::getPositionX() {
@@ -89,9 +88,9 @@ Return<void> FingerprintInscreen::onFinishEnroll() {
     return Void();
 }
 
-Return<void> FingerprintInscreen::onPress(int32_t ambientLight) {
+Return<void> FingerprintInscreen::onPress() {
     xiaomiDisplayFeatureService->setFeature(0, 11, 1, 4);
-    if (ambientLight > 12) {
+    if (get(BRIGHTNESS_PATH, 0) > 100) {
         xiaomiFingerprintService->extCmd(COMMAND_NIT, PARAM_NIT_630_FOD);
         xiaomiDisplayFeatureService->setFeature(0, 11, 1, 3);
     } else if (get(BRIGHTNESS_PATH, 0) != 0) {
@@ -99,13 +98,12 @@ Return<void> FingerprintInscreen::onPress(int32_t ambientLight) {
         xiaomiDisplayFeatureService->setFeature(0, 11, 1, 5);
     }
 
-    ambient = ambientLight;
     return Void();
 }
 
 Return<void> FingerprintInscreen::onRelease() {
     xiaomiFingerprintService->extCmd(COMMAND_NIT, PARAM_NIT_NONE);
-    if (ambient > 12) {
+    if (get(BRIGHTNESS_PATH, 0) > 100) {
         xiaomiDisplayFeatureService->setFeature(0, 11, 0, 3);
     } else if (get(BRIGHTNESS_PATH, 0) != 0) {
         xiaomiDisplayFeatureService->setFeature(0, 11, 1, 4);
@@ -125,7 +123,7 @@ Return<void> FingerprintInscreen::onHideFODView() {
     set(FOD_STATUS_PATH, FOD_STATUS_OFF);
     xiaomiDisplayFeatureService->setFeature(0, 17, 0, 255);
     xiaomiFingerprintService->extCmd(COMMAND_NIT, PARAM_NIT_NONE);
-    if (ambient > 12) {
+    if (get(BRIGHTNESS_PATH, 0) > 100) {
         xiaomiDisplayFeatureService->setFeature(0, 11, 0, 3);
     } else if (get(BRIGHTNESS_PATH, 0) != 0) {
         xiaomiDisplayFeatureService->setFeature(0, 11, 1, 4);
@@ -137,7 +135,7 @@ Return<void> FingerprintInscreen::onHideFODView() {
 Return<bool> FingerprintInscreen::handleAcquired(int32_t acquiredInfo, int32_t vendorCode) {
     if (acquiredInfo == 0) {
         if (vendorCode == 0) {
-            if (ambient > 12) {
+            if (get(BRIGHTNESS_PATH, 0) > 100) {
                 xiaomiDisplayFeatureService->setFeature(0, 11, 0, 3);
             } else if (get(BRIGHTNESS_PATH, 0) != 0) {
                 xiaomiDisplayFeatureService->setFeature(0, 11, 1, 4);
