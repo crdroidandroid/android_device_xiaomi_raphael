@@ -47,6 +47,7 @@ public class PopupCameraService extends Service {
     private static final String BLUE_LED_PATH = "/sys/class/leds/blue/brightness";
     private static String mCameraState = "-1";
     private static Handler mHandler = new Handler();
+    private boolean mMotorBusy = false;
     private IMotor mMotor = null;
     private SensorManager mSensorManager;
     private Sensor mFreeFallSensor;
@@ -129,21 +130,43 @@ public class PopupCameraService extends Service {
     }
 
     private void updateMotor(String cameraState) {
-        if (mMotor == null) return;
-        try {
-            if (cameraState.equals(openCameraState) && mMotor.getMotorStatus() == 13) {
-                lightUp();
-                playSoundEffect(openCameraState);
-                mMotor.popupMotor(1);
-                mSensorManager.registerListener(mFreeFallListener, mFreeFallSensor, SensorManager.SENSOR_DELAY_NORMAL);
-            } else if (cameraState.equals(closeCameraState) && mMotor.getMotorStatus() == 11) {
-                lightUp();
-                playSoundEffect(closeCameraState);
-                mMotor.takebackMotor(1);
-                mSensorManager.unregisterListener(mFreeFallListener, mFreeFallSensor);
+        final Runnable r = () -> {
+            mMotorBusy = true;
+            mHandler.postDelayed(() -> {
+                mMotorBusy = false;
+            }, 1200);
+            if (mMotor == null) return;
+            try {
+                if (cameraState.equals(openCameraState) && mMotor.getMotorStatus() == 13) {
+                    lightUp();
+                    playSoundEffect(openCameraState);
+                    mMotor.popupMotor(1);
+                    mSensorManager.registerListener(mFreeFallListener, mFreeFallSensor,
+                            SensorManager.SENSOR_DELAY_NORMAL);
+                } else if (cameraState.equals(closeCameraState)
+                        && mMotor.getMotorStatus() == 11) {
+                    lightUp();
+                    playSoundEffect(closeCameraState);
+                    mMotor.takebackMotor(1);
+                    mSensorManager.unregisterListener(mFreeFallListener, mFreeFallSensor);
+                }
+            } catch (Exception e) {
+                // Do nothing
             }
-        } catch (Exception e) {
-            // Do nothing
+        };
+        if (mMotorBusy) {
+            mHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    if (mMotorBusy) {
+                        mHandler.postDelayed(this, 100);
+                    } else {
+                        mHandler.post(r);
+                    }
+                }
+            }, 100);
+        } else {
+            mHandler.post(r);
         }
     }
 
