@@ -29,6 +29,7 @@ import android.media.AudioAttributes;
 import android.media.SoundPool;
 import android.os.Handler;
 import android.os.IBinder;
+import android.os.UserHandle;
 import android.util.Log;
 
 import org.lineageos.internal.util.FileUtils;
@@ -175,6 +176,6 @@ public class PopupCameraService extends Service {
         Intent homeIntent = new Intent(Intent.ACTION_MAIN);
         homeIntent.addCategory(Intent.CATEGORY_HOME);
         homeIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(homeIntent);
+        startActivityAsUser(homeIntent, null, UserHandle.CURRENT);
     }
 }
