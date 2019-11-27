@@ -16,7 +16,6 @@
 -->
 <resources>
     <!-- DC Dimming settings -->
-    <string name="dc_dimming_title">DC Dimming</string>
     <string name="dc_dimming_enable_title">Anti-Flicker Mode</string>
     <string name="dc_dimming_enable_summary">DC Dimming reduces eye strain in low light conditions</string>
 
