@@ -39,6 +39,7 @@
 
         <SwitchPreference
             android:defaultValue="false"
+            android:icon="@drawable/ic_hifi"
             android:key="dirac_hifi_pref"
             android:summary="@string/dirac_hifi_summary"
             android:title="@string/dirac_hifi_enable_title" />
