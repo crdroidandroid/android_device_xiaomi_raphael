@@ -18,11 +18,7 @@ package org.lineageos.settings.popupcamera;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.SystemClock;
 import android.os.UserHandle;
-import android.util.Log;
-
-import java.util.List;
 
 public class PopupCameraUtils {
 

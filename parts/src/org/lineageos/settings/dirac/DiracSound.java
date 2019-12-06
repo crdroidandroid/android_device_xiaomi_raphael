@@ -35,16 +35,16 @@ public class DiracSound extends AudioEffect {
         super(EFFECT_TYPE_NULL, EFFECT_TYPE_DIRACSOUND, priority, audioSession);
     }
 
-    public void setMusic(int enable) throws IllegalStateException,
-            IllegalArgumentException, UnsupportedOperationException {
-        checkStatus(setParameter(DIRACSOUND_PARAM_MUSIC, enable));
-    }
-
     public int getMusic() throws IllegalStateException,
             IllegalArgumentException, UnsupportedOperationException {
         int[] value = new int[1];
         checkStatus(getParameter(DIRACSOUND_PARAM_MUSIC, value));
         return value[0];
+    }
+
+    public void setMusic(int enable) throws IllegalStateException,
+            IllegalArgumentException, UnsupportedOperationException {
+        checkStatus(setParameter(DIRACSOUND_PARAM_MUSIC, enable));
     }
 
     public void setHeadsetType(int type) throws IllegalStateException,
