@@ -79,6 +79,14 @@ void power_hint(power_hint_t hint, void *data)
     switch(hint) {
         case POWER_HINT_VSYNC:
         break;
+        case POWER_HINT_VIDEO_DECODE:
+        break;
+        case POWER_HINT_LOW_POWER:
+        break;
+        case POWER_HINT_LAUNCH:
+        break;
+        case POWER_HINT_DISABLE_TOUCH:
+        break;
         case POWER_HINT_VR_MODE:
             ALOGI("VR mode power hint not handled in power_hint_override");
             break;
