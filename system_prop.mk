@@ -79,6 +79,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.default_network=22,22 \
     persist.dbg.volte_avail_ovr=1 \
     persist.dbg.vt_avail_ovr=1 \
+    persist.dbg.wfc_avail_ovr=1 \
     persist.radio.NO_STAPA=1 \
     persist.radio.VT_CAM_INTERFACE=1 \
     persist.vendor.data.iwlan.enable=true \
