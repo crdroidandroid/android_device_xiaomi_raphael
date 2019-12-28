@@ -27,7 +27,7 @@
  *
  */
 #define LOG_TAG "QTI PowerHAL"
-#include <cutils/log.h>
+#include <log/log.h>
 #include <fcntl.h>
 #include <string.h>
 #include <cutils/properties.h>
