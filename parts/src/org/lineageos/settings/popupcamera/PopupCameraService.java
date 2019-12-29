@@ -33,7 +33,6 @@ import android.os.UserHandle;
 import android.util.Log;
 
 import org.lineageos.settings.R;
-import org.lineageos.settings.utils.LimitSizeList;
 import org.lineageos.settings.utils.FileUtils;
 
 import vendor.xiaomi.hardware.displayfeature.V1_0.IDisplayFeature;
