@@ -361,91 +361,91 @@
     {
       "PowerHint": "LAUNCH",
       "Node": "CPUBigClusterMaxFreq",
-      "Duration": 5000,
+      "Duration": 3000,
       "Value": "9999999"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "CPUBigPlusClusterMaxFreq",
-      "Duration": 5000,
+      "Duration": 3000,
       "Value": "9999999"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "CPUBigClusterMinFreq",
-      "Duration": 5000,
+      "Duration": 3000,
       "Value": "9999999"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "CPUBigPlusClusterMinFreq",
-      "Duration": 5000,
+      "Duration": 3000,
       "Value": "9999999"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "CPULittleClusterMinFreq",
-      "Duration": 5000,
+      "Duration": 3000,
       "Value": "9999999"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "PMQoSCpuDmaLatency",
-      "Duration": 5000,
+      "Duration": 3000,
       "Value": "2c"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "CPUBWHystTriggerCount",
-      "Duration": 5000,
+      "Duration": 3000,
       "Value": "0"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "CPUBWHystLength",
-      "Duration": 5000,
+      "Duration": 3000,
       "Value": "0"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "CPUBWHistMemory",
-      "Duration": 5000,
+      "Duration": 3000,
       "Value": "0"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "CPUBWMinFreq",
-      "Duration": 5000,
+      "Duration": 3000,
       "Value": "14236"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "GPUForceClkOn",
-      "Duration": 5000,
+      "Duration": 3000,
       "Value": "1"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "GPUForceRailOn",
-      "Duration": 5000,
+      "Duration": 3000,
       "Value": "1"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "GPUIdleTimer",
-      "Duration": 5000,
+      "Duration": 3000,
       "Value": "10000"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "LLCCBWMinFreq",
-      "Duration": 5000,
+      "Duration": 3000,
       "Value": "6881"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "L3BigClusterMinFreq",
-      "Duration": 5000,
+      "Duration": 3000,
       "Value": "1440000000"
     },
     {
