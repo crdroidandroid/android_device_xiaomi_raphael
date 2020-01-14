@@ -29,4 +29,7 @@
 
     <!-- Doze: check proximity sensor before pulsing? -->
     <bool name="doze_proximity_check_before_pulse">false</bool>
+
+    <!-- Whether the binned brightness sensor reports a value of 0 on proximity near events -->
+    <bool name="doze_brightness_sensor_reports_proximity" translatable="false">false</bool>
 </resources>
