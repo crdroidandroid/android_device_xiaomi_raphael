@@ -15,8 +15,7 @@
 -->
 <resources>
     <!-- Color of the FOD view -->
-    <color name="config_fodColor">#00ffff</color>
-
+    <color name="config_fodColor">#00ffffff</color>
 
     <!-- Whether the binned brightness sensor reports a value of 0 on proximity
          near events -->
