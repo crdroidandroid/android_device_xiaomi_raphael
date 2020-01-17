@@ -14,9 +14,6 @@
      limitations under the License.
 -->
 <resources>
-    <!-- Color of the FOD view -->
-    <color name="config_fodColor">#00ff00</color>
-
     <!-- Smart replies in notifications: Whether we disable the feature unless the app targets P -->
     <bool name="config_smart_replies_in_notifications_requires_targeting_p">false</bool>
 
@@ -32,4 +29,7 @@
 
     <!-- Whether the binned brightness sensor reports a value of 0 on proximity near events -->
     <bool name="doze_brightness_sensor_reports_proximity" translatable="false">false</bool>
+
+    <!-- Color of the FOD view -->
+    <color name="config_fodColor">#00ffffff</color>
 </resources>
