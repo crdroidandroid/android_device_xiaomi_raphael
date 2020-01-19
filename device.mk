@@ -133,6 +133,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.power@1.2-service.raphael
 
+#Recorder
+PRODUCT_PACKAGES += \
+    Recorder
+
 # Ril
 PRODUCT_PACKAGES += \
     android.hardware.radio@1.4
