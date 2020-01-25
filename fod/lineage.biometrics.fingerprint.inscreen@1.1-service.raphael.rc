@@ -1,0 +1,6 @@
+service fingerprint-inscreen-1-1 /system/bin/hw/lineage.biometrics.fingerprint.inscreen@1.1-service.raphael
+    interface vendor.lineage.biometrics.fingerprint.inscreen@1.1::IFingerprintInscreen default
+    class hal
+    user system
+    group system wakelock
+    shutdown critical
