@@ -1,6 +1,10 @@
 on boot
     write /sys/class/thermal/thermal_message/sconfig 10
 
+on post-fs
+    mount none /system/etc/goodix/BMatrix.so /mnt/vendor/persist/goodix/BMatrix.so bind
+    mount none /system/etc/goodix/caliParamsInfo.so /mnt/vendor/persist/goodix/caliParamsInfo.so bind
+
 service citsensor-hal-1-1  /vendor/bin/hw/vendor.xiaomi.hardware.citsensorservice@1.1-service
     override
     class late_start
