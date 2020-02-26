@@ -54,6 +54,9 @@ ro.lmk.log_stats=true
 # Logd buffer size
 ro.logd.size=2M
 
+# Fastbootd
+ro.fastbootd.available=true
+
 # Media
 av.offload.enable=true
 media.stagefright.enable-player=true

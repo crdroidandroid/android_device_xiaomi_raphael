@@ -1,3 +1,6 @@
+# Fastbootd
+ro.fastbootd.available	u:object_r:exported_default_prop:s0
+
 # Global
 ro.build.flavor                u:object_r:build_prop:s0
 ro.product.marketname          u:object_r:build_prop:s0
