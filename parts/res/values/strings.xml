@@ -19,6 +19,9 @@
     <string name="dc_dimming_enable_title">Anti-Flicker Mode</string>
     <string name="dc_dimming_enable_summary">DC Dimming reduces eye strain in low light conditions</string>
 
+    <!-- DC Dimming tile -->
+    <string name="dc_dimming_tile_title">DC Dimming</string>
+
     <!-- Dirac settings -->
     <string name="dirac_title">Dirac sound enhancer</string>
     <string name="dirac_headset_title">Headset type</string>
