@@ -37,7 +37,7 @@ public class FodService extends Service {
             if (Intent.ACTION_SCREEN_ON.equals(action)) {
                 try {
                     IDisplayFeature mDisplayFeature = IDisplayFeature.getService();
-                    mDisplayFeature.setFeature(0, 0, 2, 255);
+                    mDisplayFeature.setFeature(0, 1, 2, 255);
                     mDisplayFeature.setFeature(0, 3, 0, 255);
                 } catch (Exception e) {
                     // Do nothing
