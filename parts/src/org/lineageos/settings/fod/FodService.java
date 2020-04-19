@@ -22,6 +22,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.IBinder;
+import android.os.RemoteException;
 import android.util.Log;
 
 import vendor.xiaomi.hardware.displayfeature.V1_0.IDisplayFeature;
@@ -39,7 +40,7 @@ public class FodService extends Service {
                     IDisplayFeature mDisplayFeature = IDisplayFeature.getService();
                     mDisplayFeature.setFeature(0, 1, 2, 255);
                     mDisplayFeature.setFeature(0, 3, 0, 255);
-                } catch (Exception e) {
+                } catch (RemoteException e) {
                     // Do nothing
                 }
             }
