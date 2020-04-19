@@ -18,6 +18,7 @@ package org.lineageos.settings.display.tile;
 
 import android.content.SharedPreferences;
 import android.graphics.drawable.Icon;
+import android.os.RemoteException;
 import android.service.quicksettings.Tile;
 import android.service.quicksettings.TileService;
 
@@ -55,7 +56,7 @@ public class DcDimmingTile extends TileService {
         try {
             IDisplayFeature mDisplayFeature = IDisplayFeature.getService();
             mDisplayFeature.setFeature(0, 20, enable ? 1 : 0, 255);
-        } catch (Exception e) {
+        } catch (RemoteException e) {
             // Do nothing
         }
 
