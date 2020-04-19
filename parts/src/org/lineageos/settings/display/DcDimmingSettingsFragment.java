@@ -17,6 +17,7 @@
 package org.lineageos.settings.display;
 
 import android.os.Bundle;
+import android.os.RemoteException;
 import android.view.MenuItem;
 
 import androidx.preference.Preference;
@@ -41,7 +42,7 @@ public class DcDimmingSettingsFragment extends PreferenceFragment implements
         getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
         try {
             mDisplayFeature = IDisplayFeature.getService();
-        } catch (Exception e) {
+        } catch (RemoteException e) {
             // Do nothing
         }
         mDcDimmingPreference = (SwitchPreference) findPreference(DC_DIMMING_ENABLE_KEY);
@@ -70,7 +71,7 @@ public class DcDimmingSettingsFragment extends PreferenceFragment implements
         if (mDisplayFeature == null) return;
         try {
             mDisplayFeature.setFeature(0, 20, enable, 255);
-        } catch (Exception e) {
+        } catch (RemoteException e) {
             // Do nothing
         }
     }
