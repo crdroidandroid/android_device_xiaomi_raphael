@@ -1,0 +1,3 @@
+ro.miui.                       u:object_r:exported_system_prop:s0
+ro.product.system.manufacturer u:object_r:exported2_default_prop:s0 exact string
+persist.sensor.                u:object_r:sensors_prop:s0
