@@ -1,0 +1,1 @@
+allow tee persist_file:lnk_file read;

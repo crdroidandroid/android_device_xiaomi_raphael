@@ -1,11 +1,20 @@
+# data
+type display_data_file, data_file_type, core_data_file_type, file_type;
+
+# firmware
 type adsprpcd_file, file_type;
 type bt_firmware_file, file_type;
 type firmware_file, file_type;
 type persist_file, file_type;
 
+# battery
 type sysfs_battery_supply, sysfs_type, fs_type;
 type sysfs_usb_supply, sysfs_type, fs_type;
 
-type display_data_file, data_file_type, core_data_file_type, file_type;
+# socket
 type pps_socket, file_type;
+
+#sysfs
 type sysfs_graphics, sysfs_type, fs_type;
+type sysfs_tp_fodstatus, sysfs_type, fs_type;
+type sysfs_kgsl, sysfs_type, fs_type;

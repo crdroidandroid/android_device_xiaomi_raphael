@@ -3,3 +3,21 @@ hal_server_domain(hal_fod_raphael, hal_lineage_fod)
 
 type hal_fod_raphael_exec, exec_type, system_file_type, file_type;
 init_daemon_domain(hal_fod_raphael)
+
+# Allow binder communication with hal_displayfeature_xiaomi_default
+binder_call(hal_fod_raphael, hal_displayfeature_xiaomi_default)
+
+# Allow hal_fod_raphael to find hal_displayfeature_xiaomi_hwservice
+allow hal_fod_raphael hal_displayfeature_xiaomi_hwservice:hwservice_manager find;
+
+# Allow hal_fod_raphael to find hal_fingerprint_hwservice_xiaomi
+allow hal_fod_raphael hal_fingerprint_hwservice_xiaomi:hwservice_manager find;
+
+# Allow hal_fod_raphael to write to fod sysfs
+allow hal_fod_raphael sysfs_tp_fodstatus:file rw_file_perms;
+
+# Allow access to the hals
+hal_client_domain(hal_fod_raphael, hal_fingerprint)
+
+# Allow to use wakelock
+wakelock_use(hal_fod_raphael)

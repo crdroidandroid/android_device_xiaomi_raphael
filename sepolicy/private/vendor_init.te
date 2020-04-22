@@ -1,3 +1,2 @@
+allow vendor_init persist_file:lnk_file read;
 type qti_init_shell_exec, exec_type, vendor_file_type,file_type;
-
-permissive vendor_init;
