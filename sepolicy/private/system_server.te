@@ -1,0 +1,2 @@
+allow system_server sysfs_kgsl:file r_file_perms;
+get_prop(system_server, persist_camera_prop)

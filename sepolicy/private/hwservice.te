@@ -1,1 +1,4 @@
 type hal_display_color_hwservice, hwservice_manager_type;
+type hal_displayfeature_xiaomi_hwservice, hwservice_manager_type;
+type hal_fingerprint_hwservice_xiaomi, hwservice_manager_type;
+type hal_motor_hwservice, hwservice_manager_type;

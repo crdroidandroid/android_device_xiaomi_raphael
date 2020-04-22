@@ -1,0 +1,7 @@
+type hal_citsensorservice_xiaomi_default, domain;
+
+# Allow hal_citsensorservice_xiaomi_default to get sensors_prop
+get_prop(hal_citsensorservice_xiaomi_default, sensors_prop)
+
+# Allow to use wakelock
+wakelock_use(hal_citsensorservice_xiaomi_default)
