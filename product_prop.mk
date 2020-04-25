@@ -20,3 +20,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Priv-app permission
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.control_privapp_permissions=log
+
+# Dex2oat
+PRODUCT_PRODUCT_PROPERTIES += \
+     dalvik.vm.dex2oat64.enabled=true
