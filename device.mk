@@ -55,6 +55,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     Snap
 
+#crDroid Specific
+TARGET_HAS_FOD := true
+
 # Device-specific settings
 PRODUCT_PACKAGES += \
     XiaomiParts
