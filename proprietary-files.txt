@@ -108,7 +108,7 @@ product/framework/com.qualcomm.qti.uceservice-V2.0-java.jar
 product/framework/com.qualcomm.qti.uceservice-V2.1-java.jar
 product/framework/vendor.qti.ims.callinfo-V1.0-java.jar
 product/framework/vendor.qti.ims.rcsconfig-V1.0-java.jar
--product/priv-app/ims/ims.apk|da04e0fe234c87599b9877efcd87b546f8879b52
+-product/priv-app/ims/ims.apk|70d0bdc659e3e85d4e817d9c6f293225cbcab820
 product/lib64/com.qualcomm.qti.imscmservice@1.0.so
 product/lib64/com.qualcomm.qti.imscmservice@2.0.so
 product/lib64/com.qualcomm.qti.imscmservice@2.1.so
@@ -132,6 +132,10 @@ etc/excluded-input-devices.xml
 # HotwordEnrollment
 -product/priv-app/HotwordEnrollmentXGoogleHEXAGON/HotwordEnrollmentXGoogleHEXAGON.apk;PRESIGNED
 -product/priv-app/HotwordEnrollmentOKGoogleHEXAGON/HotwordEnrollmentOKGoogleHEXAGON.apk;PRESIGNED
+
+# Media
+-vendor/lib/libplatformconfig.so
+-vendor/lib64/libplatformconfig.so
 
 # Perf
 product/lib64/vendor.qti.hardware.iop@2.0.so
