@@ -68,12 +68,6 @@ void vendor_load_properties() {
     } else {
         LOG(ERROR) << __func__ << ": unexcepted region!";
     }
-
-    property_override("ro.bluetooth.a2dp_offload.supported", "false");
-    property_override("persist.bluetooth.a2dp_offload.disabled", "true");
-    property_override("persist.bluetooth.bluetooth_audio_hal.disabled", "true");
-    property_override("persist.vendor.qcom.bluetooth.enable.splita2dp", "false");
-    property_override("vendor.audio.feature.a2dp_offload.enable", "false");
     property_override("ro.vendor.build.fingerprint", "google/coral/coral:10/QQ2A.200501.001.B2/6352890:user/release-keys");
     property_override("ro.build.fingerprint", "google/coral/coral:10/QQ2A.200501.001.B2/6352890:user/release-keys");
 }
