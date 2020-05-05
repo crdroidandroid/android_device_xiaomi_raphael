@@ -20,3 +20,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
     persist.bluetooth.bluetooth_audio_hal.disabled=true \
     persist.vendor.qcom.bluetooth.enable.splita2d=false \
     vendor.audio.feature.a2dp_offload.enable = false
+
+# Media
+PRODUCT_PRODUCT_PROPERTIES += \
+    debug.stagefright.omx_default_rank.sw-audio=16
