@@ -7,9 +7,6 @@
 /firmware(/.*)?          u:object_r:firmware_file:s0
 /persist(/.*)?           u:object_r:persist_file:s0
 
-# Fingerprint
-/system/etc/goodix(/.*)?      u:object_r:fingerprint_data_file:s0
-
 # HALs
 /(product|system/product)/vendor_overlay/[0-9]+/bin/hw/android\.hardware.power@1\.2-service                    u:object_r:hal_power_default_exec:s0
 /system/bin/hw/lineage\.livedisplay@2\.0-service-sdm                   u:object_r:shal_livedisplay_default_exec:s0
