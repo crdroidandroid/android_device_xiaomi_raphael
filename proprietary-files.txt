@@ -70,10 +70,6 @@ product/lib64/vendor.display.color@1.1.so
 product/lib64/vendor.display.color@1.2.so
 product/lib64/vendor.display.color@1.3.so
 
-# Fingerprint
-etc/goodix/BMatrix.so|28e9ff5f39e36b92ac3b7633b3847def8e6949e3
-etc/goodix/caliParamsInfo.so|95a4668aa54107250e416af070d9e93c6e3b243c
-
 # FM
 lib64/fm_helium.so
 lib64/libfm-hci.so
