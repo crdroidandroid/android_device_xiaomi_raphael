@@ -16,6 +16,8 @@
 
 #define LOG_TAG "light"
 
+#define MAXIMUM_DISPLAY_BRIGHTNESS 2047
+
 #include <log/log.h>
 
 #include <stdio.h>
@@ -63,6 +65,11 @@ Return<Status> Light::setLight(Type type, const LightState& state)  {
         .flashOffMS = state.flashOffMs,
         .brightnessMode = static_cast<int>(state.brightnessMode),
     };
+
+    // Scale display brightness.
+    if (type == Type::BACKLIGHT) {
+        legacyState.color = (state.color & 0xFF) * MAXIMUM_DISPLAY_BRIGHTNESS / 0xFF;
+    }
 
     int ret = hwLight->set_light(hwLight, &legacyState);
 
