@@ -74,6 +74,6 @@ void vendor_load_properties() {
     property_override("persist.bluetooth.bluetooth_audio_hal.disabled", "true");
     property_override("persist.vendor.qcom.bluetooth.enable.splita2dp", "false");
     property_override("vendor.audio.feature.a2dp_offload.enable", "false");
-    property_override("ro.vendor.build.fingerprint", "google/coral/coral:10/QQ2A.200405.005/6254899:user/release-keys");
-    property_override("ro.build.fingerprint", "google/coral/coral:10/QQ2A.200405.005/6254899:user/release-keys");
+    property_override("ro.vendor.build.fingerprint", "google/coral/coral:10/QQ2A.200501.001.B2/6352890:user/release-keys");
+    property_override("ro.build.fingerprint", "google/coral/coral:10/QQ2A.200501.001.B2/6352890:user/release-keys");
 }
