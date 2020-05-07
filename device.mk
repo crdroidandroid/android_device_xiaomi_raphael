@@ -106,6 +106,10 @@ PRODUCT_COPY_FILES += \
 
 # Livedisplay
 PRODUCT_PACKAGES += \
+    android.hardware.light@2.0-impl.raphael
+
+# Livedisplay
+PRODUCT_PACKAGES += \
     lineage.livedisplay@2.0-service-sdm
 
 # Media
