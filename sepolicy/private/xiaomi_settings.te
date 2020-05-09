@@ -44,3 +44,6 @@ allow xiaomi_settings sysfs_graphics:file rw_file_perms;
 # Allow xiaomi_settings to read and write to sysfs_leds
 allow xiaomi_settings sysfs_leds:dir search;
 allow xiaomi_settings sysfs_leds:file rw_file_perms;
+
+# Allow xiaomi_settings to write to sysfs_thermal
+allow xiaomi_settings sysfs_thermal:file w_file_perms;
