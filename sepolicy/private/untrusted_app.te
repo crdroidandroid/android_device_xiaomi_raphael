@@ -1,0 +1,2 @@
+get_prop(untrusted_app, persist_camera_prop)
+get_prop(untrusted_app, vendor_camera_prop)
