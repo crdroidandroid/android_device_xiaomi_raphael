@@ -1,2 +1,4 @@
 allow system_server sysfs_kgsl:file r_file_perms;
-get_prop(system_server, persist_camera_prop)
+
+#Smart charging
+allow system_server sysfs_battery_supply:file { getattr open read write };
