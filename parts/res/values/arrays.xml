@@ -110,6 +110,12 @@
         <item>popup_chilun_down.ogg</item>
         <item>popup_cangmen_up.ogg</item>
         <item>popup_cangmen_down.ogg</item>
+        <item>popup_imperial_march_up.ogg</item>
+        <item>popup_imperial_march_down.ogg</item>
+        <item>popup_lightsaber_up.ogg</item>
+        <item>popup_lightsaber_down.ogg</item>
+        <item>popup_throne_room_up.ogg</item>
+        <item>popup_throne_room_down.ogg</item>
     </string-array>
 
     <string-array name="popupcamera_effects_entries">
@@ -120,6 +126,9 @@
         <item>@string/popup_title_jijia</item>
         <item>@string/popup_title_chilun</item>
         <item>@string/popup_title_cangmen</item>
+        <item>@string/popup_sound_imperial_march</item>
+        <item>@string/popup_sound_lightsaber</item>
+        <item>@string/popup_sound_throne_room</item>
     </string-array>
 
     <string-array name="popupcamera_effects_values">
@@ -130,5 +139,8 @@
         <item>6</item>
         <item>8</item>
         <item>10</item>
+        <item>12</item>
+        <item>14</item>
+        <item>16</item>
     </string-array>
 </resources>
