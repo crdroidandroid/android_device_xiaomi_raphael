@@ -85,4 +85,7 @@
 
     <!-- Burn in protection -->
     <bool name="config_statusBarBurnInProtection">true</bool>
+
+    <!-- Enable face auth when swiping security view -->
+    <bool name="config_faceAuthOnSecurityView">true</bool>
 </resources>
