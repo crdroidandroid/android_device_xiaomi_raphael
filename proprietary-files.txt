@@ -116,6 +116,43 @@ etc/excluded-input-devices.xml
 -product/priv-app/HotwordEnrollmentXGoogleHEXAGON/HotwordEnrollmentXGoogleHEXAGON.apk;PRESIGNED
 -product/priv-app/HotwordEnrollmentOKGoogleHEXAGON/HotwordEnrollmentOKGoogleHEXAGON.apk;PRESIGNED
 
+# Modules
+vendor/lib/modules/audio_adsp_loader.ko:product/vendor_overlay/29/lib/modules/audio_adsp_loader.ko
+vendor/lib/modules/audio_apr.ko:product/vendor_overlay/29/lib/modules/audio_apr.ko
+vendor/lib/modules/audio_cs35l41.ko:product/vendor_overlay/29/lib/modules/audio_cs35l41.ko
+vendor/lib/modules/audio_hdmi.ko:product/vendor_overlay/29/lib/modules/audio_hdmi.ko
+vendor/lib/modules/audio_machine_msmnile.ko:product/vendor_overlay/29/lib/modules/audio_machine_msmnile.ko
+vendor/lib/modules/audio_mbhc.ko:product/vendor_overlay/29/lib/modules/audio_mbhc.ko
+vendor/lib/modules/audio_native.ko:product/vendor_overlay/29/lib/modules/audio_native.ko
+vendor/lib/modules/audio_pinctrl_wcd.ko:product/vendor_overlay/29/lib/modules/audio_pinctrl_wcd.ko
+vendor/lib/modules/audio_platform.ko:product/vendor_overlay/29/lib/modules/audio_platform.ko
+vendor/lib/modules/audio_q6.ko:product/vendor_overlay/29/lib/modules/audio_q6.ko
+vendor/lib/modules/audio_q6_notifier.ko:product/vendor_overlay/29/lib/modules/audio_q6_notifier.ko
+vendor/lib/modules/audio_q6_pdr.ko:product/vendor_overlay/29/lib/modules/audio_q6_pdr.ko
+vendor/lib/modules/audio_stub.ko:product/vendor_overlay/29/lib/modules/audio_stub.ko
+vendor/lib/modules/audio_swr_ctrl.ko:product/vendor_overlay/29/lib/modules/audio_swr_ctrl.ko
+vendor/lib/modules/audio_swr.ko:product/vendor_overlay/29/lib/modules/audio_swr.ko
+vendor/lib/modules/audio_tas2557.ko:product/vendor_overlay/29/lib/modules/audio_tas2557.ko
+vendor/lib/modules/audio_tfa98xx.ko:product/vendor_overlay/29/lib/modules/audio_tfa98xx.ko
+vendor/lib/modules/audio_usf.ko:product/vendor_overlay/29/lib/modules/audio_usf.ko
+vendor/lib/modules/audio_wcd934x.ko:product/vendor_overlay/29/lib/modules/audio_wcd934x.ko
+vendor/lib/modules/audio_wcd9360.ko:product/vendor_overlay/29/lib/modules/audio_wcd9360.ko
+vendor/lib/modules/audio_wcd9xxx.ko:product/vendor_overlay/29/lib/modules/audio_wcd9xxx.ko
+vendor/lib/modules/audio_wcd_core.ko:product/vendor_overlay/29/lib/modules/audio_wcd_core.ko
+vendor/lib/modules/audio_wcd_spi.ko:product/vendor_overlay/29/lib/modules/audio_wcd_spi.ko
+vendor/lib/modules/audio_wglink.ko:product/vendor_overlay/29/lib/modules/audio_wglink.ko
+vendor/lib/modules/audio_wsa881x.ko:product/vendor_overlay/29/lib/modules/audio_wsa881x.ko
+vendor/lib/modules/exfat.ko:product/vendor_overlay/29/lib/modules/exfat.ko
+vendor/lib/modules/modules.alias:product/vendor_overlay/29/lib/modules/modules.alias
+vendor/lib/modules/modules.dep:product/vendor_overlay/29/lib/modules/modules.dep
+vendor/lib/modules/mpq-adapter.ko:product/vendor_overlay/29/lib/modules/mpq-adapter.ko
+vendor/lib/modules/mpq-dmx-hw-plugin.ko:product/vendor_overlay/29/lib/modules/mpq-dmx-hw-plugin.ko
+vendor/lib/modules/qca_cld3_wlan.ko:product/vendor_overlay/29/lib/modules/qca_cld3_wlan.ko
+vendor/lib/modules/rmnet_perf.ko:product/vendor_overlay/29/lib/modules/rmnet_perf.ko
+vendor/lib/modules/rmnet_shs.ko:product/vendor_overlay/29/lib/modules/rmnet_shs.ko
+vendor/lib/modules/sla.ko:product/vendor_overlay/29/lib/modules/sla.ko
+vendor/lib/modules/tspp.ko:product/vendor_overlay/29/lib/modules/tspp.ko
+
 # Perf
 product/lib64/vendor.qti.hardware.iop@2.0.so
 product/lib64/vendor.qti.hardware.perf@2.0.so
