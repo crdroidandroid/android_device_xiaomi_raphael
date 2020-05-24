@@ -1,3 +1,6 @@
+on post-fs-data
+    write /sys/class/drm/card0-DSI-1/dim_layer_enable 1
+
 service citsensor-hal-1-1  /vendor/bin/hw/vendor.xiaomi.hardware.citsensorservice@1.1-service
     override
     class late_start
