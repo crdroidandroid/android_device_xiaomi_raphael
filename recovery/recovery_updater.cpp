@@ -48,8 +48,7 @@
 
 #define VENDOR_VER_STR "ro.vendor.build.version.incremental="
 #define VENDOR_VER_STR_LEN 36
-#define VENDOR_VER_BUF_LEN 18
-
+#define VENDOR_VER_BUF_LEN 19
 
 /* Boyer-Moore string search implementation from Wikipedia */
 
@@ -169,6 +168,19 @@ err_ret:
     return ret;
 }
 
+static int extractIntegerWords(const char *str) {
+    static char num[VENDOR_VER_BUF_LEN];
+    memset(num, 0, VENDOR_VER_BUF_LEN);
+
+    for (int i = 0; i < strlen(str); i++) {
+        if (isdigit(str[i])) {
+            char digit = str[i];
+            strncat(num, &digit, 1);
+        }
+    }
+    return std::stoi(num);
+}
+
 /* verify_trustzone("TZ_VERSION", "TZ_VERSION", ...) */
 Value* VerifyTrustZoneFn(const char* name, State* state,
                      const std::vector<std::unique_ptr<Expr>>& argv) {
@@ -221,8 +233,11 @@ Value* VerifyVendorFn(const char* name, State* state,
                           "%s() failed to read current vendor version: %d", name, ret);
     }
 
-    if (current_version != args[0]) {
-        return StringValue(strdup("0"));
+    std::string new_current_version(current_version);
+
+    if (extractIntegerWords(new_current_version.c_str()) <
+        extractIntegerWords(args[0].c_str())) {
+      return StringValue(strdup("0"));
     }
 
     // Check for UTC build date
