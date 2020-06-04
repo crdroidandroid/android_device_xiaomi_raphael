@@ -1,4 +1,4 @@
 require version-tz=TZ.XF.5.2.C1-00008|TZ.XF.5.2.C1-00019
-require version-in=INDIA,1583224782,V11.0.4.0.QFKINXM
+require version-in=INDIA,1590602484,V12.0.0.9.QFKINXM
 require version-cn=CN,1584895332,V11.0.8.0.QFKCNXM
-require version-eea=GLOBAL,1587572765,V11.0.6.0.QFKEUXM
+require version-eea=GLOBAL,1590069282,V12.0.0.8.QFKMIXM
