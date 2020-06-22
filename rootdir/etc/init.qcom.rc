@@ -1,3 +1,7 @@
+on boot
+    chown system system /sys/class/power_supply/battery/input_suspend
+    chmod 0666 /sys/class/power_supply/battery/input_suspend
+
 on post-fs-data
     write /sys/class/drm/card0-DSI-1/dim_layer_enable 1
 
