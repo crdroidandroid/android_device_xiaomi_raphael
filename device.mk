@@ -59,6 +59,7 @@ PRODUCT_PACKAGES += \
 
 #crDroid Specific
 TARGET_HAS_FOD := true
+EXTRA_FOD_ANIMATIONS := true
 
 # Device-specific settings
 PRODUCT_PACKAGES += \
