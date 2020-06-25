@@ -16,6 +16,25 @@
 */
 -->
 <resources>
-    <dimen name="rounded_corner_content_padding">12dp</dimen>
-    <dimen name="system_icons_keyguard_padding_end">4dp</dimen>
+    <!-- for 16dp of padding at 2.75px/dp at default density -->
+    <dimen name="rounded_corner_content_padding">44px</dimen>
+    <dimen name="status_bar_extra_padding">14dp</dimen>
+
+    <!-- the padding on the top of the statusbar (usually 0) -->
+    <dimen name="status_bar_padding_top">1dp</dimen>
+
+    <!-- Padding for the system icons on the keyguard (when no multi user switch is showing).
+    The icons always have a 4dp padding in the container so we only need 33 extra px of padding
+    for the corners -->
+    <dimen name="system_icons_super_container_avatarless_margin_end">33px</dimen>
+
+    <!-- Multi user switch has some intrinsic padding to it -->
+    <dimen name="multi_user_switch_keyguard_margin">22px</dimen>
+
+    <dimen name="keyguard_carrier_text_margin">44px</dimen>
+
+    <!-- Height of the battery icon in the status bar. -->
+    <dimen name="status_bar_battery_icon_height">12.5dp</dimen>
+
+
 </resources>
