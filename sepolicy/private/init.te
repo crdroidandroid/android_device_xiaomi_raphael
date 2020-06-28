@@ -6,3 +6,6 @@ allow init vendor_configs_file:dir mounton;
 
 # Allow init to write to sysfs_graphics
 allow init sysfs_graphics:file w_file_perms;
+
+# Allow init to wrtie to sysfs_battery_supply
+allow init sysfs_battery_supply:file { setattr };
