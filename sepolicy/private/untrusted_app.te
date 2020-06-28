@@ -1,3 +1,5 @@
 # allow apps to read battery status
 r_dir_file(untrusted_app, sysfs_battery_supply)
 r_dir_file(untrusted_app, sysfs_usb_supply)
+allow system_server sysfs_battery_supply:file { getattr open read write };
+allow system_server sysfs_usb_supply:file { getattr open read write };
