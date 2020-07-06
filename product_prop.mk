@@ -15,7 +15,8 @@ endif
 
 # Media
 PRODUCT_PRODUCT_PROPERTIES += \
-    debug.stagefright.omx_default_rank.sw-audio=16
+    debug.stagefright.omx_default_rank.sw-audio=16 \
+    persist.vendor.audio.fluence.voicerec=true
 
 # Priv-app permission
 PRODUCT_PRODUCT_PROPERTIES += \
