@@ -16,12 +16,15 @@
 
 package org.lineageos.settings.display;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.RemoteException;
 import android.view.MenuItem;
 
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
+import androidx.preference.PreferenceManager;
 import androidx.preference.PreferenceFragment;
 import androidx.preference.SwitchPreference;
 
@@ -30,11 +33,14 @@ import org.lineageos.settings.R;
 import vendor.xiaomi.hardware.displayfeature.V1_0.IDisplayFeature;
 
 public class DcDimmingSettingsFragment extends PreferenceFragment implements
-        OnPreferenceChangeListener {
+        OnPreferenceChangeListener, SharedPreferences.OnSharedPreferenceChangeListener {
 
     private static final String DC_DIMMING_ENABLE_KEY = "dc_dimming_enable";
     private SwitchPreference mDcDimmingPreference;
     private IDisplayFeature mDisplayFeature;
+    private SharedPreferences mSharedPrefs;
+    public static final String DC_DIMMING_KEY = "dc_dimming_enable";
+    public static final boolean DC_DIMMING_DEFAULT_VALUE = false;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -48,6 +54,27 @@ public class DcDimmingSettingsFragment extends PreferenceFragment implements
         mDcDimmingPreference = (SwitchPreference) findPreference(DC_DIMMING_ENABLE_KEY);
         mDcDimmingPreference.setEnabled(true);
         mDcDimmingPreference.setOnPreferenceChangeListener(this);
+        mSharedPrefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
+    }
+
+    @Override     
+    public void onResume() {
+        super.onResume();
+        mSharedPrefs.registerOnSharedPreferenceChangeListener(this);     
+    }
+
+    @Override     
+    public void onPause() {         
+        super.onPause();          
+        mSharedPrefs.unregisterOnSharedPreferenceChangeListener(this);
+    }
+
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String s) {
+        boolean value = mSharedPrefs.getBoolean(DC_DIMMING_KEY, DC_DIMMING_DEFAULT_VALUE);
+        if (value != mDcDimmingPreference.isChecked()){
+            mDcDimmingPreference.setChecked(value);
+        }
     }
 
     @Override
