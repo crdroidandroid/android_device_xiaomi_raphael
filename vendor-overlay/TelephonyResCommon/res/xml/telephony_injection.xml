@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<injection jar="/system/framework/qti-telephony-common.jar:/product/framework/qti-telephony-common.jar:/product/framework/qti-telephony-hidl-wrapper.jar:/product/framework/qti-telephony-utils.jar:/system/framework/qti-telephony-utils.jar" package="com.qualcomm.qti.internal.telephony.QtiTelephonyComponentFactory">
+    <components>
+        <component>com.android.internal.telephony.ServiceStateTracker</component>
+        <component>com.android.internal.telephony.SubscriptionController</component>
+        <component>com.android.internal.telephony.SubscriptionInfoUpdater</component>
+        <component>com.android.internal.telephony.GsmCdmaPhone</component>
+        <component>com.android.internal.telephony.PhoneSwitcher</component>
+        <component>com.android.internal.telephony.IccPhoneBookInterfaceManager</component>
+        <component>com.android.internal.telephony.dataconnection.DcTracker</component>
+        <component>com.android.internal.telephony.RIL</component>
+        <component>com.android.internal.telephony.TelephonyComponentFactory</component>
+        <component>com.android.internal.telephony.MultiSimSettingController</component>
+    </components>
+</injection>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="show_plmn_and_spn_in_carrier">true</bool>
+    <bool name="status_bar_show_spn_when_airplane">true</bool>
+</resources>

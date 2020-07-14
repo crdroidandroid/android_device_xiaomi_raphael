@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="dialog_button_color">#ff000000</color>
+    <color name="dialog_link_color">#ff009688</color>
+    <color name="dialog_message_color">#ff000000</color>
+    <color name="dialog_title_color">#ff000000</color>
+    <color name="transparent">#00000000</color>
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="data_type_name_mcc_mnc_key">
+        <item>4</item>
+    </integer-array>
+    <string-array name="data_type_name_mcc_mnc_value">
+        <item>3G</item>
+    </string-array>
+</resources>

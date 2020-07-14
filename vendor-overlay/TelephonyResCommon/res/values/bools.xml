@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="config_no_sim_display_network_modes">true</bool>
+    <bool name="config_support_rtt">true</bool>
+    <bool name="csp_enabled">true</bool>
+    <bool name="dtmf_type_enabled">true</bool>
+    <bool name="send_mic_mute_to_AudioManager">true</bool>
+    <bool name="world_phone">true</bool>
+</resources>

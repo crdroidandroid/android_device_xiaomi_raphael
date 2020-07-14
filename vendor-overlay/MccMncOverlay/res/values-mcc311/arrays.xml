@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="data_type_name_mcc_key">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+    </integer-array>
+    <string-array name="data_type_name_mcc_value">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item>4G</item>
+        <item>4G</item>
+        <item>LTE</item>
+        <item>LTE+</item>
+    </string-array>
+</resources>

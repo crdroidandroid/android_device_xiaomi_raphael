@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="dialog_message_typeface">0</integer>
+    <integer name="dialog_padding_msg_bottom">0</integer>
+    <integer name="dialog_padding_msg_left">24</integer>
+    <integer name="dialog_padding_msg_right">36</integer>
+    <integer name="dialog_padding_msg_top">0</integer>
+    <integer name="dialog_padding_title_bottom">0</integer>
+    <integer name="dialog_padding_title_left">24</integer>
+    <integer name="dialog_padding_title_right">24</integer>
+    <integer name="dialog_padding_title_top">24</integer>
+    <integer name="dialog_title_typeface">1</integer>
+</resources>

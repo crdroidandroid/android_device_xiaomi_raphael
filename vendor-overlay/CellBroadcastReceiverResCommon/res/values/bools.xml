@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="show_brazil_settings">true</bool>
+    <bool name="show_cmas_settings">true</bool>
+    <bool name="show_etws_settings">true</bool>
+</resources>

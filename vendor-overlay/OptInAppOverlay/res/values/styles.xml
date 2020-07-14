@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="DisableAppStartingTheme">
+        <item name="android:windowBackground">@null</item>
+    </style>
+    <style name="TextAppearance_dialog_message" parent="@android:style/TextAppearance.Material.Subhead" />
+    <style name="TextAppearance_dialog_title" parent="@android:style/TextAppearance.Large" />
+    <style name="XTActivityTheme" parent="@android:style/Theme.DeviceDefault.Light.Dialog" />
+    <style name="XTDialogTheme" parent="@android:style/Theme.DeviceDefault.Light.Dialog.Alert" />
+    <style name="XTNoticeActivityTheme" parent="@android:style/Theme.DeviceDefault.Light.Dialog" />
+</resources>
