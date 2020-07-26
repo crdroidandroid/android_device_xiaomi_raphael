@@ -41,7 +41,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.display.ad.hdr_calib_data=/vendor/etc/hdr_config.cfg \
     ro.vendor.display.ad.sdr_calib_data=/vendor/etc/sdr_config.cfg \
     ro.vendor.display.sensortype=2 \
-    ro.vendor.soft_backlight.enable=true \
     ro.xiaomi.bl.poll=true \
     persist.displayfeature.dc_backlight.threshold=610 \
     persist.displayfeature.dc_backlight.enable=false \
@@ -50,7 +49,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.sf.disable_backpressure=1 \
     debug.sf.latch_unsignaled=1 \
     debug.sf.enable_hwc_vds=1 \
     debug.cpurend.vsync=false
