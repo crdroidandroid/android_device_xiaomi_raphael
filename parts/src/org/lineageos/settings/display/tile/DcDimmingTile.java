@@ -24,14 +24,12 @@ import android.service.quicksettings.TileService;
 
 import androidx.preference.PreferenceManager;
 
+import static org.lineageos.settings.display.DcDimmingSettingsFragment.*;
 import org.lineageos.settings.R;
 
 import vendor.xiaomi.hardware.displayfeature.V1_0.IDisplayFeature;
 
 public class DcDimmingTile extends TileService {
-    private static final String DC_DIMMING_KEY = "dc_dimming_enable";
-    private static final boolean DC_DIMMING_DEFAULT_VALUE = false;
-
     @Override
     public void onStartListening() {
         super.onStartListening();
