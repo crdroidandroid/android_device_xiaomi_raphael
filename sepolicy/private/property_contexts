@@ -1,3 +1,6 @@
+ro.build.flavor                u:object_r:exported_default_prop:s0
+ro.cust.test                   u:object_r:exported_system_prop:s0
 ro.miui.                       u:object_r:exported_system_prop:s0
+ro.product.mod_device          u:object_r:exported2_default_prop:s0
 ro.product.system.manufacturer u:object_r:exported2_default_prop:s0 exact string
 persist.sensor.                u:object_r:sensors_prop:s0
