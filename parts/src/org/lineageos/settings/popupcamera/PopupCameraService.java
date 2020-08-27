@@ -20,6 +20,15 @@ import android.annotation.NonNull;
 import android.app.AlertDialog;
 import android.app.Service;
 import android.content.Intent;
+<<<<<<< HEAD
+=======
+import android.content.Context;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.IntentFilter;
+>>>>>>> a8b441e... parts: Show alert dialog before raising camera when screen is off
 import android.content.res.Resources;
 import android.content.DialogInterface;
 import android.content.Context;
@@ -57,7 +66,9 @@ public class PopupCameraService extends Service implements Handler.Callback {
     private boolean mMotorBusy = false;
     private long mClosedEvent;
     private long mOpenEvent;
+    private boolean mScreenOn = true;
 
+    private AlertDialog mAlertDialog;
     private Handler mHandler = new Handler(this);
     private IMotor mMotor = null;
     private IMotorCallback mMotorStatusCallback;
@@ -68,6 +79,18 @@ public class PopupCameraService extends Service implements Handler.Callback {
     private SensorManager mSensorManager;
     private Sensor mFreeFallSensor;
     private SoundPool mSoundPool;
+
+    private BroadcastReceiver mIntentReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String action = intent.getAction();
+            if (action.equals(Intent.ACTION_SCREEN_OFF)) {
+                mScreenOn = false;
+            } else if (action.equals(Intent.ACTION_SCREEN_ON)) {
+                mScreenOn = true;
+            }
+        }
+    };
 
     private CameraManager.AvailabilityCallback availabilityCallback =
             new CameraManager.AvailabilityCallback() {
@@ -123,6 +146,10 @@ public class PopupCameraService extends Service implements Handler.Callback {
 
     @Override
     public void onCreate() {
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction(Intent.ACTION_SCREEN_OFF);
+        intentFilter.addAction(Intent.ACTION_SCREEN_ON);
+        registerReceiver(mIntentReceiver, intentFilter);
         CameraManager cameraManager = getSystemService(CameraManager.class);
         cameraManager.registerAvailabilityCallback(availabilityCallback, null);
         mSensorManager = getSystemService(SensorManager.class);
@@ -211,6 +238,7 @@ public class PopupCameraService extends Service implements Handler.Callback {
     @Override
     public void onDestroy() {
         if (DEBUG) Log.d(TAG, "Destroying service");
+        unregisterReceiver(mIntentReceiver);
         super.onDestroy();
     }
 
@@ -392,10 +420,29 @@ public class PopupCameraService extends Service implements Handler.Callback {
     public boolean handleMessage(Message msg) {
         switch (msg.what) {
             case Constants.MSG_CAMERA_CLOSED: {
+                if (mAlertDialog != null && mAlertDialog.isShowing()) {
+                    mAlertDialog.dismiss();
+                }
                 updateMotor(Constants.CLOSE_CAMERA_STATE);
             }
             break;
             case Constants.MSG_CAMERA_OPEN: {
+            if (!mScreenOn) {
+                if (mAlertDialog == null) {
+                    mAlertDialog = new AlertDialog.Builder(this)
+                            .setMessage(R.string.popup_camera_dialog_message)
+                            .setNegativeButton(R.string.popup_camera_dialog_no, (dialog, which) -> {
+                            goBackHome();
+                        })
+                    .setPositiveButton(R.string.popup_camera_dialog_raise, (dialog, which) -> {
+                    updateMotor(Constants.OPEN_CAMERA_STATE);
+                        })
+                        .create();
+                    mAlertDialog.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ERROR);
+                    mAlertDialog.setCanceledOnTouchOutside(false);
+                }
+                mAlertDialog.show();
+            } else
                 updateMotor(Constants.OPEN_CAMERA_STATE);
             }
             break;
