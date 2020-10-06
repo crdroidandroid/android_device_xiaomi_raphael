@@ -1,1 +1,4 @@
 allow system_app sysfs_device_info:file r_file_perms;
+
+# fm_radio app needs open read write on fm_radio_device
+allow system_app fm_radio_device:chr_file r_file_perms;
