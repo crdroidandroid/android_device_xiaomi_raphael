@@ -105,4 +105,19 @@
     <string name="touch_sensitivity_summary">Controls touch sensitivity for repeated taps</string>
     <string name="touch_resistant_title">Touch-resistant area</string>
     <string name="touch_resistant_summary">Reduce touch sensitivity near the edges to avoid triggering touch controls</string>
+
+	
+    <!-- Raise to wake strings-->
+    <string name="raise_to_wake_gesture_title">Raise to wake</string>
+    <string name="raise_to_wake_gesture_summary">Wake up the device instead of pulsing notification</string>
+
+    <!-- Popup camera strings -->
+    <string name="popup_camera_tip">Warning</string>
+    <string name="popup_camera_takeback_failed_calibrate">Couldn\'t close front camera. Try calibrating the motor.</string>
+    <string name="popup_camera_popup_failed_calibrate">Couldn\'t open front camera. Try calibrating the motor.</string>
+    <string name="popup_camera_calibrate_running">Front camera cannot be used during calibration.</string>
+    <string name="popup_camera_calibrate_now">Calibrate</string>
+    <string name="popup_camera_calibrate_failed">Couldn\'t calibrate</string>
+    <string name="popup_camera_calibrate_success">Calibrated successfully. You can open the front camera now.</string>
+
 </resources>
