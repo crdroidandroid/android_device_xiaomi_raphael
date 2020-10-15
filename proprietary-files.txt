@@ -153,6 +153,8 @@ media/audio/ui/popup_lightsaber_down.ogg|6a3fa079443ff8b663b2294ac54a558263b935e
 media/audio/ui/popup_lightsaber_up.ogg|18f78fc7bc485c3f233b496e7c4876625f03aab6
 media/audio/ui/popup_throne_room_down.ogg|0a250fbad938fb64cdf1d19220bf02e50811ffec
 media/audio/ui/popup_throne_room_up.ogg|e52d7c2a15f899a02ae02184a31ffe89f6bc167c
+media/audio/ui/popup_super_mario_down.ogg|8cb36a344e844c2909e5eaf0c5329c7043f0ad8f
+media/audio/ui/popup_super_mario_up.ogg|a3d022ef6b3654be67a55180b5a5150dfb837060
 
 # OMX
 lib/libstagefright_softomx.so

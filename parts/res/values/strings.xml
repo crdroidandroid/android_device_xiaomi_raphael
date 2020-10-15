@@ -82,7 +82,8 @@
     <string name="popup_title_cangmen">Cabin door</string>
     <string name="popup_sound_imperial_march">Star Wars© Imperial March</string>
     <string name="popup_sound_lightsaber">Star Wars© Lightsaber</string>
-    <string name="popup_sound_throne_room">Star Wars© Throne Room </string>
+    <string name="popup_sound_throne_room">Star Wars© Throne Room</string>
+    <string name="popup_super_mario">Super Mario</string>
     <string name="popup_calibration_title">Calibration</string>
     <string name="popup_calibration_summary">Calibrate the popup camera motor</string>
     <string name="popup_calibration_warning_title">Motor calibration</string>
