@@ -1,4 +1,5 @@
 on post-fs-data
+    mount none /vendor/etc/audio/audio_policy_configuration.xml /vendor/etc/audio_policy_configuration.xml bind
     write /sys/class/drm/card0-DSI-1/dim_layer_enable 1
 
 service citsensor-hal-1-1  /vendor/bin/hw/vendor.xiaomi.hardware.citsensorservice@1.1-service
