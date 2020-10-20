@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2020 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License"
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:key="touch_settings"
+        android:title="@string/touch_control_title" >
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="touch_game_mode"
+            android:summary="@string/touch_game_mode_summary"
+            android:title="@string/touch_game_mode_title" />
+
+        <org.lineageos.settings.widget.SeekBarPreference
+            android:key="touch_response"
+            android:title="@string/touch_response_title"
+            android:summary="@string/touch_response_summary"
+            android:layout="@layout/preference_slider"
+            android:defaultValue="@integer/smoothness_default"
+            android:max="@integer/smoothness_max" />
+
+        <org.lineageos.settings.widget.SeekBarPreference
+            android:key="touch_sensitivity"
+            android:title="@string/touch_sensitivity_title"
+            android:summary="@string/touch_sensitivity_summary"
+            android:layout="@layout/preference_slider"
+            android:defaultValue="@integer/smoothness_default"
+            android:max="@integer/smoothness_max" />
+
+        <org.lineageos.settings.widget.SeekBarPreference
+            android:key="touch_resistant"
+            android:title="@string/touch_resistant_title"
+            android:summary="@string/touch_resistant_summary"
+            android:layout="@layout/preference_slider"
+            android:defaultValue="@integer/smoothness_default"
+            android:max="@integer/smoothness_max" />
+    </PreferenceCategory>
+</PreferenceScreen>

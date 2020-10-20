@@ -1,0 +1,12 @@
+package vendor.xiaomi.hardware.touchfeature@1.0;
+
+interface ITouchFeature {
+    setTouchMode(int32_t mode, int32_t value) generates (bool result);
+    getTouchModeCurValue(int32_t mode) generates (int32_t result);
+    getTouchModeMaxValue(int32_t mode) generates (int32_t result);
+    getTouchModeMinValue(int32_t mode) generates (int32_t result);
+    getTouchModeDefValue(int32_t mode) generates (int32_t result);
+    resetTouchMode(int32_t mode) generates (bool result);
+    getModeValues(int32_t mode) generates (vec<int32_t> result);
+    setEdgeMode(int32_t mode, vec<int32_t> value, int32_t length) generates (bool result);
+};
