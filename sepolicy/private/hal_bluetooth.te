@@ -1,0 +1,1 @@
+allow hal_bluetooth vendor_fm_app:binder { call };

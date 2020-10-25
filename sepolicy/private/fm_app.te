@@ -1,0 +1,3 @@
+allow vendor_fm_app hal_fm_hwservice:hwservice_manager find;
+allow vendor_fm_app hal_bluetooth:binder { call };
+allow vendor_fm_app hal_bluetooth:binder { transfer };
