@@ -1,6 +1,6 @@
 # Audio
-vendor/lib64/soundfx/libvolumelistener.so:product/vendor_overlay/29/lib64/soundfx/libvolumelistener.so|8579213d55eef5ab9c352470af5babf3c880b7a7
-vendor/lib/soundfx/libvolumelistener.so:product/vendor_overlay/29/lib/soundfx/libvolumelistener.so|49f2a081612d2cb6ac1e25ff8ec7b53e8af967d2
+vendor/lib/soundfx/libvolumelistener.so:product/vendor_overlay/29/lib/soundfx/libvolumelistener.so|eccf8e24f178f3679f9309be0d92234b4cb58489
+vendor/lib64/soundfx/libvolumelistener.so:product/vendor_overlay/29/lib64/soundfx/libvolumelistener.so|abb573d099b777d4f4e85960778999b3a92a393e
 
 # Alarm
 -product/app/PowerOffAlarm/PowerOffAlarm.apk
