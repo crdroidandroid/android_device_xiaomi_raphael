@@ -50,6 +50,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     BluetoothQti
 
+# Board
+PRODUCT_USES_QCOM_HARDWARE := true
+PRODUCT_BOARD_PLATFORM := msmnile
+
 # Camera
 PRODUCT_PACKAGES += \
     Snap
