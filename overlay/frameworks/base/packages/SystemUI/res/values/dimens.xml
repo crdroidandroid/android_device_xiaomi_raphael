@@ -18,4 +18,7 @@
 <resources>
     <dimen name="rounded_corner_content_padding">12dp</dimen>
     <dimen name="system_icons_keyguard_padding_end">4dp</dimen>
+
+     <!-- Bottom margin size when fingerprint in display is active -->
+    <dimen name="keyguard_indication_margin_bottom_fingerprint_in_display">192dp</dimen>
 </resources>
