@@ -404,5 +404,8 @@
 
     <!-- Corner radius of system progress bars -->
     <dimen name="config_progressBarCornerRadius">1000.0dip</dimen>
+
+    <!-- FOD Icon Dimming -->
+    <bool name="config_targetUsesInKernelDimming">false</bool>
 </resources>
 
