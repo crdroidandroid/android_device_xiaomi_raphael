@@ -132,3 +132,7 @@ persist.timed.enable=true
 
 # WiFi
 config.disable_rtt=true
+
+# Transcoding related property.
+debug.media.transcoding.codec_max_operating_rate_720P=240
+debug.media.transcoding.codec_max_operating_rate_1080P=120
