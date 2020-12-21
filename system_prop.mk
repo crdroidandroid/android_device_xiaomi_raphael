@@ -52,6 +52,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.fod.modified.dc_status=false \
     sys.displayfeature.hbm.enable=true
 
+# Gboard
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.com.google.ime.kb_pad_port_b=1
+
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.disable_backpressure=1 \
