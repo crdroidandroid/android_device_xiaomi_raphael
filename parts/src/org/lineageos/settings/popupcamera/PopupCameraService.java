@@ -262,14 +262,16 @@ public class PopupCameraService extends Service implements Handler.Callback {
                 if (cameraState.equals(Constants.OPEN_CAMERA_STATE)
                         && (status == Constants.MOTOR_STATUS_TAKEBACK_OK
                                    || status == Constants.MOTOR_STATUS_CALIB_OK)) {
-                    lightUp(true);
+                    if (mPopupCameraPreferences.isLedAllowed())
+                        lightUp(true);
                     playSoundEffect(Constants.OPEN_CAMERA_STATE);
                     mMotor.popupMotor(1);
                     mSensorManager.registerListener(mFreeFallListener, mFreeFallSensor,
                             SensorManager.SENSOR_DELAY_NORMAL);
                 } else if (cameraState.equals(Constants.CLOSE_CAMERA_STATE)
                         && status == Constants.MOTOR_STATUS_POPUP_OK) {
-                    lightUp(false);
+                    if (mPopupCameraPreferences.isLedAllowed())
+                        lightUp(false);
                     playSoundEffect(Constants.CLOSE_CAMERA_STATE);
                     mMotor.takebackMotor(1);
                 } else {
@@ -305,7 +307,6 @@ public class PopupCameraService extends Service implements Handler.Callback {
     }
 
     private void lightUp(boolean open) {
-        if (mPopupCameraPreferences.isLedAllowed()) {
             String ledBreathing = FileUtils.readOneLine(Constants.BREATH_GREEN_LED_PATH);
             String ledBrightness = FileUtils.readOneLine(Constants.GREEN_LED_PATH);
 
@@ -331,7 +332,6 @@ public class PopupCameraService extends Service implements Handler.Callback {
                     }
                 }
             }, 1200);
-        }
     }
 
     private void showCalibrationResult(int status) {
