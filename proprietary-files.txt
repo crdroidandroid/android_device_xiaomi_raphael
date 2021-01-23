@@ -46,12 +46,12 @@ product/lib64/vendor.display.color@1.2.so
 product/lib64/vendor.display.color@1.3.so
 
 # FM
-lib64/fm_helium.so
-lib64/libfm-hci.so
-lib/fm_helium.so
-lib/libfm-hci.so
-product/lib64/vendor.qti.hardware.fm@1.0.so
-product/lib/vendor.qti.hardware.fm@1.0.so
+lib64/fm_helium.so:system_ext/lib64/fm_helium.so
+lib64/libfm-hci.so:system_ext/lib64/libfm-hci.so
+lib/fm_helium.so:system_ext/lib/fm_helium.so
+lib/libfm-hci.so:system_ext/lib/libfm-hci.so
+product/lib64/vendor.qti.hardware.fm@1.0.so:system_ext/lib64/vendor.qti.hardware.fm@1.0.so
+product/lib/vendor.qti.hardware.fm@1.0.so:system_ext/lib/vendor.qti.hardware.fm@1.0.so
 
 # IMS
 etc/permissions/com.qualcomm.qti.imscmservice.xml
