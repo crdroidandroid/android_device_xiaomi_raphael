@@ -124,6 +124,10 @@ vendor/lib/modules/rmnet_shs.ko:product/vendor_overlay/29/lib/modules/rmnet_shs.
 vendor/lib/modules/sla.ko:product/vendor_overlay/29/lib/modules/sla.ko
 vendor/lib/modules/tspp.ko:product/vendor_overlay/29/lib/modules/tspp.ko
 
+# Media
+-vendor/lib/libplatformconfig.so
+-vendor/lib64/libplatformconfig.so
+
 # Perf
 product/lib64/vendor.qti.hardware.iop@2.0.so
 product/lib64/vendor.qti.hardware.perf@2.0.so
