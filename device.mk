@@ -42,11 +42,13 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.freeform_window_management.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.freeform_window_management.xml
 
 # Overlays
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay
+
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
 PRODUCT_PACKAGES += \
     ApertureOverlay \
-    CarrierConfigOverlay \
     DialerConfigOverlay \
     FrameworksResRaphael \
     LineageSDKOverlay \
@@ -57,6 +59,8 @@ PRODUCT_PACKAGES += \
     TelephonyResCommon \
     TetheringConfigOverlay \
     WifiOverlay
+
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += $(LOCAL_PATH)/overlay/packages/apps/CarrierConfig
 
 # ANT+
 PRODUCT_PACKAGES += \
