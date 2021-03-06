@@ -442,6 +442,5 @@
          Settings.System.RING_VIBRATION_INTENSITY more details on the constant values and
          meanings. -->
     <integer name="config_defaultRingVibrationIntensity">3</integer>
-
 </resources>
 
