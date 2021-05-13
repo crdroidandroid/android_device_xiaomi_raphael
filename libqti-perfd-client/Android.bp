@@ -8,6 +8,7 @@ cc_library_shared {
     name: "libqti-perfd-client",
     srcs: ["client.cpp"],
     shared_libs: [
+        "liblog",
         "libutils",
     ],
     vendor: true,
