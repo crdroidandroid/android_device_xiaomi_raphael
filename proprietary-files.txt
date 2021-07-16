@@ -1080,6 +1080,9 @@ vendor/lib64/vendor.qti.hardware.qccvndhal@1.0.so
 # QDMA
 vendor/lib64/libqdma_file_agent.so
 
+# Power-off charging daemon
+-bin/charger:bin/chargeonlymode
+
 # QMI
 system_ext/etc/permissions/qti_libpermissions.xml
 system_ext/etc/permissions/qti_permissions.xml
