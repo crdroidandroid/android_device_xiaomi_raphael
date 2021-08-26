@@ -271,14 +271,6 @@
       "HoldFd": true
     },
     {
-      "Name": "DisplayWakeup",
-      "Path": "/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/sde-crtc-0/early_wakeup",
-      "Values": [
-        "1",
-        "0"
-      ]
-    },
-    {
       "Name": "PowerHALMainState",
       "Path": "vendor.powerhal.state",
       "Values": [
@@ -792,12 +784,6 @@
       "Node": "PMQoSCpuDmaLatency",
       "Duration": 2000,
       "Value": "2c"
-    },
-    {
-      "PowerHint": "DISPLAY_UPDATE_IMMINENT",
-      "Node": "DisplayWakeup",
-      "Duration": 60,
-      "Value": "1"
     },
     {
       "PowerHint": "LOW_POWER_LITTLE_CLUSTER_50",
