@@ -18,6 +18,7 @@ cc_binary {
     relative_install_path: "hw",
     defaults: ["hidl_defaults"],
     init_rc: ["android.hardware.biometrics.fingerprint@2.3-service.raphael.rc"],
+    vintf_fragments: ["android.hardware.biometrics.fingerprint@2.3-service.xiaomi_raphael.xml"],
     srcs: ["service.cpp", "BiometricsFingerprint.cpp"],
     shared_libs: [
         "libbase",
