@@ -75,6 +75,7 @@ on early-fs
 
 on fs
     start hwservicemanager
+    chown media audio /mnt/vendor/persist/audio
     mount_all /vendor/etc/fstab.qcom --early
 
     mkdir /mnt/vendor/persist/data 0700 system system
