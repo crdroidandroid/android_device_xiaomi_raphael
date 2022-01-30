@@ -243,7 +243,11 @@ vendor.gralloc.disable_ubwc=0
 debug.sf.treat_170m_as_sRGB=1
 debug.renderengine.backend=skiaglthreaded
 renderthread.skia.reduceopstasksplitting=true
+
+# HWUI
 debug.hwui.renderer=skiagl
+debug.hwui.target_cpu_time_percent=30
+debug.hwui.use_hint_manager=true
 
 # IMS
 persist.vendor.ims.disableADBLogs=1
