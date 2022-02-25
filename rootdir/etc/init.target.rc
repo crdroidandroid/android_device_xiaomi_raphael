@@ -55,7 +55,7 @@ on init
     chmod 0660 /dev/cpuset/camera-daemon/tasks
 
     # Report max frequency to unity tasks
-    write /proc/sys/kernel/sched_lib_name "com.miHoYo.,UnityMain,libunity.so"
+    write /proc/sys/kernel/sched_lib_name "com.miHoYo.,UnityMain,libunity.so,libfb.so"
     write /proc/sys/kernel/sched_lib_mask_force 255
 
     # ZRAM setup
