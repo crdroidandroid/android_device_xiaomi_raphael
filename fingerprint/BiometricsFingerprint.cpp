@@ -112,7 +112,7 @@ BiometricsFingerprint::BiometricsFingerprint() : mClientCallback(nullptr), mDevi
 
             bool fingerDown = readBool(fd);
             ALOGI("fod_ui status: %d", fingerDown);
-            mDevice->extCmd(mDevice, COMMAND_NIT, fingerDown ? PARAM_NIT_FOD : PARAM_NIT_NONE);
+            extCmd(COMMAND_NIT, fingerDown ? PARAM_NIT_FOD : PARAM_NIT_NONE);
             if (!fingerDown) {
                 set(FOD_STATUS_PATH, FOD_STATUS_OFF);
             }
