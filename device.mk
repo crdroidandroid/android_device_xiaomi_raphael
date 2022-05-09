@@ -21,6 +21,11 @@ PRODUCT_COPY_FILES += \
 TARGET_SCREEN_HEIGHT := 2340
 TARGET_SCREEN_WIDTH := 1080
 
+# Camera
+PRODUCT_PACKAGES += \
+    libMegviiFacepp-0.5.2 \
+    libmegface
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
