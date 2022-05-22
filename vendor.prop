@@ -132,10 +132,8 @@ ro.frp.pst=/dev/block/bootdevice/by-name/frp
 vendor.gatekeeper.disable_spu=true
 
 # Graphics
-debug.egl.hw=0
-debug.mdpcomp.logs=0
+debug.sf.disable_client_composition_cache=1
 debug.sdm.support_writeback=0
-debug.sf.hw=0
 debug.sf.latch_unsignaled=0
 debug.sf.enable_gl_backpressure=1
 persist.sys.sf.color_saturation=1.0
