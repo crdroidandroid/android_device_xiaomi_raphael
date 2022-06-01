@@ -3,3 +3,6 @@ persist.camera.gyro.disable=0
 
 # DPM
 persist.vendor.dpm.feature=11
+
+# Thermal
+vendor.thermal.config=thermal_info_config.json
