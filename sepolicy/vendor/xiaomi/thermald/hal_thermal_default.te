@@ -1,8 +1,15 @@
 allow hal_thermal_default sysfs_thermal:dir r_dir_perms;
 allow hal_thermal_default sysfs_thermal:file rw_file_perms;
+allow hal_thermal_default sysfs_thermal:lnk_file r_file_perms;
+allow hal_thermal_default thermal_link_device:dir r_dir_perms;
 allow hal_thermal_default proc_stat:file r_file_perms;
 
 allow hal_thermal_default self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
 
+hal_client_domain(hal_thermal_default, hal_power);
+
 # read thermal_config
 get_prop(hal_thermal_default, vendor_thermal_prop)
+
+allow hal_thermal_default hal_power_default:binder call;
+allow hal_thermal_default hal_power_service:service_manager find;

@@ -1,0 +1,1 @@
+allow vendor_thermal-engine socket_device:sock_file { create setattr };
