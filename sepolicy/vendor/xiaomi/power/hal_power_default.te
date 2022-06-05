@@ -7,3 +7,5 @@ allow hal_power_default sysfs_msm_subsys:file rw_file_perms;
 allow hal_power_default sysfs_touchpanel:dir search;
 allow hal_power_default sysfs_touchpanel:file rw_file_perms;
 allow hal_power_default vendor_latency_device:chr_file rw_file_perms;
+allow hal_power_default hal_thermal_default:binder transfer;
+allow hal_power_default sysfs:file { open write };
