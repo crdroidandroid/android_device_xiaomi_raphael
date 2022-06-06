@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2018 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License"
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/haptic_title">
+
+    <org.lineageos.settings.widget.SeekBarPreference
+        android:key="haptic_level_pref"
+        android:title="@string/haptic_level_title"
+        android:summary="@string/haptic_level_summary"
+        android:layout="@layout/preference_slider"
+        android:defaultValue="@integer/haptic_level_default"
+        android:max="@integer/haptic_level_max" />
+
+    <com.android.settingslib.widget.FooterPreference
+        android:key="haptic_footer_preference"
+        android:title="@string/haptic_warning"
+        android:selectable="false"
+        android:layout="@layout/preference_footer" />
+
+</PreferenceScreen>

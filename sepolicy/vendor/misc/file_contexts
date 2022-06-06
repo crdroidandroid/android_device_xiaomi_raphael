@@ -59,3 +59,6 @@
 /vendor/lib64/libllvm-qgl.so                                        u:object_r:same_process_hal_file:s0
 /vendor/lib64/libOpenCL.so                                          u:object_r:same_process_hal_file:s0
 /vendor/lib64/libOpenCL_adreno.so                                   u:object_r:same_process_hal_file:s0
+
+# Haptic
+/sys/module/qti_haptics/parameters/vmax_mv_override                 u:object_r:sysfs_vibrator:s0
