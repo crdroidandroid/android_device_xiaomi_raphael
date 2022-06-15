@@ -40,13 +40,7 @@ on init
     write /sys/block/sda/queue/iostats 0
     write /sys/block/sda/queue/scheduler cfq
     write /sys/block/sda/queue/iosched/slice_idle 0
-    write /sys/block/sda/queue/read_ahead_kb 2048
     write /sys/block/sda/queue/nr_requests 256
-    write /sys/block/sde/queue/iostats 0
-    write /sys/block/sde/queue/scheduler cfq
-    write /sys/block/sde/queue/iosched/slice_idle 0
-    write /sys/block/sde/queue/read_ahead_kb 2048
-    write /sys/block/sde/queue/nr_requests 256
 
     # Freezer setup
     write /dev/freezer/frozen/freezer.killable 1
@@ -179,10 +173,6 @@ on property:sys.boot_completed=1
     # Runtime fs tuning
     write /sys/block/sda/queue/read_ahead_kb 128
     write /sys/block/sda/queue/nr_requests 128
-    write /sys/block/sda/queue/iostats 1
-    write /sys/block/sde/queue/read_ahead_kb 128
-    write /sys/block/sde/queue/nr_requests 128
-    write /sys/block/sde/queue/iostats 1
 
     # First initialize silver only cpus
     write /dev/cpuset/audio-app/cpus 1-2
