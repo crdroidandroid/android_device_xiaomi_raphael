@@ -1,0 +1,13 @@
+//
+// Copyright (C) 2021-2022 The LineageOS Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+cc_library_static {
+    name: "init_xiaomi_raphael",
+    srcs: ["init_xiaomi_raphael.cpp"],
+    whole_static_libs: ["//device/xiaomi/sm8150-common:libinit_xiaomi_msmnile"],
+    include_dirs: ["system/core/init"],
+    recovery_available: true,
+}

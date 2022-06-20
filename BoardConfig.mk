@@ -9,8 +9,15 @@ include device/xiaomi/sm8150-common/BoardConfigCommon.mk
 
 DEVICE_PATH := device/xiaomi/raphael
 
+# Assert
+TARGET_OTA_ASSERT_DEVICE := raphael,raphaelin
+
 # Display
 TARGET_SCREEN_DENSITY := 440
+
+# Init
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):init_xiaomi_raphael
+TARGET_RECOVERY_DEVICE_MODULES := init_xiaomi_raphael
 
 # Kernel
 TARGET_KERNEL_CONFIG := vendor/raphael_defconfig
