@@ -7,11 +7,7 @@
 # Inherit from sm8150-common
 $(call inherit-product, device/xiaomi/sm8150-common/msmnile.mk)
 
-# Overlays
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay
-
-# Device uses high-density artwork where available
+# AAPT
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
@@ -19,6 +15,11 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 TARGET_SCREEN_HEIGHT := 2340
 TARGET_SCREEN_WIDTH := 1080
 
+# Overlays
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay
+
+# Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 28
 
 # Soong namespaces
