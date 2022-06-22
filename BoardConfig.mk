@@ -22,7 +22,7 @@ TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):init_xiaomi_raphael
 TARGET_RECOVERY_DEVICE_MODULES := init_xiaomi_raphael
 
 # Kernel
-TARGET_KERNEL_CONFIG := vendor/raphael_defconfig
+TARGET_KERNEL_CONFIG += vendor/xiaomi/raphael.config
 
 # Inherit from the proprietary version
 include vendor/xiaomi/raphael/BoardConfigVendor.mk
