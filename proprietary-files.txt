@@ -235,6 +235,16 @@ vendor/etc/camera/watermark_font_2300_3199.dat
 # Camera firmware
 vendor/firmware/CAMERA_ICP.elf
 
+# Camera motor
+vendor/bin/hw/vendor.xiaomi.hardware.motor@1.0-service
+vendor/etc/init/init.raphael.rc
+vendor/etc/step_motor/mi_camera_config.xml
+vendor/lib64/hw/vendor.xiaomi.hardware.motor@1.0-impl.so
+vendor/lib64/libmivendor_module_calibration.so
+vendor/lib64/libmivendor_module_hall.so
+vendor/lib64/libmivendor_module_motor.so
+vendor/lib64/mi.motor.daemon.so
+
 # Charger
 vendor/bin/batterysecret
 vendor/etc/init/init.batterysecret.rc

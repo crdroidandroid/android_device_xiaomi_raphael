@@ -26,6 +26,13 @@ PRODUCT_PACKAGES += \
     libMegviiFacepp-0.5.2 \
     libmegface
 
+# Camera motor
+PRODUCT_PACKAGES += \
+    vendor.xiaomi.hardware.motor@1.0-service.xml
+
+PRODUCT_PACKAGES += \
+    vendor.xiaomi.hardware.motor@1.0.vendor
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay

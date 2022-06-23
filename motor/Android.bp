@@ -1,0 +1,13 @@
+//
+// Copyright (C) 2022 The LineageOS Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+prebuilt_etc_xml {
+    name: "vendor.xiaomi.hardware.motor@1.0-service.xml",
+    src: "vendor.xiaomi.hardware.motor@1.0-service.xml",
+    filename_from_src: true,
+    sub_dir: "vintf/manifest",
+    soc_specific: true,
+}

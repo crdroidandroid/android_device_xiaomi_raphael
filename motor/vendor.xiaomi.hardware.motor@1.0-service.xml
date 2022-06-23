@@ -1,0 +1,7 @@
+<manifest version="1.0" type="device">
+    <hal format="hidl">
+        <name>vendor.xiaomi.hardware.motor</name>
+        <transport>hwbinder</transport>
+        <fqname>@1.0::IMotor/default</fqname>
+    </hal>
+</manifest>
