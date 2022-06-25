@@ -261,7 +261,9 @@ vendor/etc/qdcm_calib_data_visionox_r66456_fhd_cmd_dsi_panel.xml
 
 # Fingerprint
 vendor/lib64/hw/fingerprint.goodix_fod.so:vendor/lib64/hw/fingerprint.goodix_fod.default.so
+vendor/lib64/libarm_proxy_skel.so
 vendor/lib64/libgf_hal.so
+vendor/lib64/libhvx_proxy_stub.so
 
 # Graphics (Adreno firmware)
 vendor/firmware/a612_rgmu.bin
