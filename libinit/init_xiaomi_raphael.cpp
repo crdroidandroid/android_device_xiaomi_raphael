@@ -21,7 +21,7 @@ static const variant_info_t raphael_global_info = {
     .model = "Mi 9T Pro",
     .build_fingerprint = FINGERPRINT,
 
-    .nfc = true,
+    .nfc = NFC_TYPE_NFC_ESE,
 };
 
 static const variant_info_t raphaelin_info = {
@@ -34,7 +34,7 @@ static const variant_info_t raphaelin_info = {
     .model = "Redmi K20 Pro",
     .build_fingerprint = FINGERPRINT,
 
-    .nfc = false,
+    .nfc = NFC_TYPE_NONE,
 };
 
 static const variant_info_t raphael_info = {
@@ -47,7 +47,7 @@ static const variant_info_t raphael_info = {
     .model = "Redmi K20 Pro",
     .build_fingerprint = FINGERPRINT,
 
-    .nfc = true,
+    .nfc = NFC_TYPE_NFC_ESE,
 };
 
 static const std::vector<variant_info_t> variants = {
