@@ -5,6 +5,7 @@
 #
 
 TARGET_HAS_FOD := true
+TARGET_IS_LEGACY := true
 
 # Inherit from sm8150-common
 $(call inherit-product, device/xiaomi/sm8150-common/msmnile.mk)
