@@ -303,6 +303,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.1.vendor
 
+# LMK tuning
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.lmk.filecache_min_kb=153600 \
+    ro.lmk.kill_timeout_ms=50 \
+    ro.lmk.stall_limit_critical=40
+
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.light-service.xiaomi
