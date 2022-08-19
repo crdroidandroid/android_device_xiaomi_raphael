@@ -19,3 +19,9 @@ cc_library_shared {
     proprietary: true,
     srcs: ["megvii_shim.cpp"],
 }
+
+cc_library_shared {
+    name: "libwatermark_shim",
+    srcs: ["libwatermark_shim.c"],
+    vendor: true,
+}
