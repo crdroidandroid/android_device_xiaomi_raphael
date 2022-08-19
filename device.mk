@@ -104,6 +104,7 @@ PRODUCT_PACKAGES += \
     libdng_sdk.vendor \
     libshim_megvii \
     libpiex_shim \
+    libwatermark_shim \
     vendor.qti.hardware.camera.device@1.0.vendor \
     vendor.qti.hardware.camera.postproc@1.0.vendor \
     libstdc++.vendor
