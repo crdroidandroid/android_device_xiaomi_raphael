@@ -1,0 +1,4 @@
+allow init vendor_configs_file:file mounton;
+
+# Allow init to set attribute to sysfs_kprofiles
+allow init sysfs_kprofiles:file { setattr };

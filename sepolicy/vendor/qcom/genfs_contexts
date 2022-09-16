@@ -6,3 +6,7 @@ genfscon sysfs /devices/platform/soc/a84000.i2c/i2c-2/2-0028/wakeup             
 genfscon sysfs /devices/platform/soc/171c0000.slim/tavil-slim-pgd/wakeup                                                                           u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/vendor/vendor:extcon_usb1/wakeup                                                                                  u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/virtual/diag/diag/wakeup                                                                                                   u:object_r:sysfs_wakeup:s0
+
+# KProfiles
+genfscon sysfs /module/kprofiles/parameters/auto_kprofiles                                                                                         u:object_r:sysfs_kprofiles:s0
+genfscon sysfs /module/kprofiles/parameters/kp_mode                                                                                                u:object_r:sysfs_kprofiles:s0
