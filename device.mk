@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-TARGET_HAS_FOD := true
+TARGET_HAS_UDFPS := true
 TARGET_IS_LEGACY := true
 
 # Inherit from sm8150-common
