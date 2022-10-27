@@ -62,3 +62,8 @@ service vendor.nfc_hal_service /vendor/bin/hw/android.hardware.nfc@1.2-service
     group nfc
     writepid /dev/cpuset/system-background/tasks
     disabled
+
+on property:vendor.post_boot.parsed=1
+
+# Enable suspend to RAM
+    write /sys/power/mem_sleep "deep"
