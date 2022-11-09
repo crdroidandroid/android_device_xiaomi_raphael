@@ -151,6 +151,7 @@ vendor.gralloc.disable_ubwc=0
 debug.renderengine.backend=skiaglthreaded
 renderthread.skia.reduceopstasksplitting=true
 debug.hwui.renderer=opengl
+debug.sf.auto_latch_unsignaled=true
 
 # Incremental
 ro.incremental.enable=1
