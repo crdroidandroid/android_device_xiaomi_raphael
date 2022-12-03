@@ -120,6 +120,10 @@ on post-fs-data
     chmod 0660 /dev/tfa_rpc
     chmod 0660 /dev/tfa_control
 
+    # Dolby
+    mkdir /data/vendor/dolby 0770 media media
+    mkdir /data/vendor/multimedia 0775 system system
+
 on early-boot
     start vendor.sensors
 

@@ -428,6 +428,8 @@
         <item>"/apex/com.android.art/javalib/core-oj.jar"</item>
         <item>"/apex/com.android.art/javalib/core-libart.jar"</item>
         <item>"/system_ext/priv-app/SystemUI/SystemUI.apk"</item>
+        <item>"/system_ext/priv-app/MotoDolbyDax3/MotoDolbyDax3.apk"</item>
+        <item>"/system_ext/priv-app/daxService/daxService.apk"</item>
         <item>"/system/bin/surfaceflinger"</item>
         <item>/system/lib64/libRScpp.so</item>
         <item>/system/lib64/libRS.so</item>

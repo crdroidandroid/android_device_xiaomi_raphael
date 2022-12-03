@@ -10,3 +10,6 @@ allow hal_audio_default audio_device:dir r_dir_perms;
 
 # Allow HAL to set audio properties
 set_prop(hal_audio_default, vendor_audio_prop)
+
+allow hal_audio_default hal_dms_hwservice:hwservice_manager find;
+binder_call(hal_audio_default, hal_dms_default)
