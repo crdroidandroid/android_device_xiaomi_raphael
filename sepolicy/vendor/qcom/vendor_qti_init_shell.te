@@ -1,1 +1,3 @@
 allow vendor_qti_init_shell sysfs_wakeup:file setattr;
+
+allow vendor_qti_init_shell proc_watermark_scale_factor:file write;

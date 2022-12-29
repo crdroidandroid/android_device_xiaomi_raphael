@@ -1,0 +1,1 @@
+allow nfc vendor_nfc_vendor_data_file:dir search;
