@@ -1,2 +1,2 @@
 # HALs
-/vendor/bin/hw/android\.hardware\.lights-service\.raphael                                          u:object_r:hal_light_default_exec:s0
+/vendor/bin/hw/android\.hardware\.light-service\.xiaomi                                          u:object_r:hal_light_default_exec:s0
