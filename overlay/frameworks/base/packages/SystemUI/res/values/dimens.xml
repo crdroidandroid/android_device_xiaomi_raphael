@@ -37,4 +37,7 @@
 
     <!--  Total minimum padding to enforce to ensure that the dot can always show  -->
     <dimen name="ongoing_appops_dot_min_padding">13.5dp</dimen>
+
+    <!-- Recognizing fingerprint animation -->
+    <dimen name="udfps_animation_offset">35dp</dimen>
 </resources>
