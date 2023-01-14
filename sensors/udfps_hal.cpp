@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-#define LOG_TAG "sensors.udfps"
+#define LOG_TAG "sensors.raphael_udfps"
 
 #include <errno.h>
 #include <fcntl.h>
@@ -16,10 +16,8 @@
 #include <string.h>
 #include <utils/SystemClock.h>
 
-static const char *udfps_state_paths[] = {
-        "/sys/touchpanel/fp_state",
-        NULL,
-};
+static const char *udfps_pressed_path = "/sys/devices/platform/goodix_ts.0/udfps_pressed";
+static const char *udfps_enabled_path = "/sys/devices/platform/goodix_ts.0/udfps_enabled";
 
 static struct sensor_t udfps_sensor = {
         .name = "UDFPS Sensor",
@@ -33,7 +31,7 @@ static struct sensor_t udfps_sensor = {
         .minDelay = -1,
         .fifoReservedEventCount = 0,
         .fifoMaxEventCount = 0,
-        .stringType = "org.lineageos.sensor.udfps",
+        .stringType = "org.yaap.sensor.udfps",
         .requiredPermission = "",
         .maxDelay = 0,
         .flags = SENSOR_FLAG_ONE_SHOT_MODE | SENSOR_FLAG_WAKE_UP,
@@ -42,7 +40,7 @@ static struct sensor_t udfps_sensor = {
 
 struct udfps_context_t {
     sensors_poll_device_1_t device;
-    int fd;
+    int fd, fd_enable;
 };
 
 static int udfps_read_line(int fd, char* buf, size_t len) {
@@ -63,15 +61,15 @@ static int udfps_read_line(int fd, char* buf, size_t len) {
     return rc;
 }
 
-static int udfps_read_state(int fd, int& pos_x, int& pos_y) {
+static int udfps_read_state(int fd) {
     int rc, state = 0;
     char buf[64];
 
     rc = udfps_read_line(fd, buf, sizeof(buf));
     if (rc > 0) {
-        rc = sscanf(buf, "%d,%d,%d", &pos_x, &pos_y, &state);
-        if (rc != 3) {
-            ALOGE("Failed to parse fp_state: %d", rc);
+        rc = sscanf(buf, "%d", &state);
+        if (rc != 1) {
+            ALOGE("Failed to parse udfps_pressed: %d", rc);
             state = 0;
         }
     }
@@ -107,6 +105,7 @@ static int udfps_close(struct hw_device_t* dev) {
 
     if (ctx) {
         close(ctx->fd);
+        close(ctx->fd_enable);
         delete ctx;
     }
 
@@ -119,6 +118,8 @@ static int udfps_activate(struct sensors_poll_device_t* dev, int handle, int ena
     if (!ctx || handle) {
         return -EINVAL;
     }
+
+    write(ctx->fd_enable, enabled ? "1" : "0", 1);
 
     // Flush any pending events
     if (enabled) udfps_flush_events(ctx->fd);
@@ -143,15 +144,15 @@ static int udfps_poll(struct sensors_poll_device_t* dev, sensors_event_t* data, 
         return -EINVAL;
     }
 
-    int fod_x, fod_y, fod_state = 0;
+    int fod_state = 0;
 
     do {
         int rc = udfps_wait_event(ctx->fd, -1);
         if (rc < 0) {
-            ALOGE("Failed to poll fp_state: %d", -errno);
+            ALOGE("Failed to poll udfps_pressed: %d", -errno);
             return -errno;
         } else if (rc > 0) {
-            fod_state = udfps_read_state(ctx->fd, fod_x, fod_y);
+            fod_state = udfps_read_state(ctx->fd);
         }
     } while (!fod_state);
 
@@ -160,8 +161,6 @@ static int udfps_poll(struct sensors_poll_device_t* dev, sensors_event_t* data, 
     data->sensor = udfps_sensor.handle;
     data->type = udfps_sensor.type;
     data->timestamp = ::android::elapsedRealtimeNano();
-    data->data[0] = fod_x;
-    data->data[1] = fod_y;
 
     return 1;
 }
@@ -190,18 +189,32 @@ static int open_sensors(const struct hw_module_t* module, const char* /* name */
     ctx->device.batch = udfps_batch;
     ctx->device.flush = udfps_flush;
 
-    for (int i = 0; udfps_state_paths[i]; i++) {
-        ctx->fd = open(udfps_state_paths[i], O_RDONLY);
+    int retries = 0;
+
+    while (retries < 5) {
+        sleep(1);
+        retries++;
+        ctx->fd = open(udfps_pressed_path, O_RDONLY);
         if (ctx->fd >= 0) {
+            ALOGI("Success open udfps_pressed state after %d retries", retries);
             break;
         }
     }
 
     if (ctx->fd < 0) {
-        ALOGE("Failed to open fp state: %d", -errno);
+        ALOGE("Failed to open udfps_pressed state after %d retries: %d", retries, -errno);
         delete ctx;
 
         return -ENODEV;
+    }
+
+    ctx->fd_enable = open(udfps_enabled_path, O_WRONLY);
+    if (ctx->fd_enable < 0) {
+        ALOGE("Failed to open udfps_enable: %d", -errno);
+        delete ctx;
+        return -ENODEV;
+    } else {
+        ALOGI("Success open udfps_enable");
     }
 
     *device = &ctx->device.common;

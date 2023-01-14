@@ -5,7 +5,7 @@
 //
 
 cc_library_shared {
-    name: "sensors.udfps",
+    name: "sensors.raphael_udfps",
     defaults: ["hidl_defaults"],
     srcs: [
         "udfps_hal.cpp",
