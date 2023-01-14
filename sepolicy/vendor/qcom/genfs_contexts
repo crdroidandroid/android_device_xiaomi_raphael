@@ -13,3 +13,7 @@ genfscon sysfs /module/kprofiles/parameters/kp_mode u:object_r:sysfs_kprofiles:s
 
 # CSC DC Dimming
 genfscon sysfs /devices/platform/soc/soc:qcom,dsi-display-primary/dc_dim u:object_r:vendor_sysfs_graphics:s0
+
+# UDFPS Sensor
+genfscon sysfs /devices/platform/goodix_ts.0/udfps_pressed u:object_r:vendor_sysfs_sensors:s0
+genfscon sysfs /devices/platform/goodix_ts.0/udfps_enabled u:object_r:vendor_sysfs_sensors:s0

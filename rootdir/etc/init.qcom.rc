@@ -128,6 +128,13 @@ on boot
     enable vendor.dataqti
     enable vendor.dataadpl
 
+
+    # UDFPS Sensor
+    chown system system /sys/devices/platform/goodix_ts.0/udfps_pressed
+    chmod 0660 /sys/devices/platform/goodix_ts.0/udfps_pressed
+    chown system system /sys/devices/platform/goodix_ts.0/udfps_enabled
+    chmod 0660 /sys/devices/platform/goodix_ts.0/udfps_enabled
+
 on post-fs-data
     # Create directory used by display clients
     mkdir /data/vendor/display 0770 system graphics
