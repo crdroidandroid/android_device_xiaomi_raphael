@@ -19,5 +19,8 @@ bluetooth.profile.pan.panu.enabled=true
 bluetooth.profile.pbap.server.enabled=true
 bluetooth.profile.sap.server.enabled=true
 
+# Camera
+persist.camera.gyro.disable=0
+
 # DPM
 persist.vendor.dpm.feature=11

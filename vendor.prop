@@ -75,6 +75,8 @@ vendor.qcom.bluetooth.soc=cherokee
 
 # Camera
 camera.disable_zsl_mode=true
+persist.vendor.camera.logInfoMask=false
+persist.vendor.camera.perflock.enable=0
 
 # CNE
 persist.vendor.cne.feature=1

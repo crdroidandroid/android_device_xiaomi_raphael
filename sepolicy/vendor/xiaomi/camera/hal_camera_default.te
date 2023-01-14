@@ -21,10 +21,17 @@ r_dir_file(hal_camera_default, vendor_sysfs_kgsl)
 # Allow hal_camera_default to read vendor camera properties
 set_prop(hal_camera_default, vendor_camera_prop)
 
+# Allow hal_camera_default to read vendor video properties
+get_prop(hal_camera_default, vendor_video_prop)
+set_prop(hal_camera_default, vendor_video_prop)
+
 # Get IRemosaicDaemon HIDL
 allow hal_camera_default remosaic_daemon_service:service_manager find;
 
 # Communicate with remosaic daemon via binder IPC
 binder_call(hal_camera_default, remosaic_daemon)
 
+# Allow hal_camera_default to read fastrpc_shell_3
 allow hal_camera_default public_adsprpcd_file:file r_file_perms;
+allow hal_camera_default vendor_xdsp_device:chr_file r_file_perms;
+allow hal_camera_default system_data_file:dir { search };
