@@ -9,6 +9,7 @@ vendor.bluetooth.soc=cherokee
 
 # Camera
 persist.vendor.camera.privapp.list=com.android.camera
+log.tag.CHIUSECASE=ERROR
 vendor.camera.sat.fallback.dist=40
 vendor.camera.sat.fallback.dist.d=10
 vendor.camera.sat.fallback.luxindex=330
