@@ -127,6 +127,10 @@ on boot
 
 on property:sys.boot_completed=1
 
+    # Haptics
+    write /sys/class/leds/vibrator/index 3
+    write /sys/class/leds/vibrator/duration 100
+    write /sys/class/leds/vibrator/boot_vibrator 1
     # Uclamp tunings
 
     # dissable default for fox stuck at min freq
