@@ -32,6 +32,7 @@ persist.sys.fuse.passthrough.enable=true
 persist.vendor.overlay.izat.optin=rro
 
 # Graphics
+debug.force_no_blanking=true
 ro.opengles.version=196610
 debug.cpurend.vsync=false
 
