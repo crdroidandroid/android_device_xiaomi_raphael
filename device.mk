@@ -94,6 +94,9 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration.xml \
     $(LOCAL_PATH)/configs/audio/audio_policy_configuration_a2dp_offload_disabled.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration_a2dp_offload_disabled.xml \
 
+# Blur
+TARGET_ENABLE_BLUR := true
+
 # Board
 PRODUCT_USES_QCOM_HARDWARE := true
 PRODUCT_BOARD_PLATFORM := msmnile
