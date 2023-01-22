@@ -10,3 +10,6 @@ genfscon sysfs /devices/virtual/diag/diag/wakeup                                
 # KProfiles
 genfscon sysfs /module/kprofiles/parameters/auto_kprofiles u:object_r:sysfs_kprofiles:s0
 genfscon sysfs /module/kprofiles/parameters/kp_mode u:object_r:sysfs_kprofiles:s0
+
+# CSC DC Dimming
+genfscon sysfs /devices/platform/soc/soc:qcom,dsi-display-primary/dc_dim u:object_r:vendor_sysfs_graphics:s0

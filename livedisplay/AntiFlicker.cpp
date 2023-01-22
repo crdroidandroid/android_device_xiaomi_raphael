@@ -27,7 +27,7 @@ namespace V2_1 {
 namespace implementation {
 
 static constexpr const char* kDcDimmingPath =
-    "/sys/devices/platform/soc/soc:qcom,dsi-display-primary/msm_fb_ea_enable";
+    "/sys/devices/platform/soc/soc:qcom,dsi-display-primary/dc_dim";
 
 Return<bool> AntiFlicker::isEnabled() {
     std::ifstream file(kDcDimmingPath);
