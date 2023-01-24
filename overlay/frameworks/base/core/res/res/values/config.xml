@@ -597,5 +597,6 @@
     <!-- Default state for LiveDisplay -->
     <bool name="config_defaultCABC">true</bool>
 
-    <!-- Type of the udfps long press sensor. Empty if long press is not supported. -->
+    <!-- Type of the double tap sensor. Empty if double tap is not supported. -->
+     <string name="config_dozeDoubleTapSensorType" translatable="false">org.yaap.sensor.double_tap</string>
 </resources>

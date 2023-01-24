@@ -135,6 +135,12 @@ on boot
     chown system system /sys/devices/platform/goodix_ts.0/udfps_enabled
     chmod 0660 /sys/devices/platform/goodix_ts.0/udfps_enabled
 
+    # Double Tap Sensor
+    chown system system /sys/devices/platform/goodix_ts.0/double_tap_pressed
+    chmod 0660 /sys/devices/platform/goodix_ts.0/double_tap_pressed
+    chown system system /sys/devices/platform/goodix_ts.0/double_tap_enabled
+    chmod 0660 /sys/devices/platform/goodix_ts.0/double_tap_enabled
+
 on post-fs-data
     # Create directory used by display clients
     mkdir /data/vendor/display 0770 system graphics

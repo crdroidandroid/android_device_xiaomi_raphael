@@ -17,3 +17,7 @@ genfscon sysfs /devices/platform/soc/soc:qcom,dsi-display-primary/dc_dim u:objec
 # UDFPS Sensor
 genfscon sysfs /devices/platform/goodix_ts.0/udfps_pressed u:object_r:vendor_sysfs_sensors:s0
 genfscon sysfs /devices/platform/goodix_ts.0/udfps_enabled u:object_r:vendor_sysfs_sensors:s0
+
+# Double Tap Sensor
+genfscon sysfs /devices/platform/goodix_ts.0/double_tap_pressed u:object_r:vendor_sysfs_sensors:s0
+genfscon sysfs /devices/platform/goodix_ts.0/double_tap_enabled u:object_r:vendor_sysfs_sensors:s0
