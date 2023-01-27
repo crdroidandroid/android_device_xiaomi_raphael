@@ -86,7 +86,7 @@ ro.crypto.volume.filenames_mode=aes-256-cts
 
 # Dalvik
 pm.dexopt.boot=verify
-pm.dexopt.first-boot=verify
+# pm.dexopt.first-boot=verify
 pm.dexopt.install=speed-profile
 dalvik.vm.image-dex2oat-filter=speed
 dalvik.vm.image-dex2oat-threads=8
