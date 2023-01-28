@@ -3,3 +3,4 @@ get_prop(appdomain, vendor_camera_prop)
 
 allow { appdomain -isolated_app } adsprpcd_file:dir r_dir_perms;
 allow { appdomain -isolated_app } public_adsprpcd_file:file r_file_perms;
+allow { appdomain -isolated_app } vendor_xdsp_device:chr_file r_file_perms;
