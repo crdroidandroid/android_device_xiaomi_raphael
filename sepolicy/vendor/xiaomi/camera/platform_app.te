@@ -1,0 +1,4 @@
+# Allow MIUI camera app to read no. of cpus
+allow platform_app cgroup:file r_file_perms;
+allow platform_app app_data_file:file execute;
+allow platform_app hal_camerapostproc_xiaomi_hwservice:hwservice_manager find;

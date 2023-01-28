@@ -1,1 +1,2 @@
 r_dir_file(vendor_adsprpcd, public_adsprpcd_file)
+r_dir_file(vendor_adsprpcd, vendor_sysfs_graphics)
