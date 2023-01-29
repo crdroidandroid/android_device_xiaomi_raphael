@@ -184,9 +184,6 @@ TARGET_USERIMAGES_SPARSE_EXT_DISABLED := false
 # Platform
 TARGET_BOARD_PLATFORM := msmnile
 
-# Power
-TARGET_POWERHAL_MODE_EXT := $(DEVICE_PATH)/power/power-mode.cpp
-
 # Properties
 TARGET_ODM_PROP += $(DEVICE_PATH)/odm.prop
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
