@@ -8,3 +8,11 @@
 /mnt/vendor/persist/fpc(/.*)?                                                      u:object_r:vendor_fingerprint_data_file:s0
 /mnt/vendor/persist/goodix(/.*)?                                                   u:object_r:vendor_fingerprint_data_file:s0
 /sys/devices/virtual/touch/tp_dev/fp_state                                         u:object_r:vendor_sysfs_sensors:s0
+
+# UDFPS Sensor
+/sys/devices/platform/goodix_ts.0/udfps_pressed u:object_r:vendor_sysfs_sensors:s0
+/sys/devices/platform/goodix_ts.0/udfps_enabled u:object_r:vendor_sysfs_sensors:s0
+
+# Double Tap Sensor
+/sys/devices/platform/goodix_ts.0/double_tap_pressed u:object_r:vendor_sysfs_sensors:s0
+/sys/devices/platform/goodix_ts.0/double_tap_enabled u:object_r:vendor_sysfs_sensors:s0
