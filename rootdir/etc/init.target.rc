@@ -129,6 +129,11 @@ on property:sys.boot_completed=1
     write /sys/class/leds/vibrator/index 3
     write /sys/class/leds/vibrator/duration 100
     write /sys/class/leds/vibrator/boot_vibrator 1
+
+    # Kprofiles tune 
+    write /sys/module/kprofiles/parameters/auto_kprofiles Y
+    write /sys/module/kprofiles/parameters/kp_mode 2
+
     # Uclamp tunings
 
     # dissable default for fox stuck at min freq
