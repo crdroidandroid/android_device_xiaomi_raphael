@@ -1,3 +1,5 @@
 # Fingerprint data
 allow tee vendor_fingerprint_data_file:dir rw_dir_perms;
 allow tee vendor_fingerprint_data_file:file create_file_perms;
+
+get_prop({ appdomain -isolated_app_all }, vendor_tee_listener_prop)
