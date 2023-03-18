@@ -30,7 +30,8 @@
 import /vendor/etc/init/init.mi_thermald.rc
 
 on early-init
-    write /proc/sys/kernel/sched_boost 1
+    # Disable EAS
+    write /proc/sys/kernel/sched_energy_aware 0
 
 on init
     write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
