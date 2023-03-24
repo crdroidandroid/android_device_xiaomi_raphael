@@ -168,7 +168,7 @@ vendor.gatekeeper.disable_spu=true
 
 # Graphics
 debug.sdm.support_writeback=0
-debug.sf.latch_unsignaled=0
+debug.sf.auto_latch_unsignaled=true
 debug.sf.enable_gl_backpressure=1
 ro.gfx.driver.1=com.qualcomm.qti.gpudrivers.msmnile.api30
 ro.hardware.egl=adreno
