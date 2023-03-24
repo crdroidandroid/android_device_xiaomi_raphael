@@ -83,6 +83,10 @@ on boot
 
     chown system system /sys/kernel/boot_slpi/ssr
 
+    # HBM
+    chown system graphics /sys/devices/platform/soc/soc:qcom,dsi-display-primary/hbm
+    chmod 0666 /sys/devices/platform/soc/soc:qcom,dsi-display-primary/hbm-1/hbm
+
     # Smart charging
     chown system system /sys/class/power_supply/battery/input_suspend
     chmod 0666 /sys/class/power_supply/battery/input_suspend
