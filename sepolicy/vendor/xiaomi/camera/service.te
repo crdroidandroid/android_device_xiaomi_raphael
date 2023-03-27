@@ -1,0 +1,4 @@
+type DisplayFeatureControl, service_manager_type;
+type perfshielder, service_manager_type;
+type miui_multi_display, service_manager_type;
+type ProcessManager, service_manager_type;

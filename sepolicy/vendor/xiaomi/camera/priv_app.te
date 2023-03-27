@@ -1,0 +1,3 @@
+allow priv_app DisplayFeatureControl:service_manager find;
+allow priv_app miui_multi_display:service_manager find;
+allow priv_app perfshielder:service_manager find;
