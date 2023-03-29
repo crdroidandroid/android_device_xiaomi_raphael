@@ -137,6 +137,9 @@ on boot
 
 on property:sys.boot_completed=1
 
+    # Enable UFS powersaving
+    write /sys/devices/platform/soc/${ro.boot.bootdevice}/clkgate_enable 1
+
     # Haptics
     write /sys/class/leds/vibrator/index 3
     write /sys/class/leds/vibrator/duration 100
