@@ -1,4 +1,4 @@
-# Bluetooth
+ # Bluetooth
 persist.vendor.btstack.enable.twsplus=true
 persist.vendor.btstack.connect.peer_earbud=true
 persist.vendor.bt.a2dp.aac_whitelist=false
@@ -13,6 +13,10 @@ log.tag.CHIUSECASE=ERROR
 
 # Charger
 ro.charger.enable_suspend=true
+
+# Deep Sleep
+pm.sleep_mode=1
+vendor.post_boot.parsed=1
 
 # DPM
 persist.vendor.dpm.feature=1

@@ -299,6 +299,9 @@ on property:sys.boot_completed=1
     setprop lmkd.reinit 1
     start vendor.qcom-post-boot
 
+    # Start perf
+    setprop vendor.post_boot.parsed 1
+
 service vendor.qrtr-ns /vendor/bin/qrtr-ns -f
     class core
     user vendor_qrtr
