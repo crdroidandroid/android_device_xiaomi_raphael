@@ -224,18 +224,14 @@ on property:sys.boot_completed=1
     write /dev/cpuctl/top-app/cpu.shares 20480
 
     # First initialize silver only cpus
-    write /dev/cpuset/audio-app/cpus 0-3
-    write /dev/cpuset/background/cpus 0-2
+    write /dev/cpuset/audio-app/cpus 1-2
+    write /dev/cpuset/background/cpus 0-1
     write /dev/cpuset/system-background/cpus 0-3
 
     # And then initialize silver + gold
-    write /dev/cpuset/top-app/cpus 0-3
-    write /dev/cpuset/foreground/cpus 0-3
-    write /dev/cpuset/foreground/boost/cpus 0-3
-
+    write /dev/cpuset/foreground/cpus 0-6
+    write /dev/cpuset/foreground/boost/cpus 0-6
     write /dev/cpuset/top-app/cpus 0-7
-    write /dev/cpuset/foreground/cpus 0-2,4-7
-    write /dev/cpuset/foreground/boost/cpus 4-7
 
     # palm_sensor
     chown system system /sys/class/touch/touch_dev/palm_sensor
