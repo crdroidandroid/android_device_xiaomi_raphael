@@ -176,6 +176,12 @@ on property:sys.boot_completed=1
     write /dev/cpuset/camera-daemon/uclamp.boosted 1
     write /dev/cpuset/camera-daemon/uclamp.latency_sensitive 1
 
+    #display
+    write /dev/cpuset/display/uclamp.max max
+    write /dev/cpuset/display/uclamp.min 80
+    write /dev/cpuset/display/uclamp.boosted 1
+    write /dev/cpuset/display/uclamp.latency_sensitive 1
+
     #game
     write /dev/cpuset/game/uclamp.max max
     write /dev/cpuset/game/uclamp.min 80
