@@ -192,7 +192,6 @@ vendor.gatekeeper.disable_spu=true
 debug.sdm.support_writeback=0
 debug.sf.auto_latch_unsignaled=true
 debug.sf.disable_backpressure=1
-ro.gfx.driver.1=com.qualcomm.qti.gpudrivers.msmnile.api30
 ro.hardware.egl=adreno
 ro.hardware.vulkan=adreno
 ro.opengles.version=196610
