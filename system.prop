@@ -1,12 +1,3 @@
- # Bluetooth
-persist.vendor.btstack.enable.twsplus=true
-persist.vendor.btstack.connect.peer_earbud=true
-persist.vendor.bt.a2dp.aac_whitelist=false
-#ro.bluetooth.library_name=libbluetooth_qti.so
-ro.bluetooth.emb_wp_mode=false
-ro.bluetooth.wipower=false
-vendor.bluetooth.soc=cherokee
-
 # Camera
 persist.vendor.camera.privapp.list=com.android.camera
 log.tag.CHIUSECASE=ERROR
