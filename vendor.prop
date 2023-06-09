@@ -195,7 +195,6 @@ debug.sf.disable_backpressure=1
 ro.hardware.egl=adreno
 ro.hardware.vulkan=adreno
 ro.opengles.version=196610
-ro.hwui.render_ahead=20
 vendor.gralloc.disable_ubwc=0
 debug.sf.treat_170m_as_sRGB=1
 debug.renderengine.backend=skiaglthreaded
