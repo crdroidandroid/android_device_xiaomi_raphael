@@ -620,7 +620,7 @@ vendor/lib64/vendor.display.color@1.4.so
 vendor/lib64/vendor.display.color@1.5.so
 vendor/lib64/vendor.display.postproc@1.0.so
 
-# Dolby
+# Dolby - from rhode
 odm/bin/hw/vendor.dolby_v3_6.hardware.dms360@2.0-service|da39a3ee5e6b4b0d3255bfef95601890afd80709
 system_ext/app/MotoSignatureApp/MotoSignatureApp.apk|98027bccd4ec14cb7887cde068e35f6b0ecd0a44
 system_ext/etc/permissions/com.motorola.frameworks.core.addon.xml|b98f53235c8d4c1962d3b279840e2a074d0ddd10
@@ -641,9 +641,9 @@ system_ext/framework/com.motorola.motosignature.jar|1607b24909a030ddec7f05b91356
 system_ext/framework/moto-checkin.jar|989119b230c01ba95341d29de45e38120a68f394
 system_ext/framework/moto-settings.jar|0ebdf871ededa1eb9c5186bdb4a9055d89594779
 system_ext/framework/moto.jar|6c797a7f205f2ce5d939c000f21c6625daf0c33f
-system_ext/priv-app/MotoDolbyDax3/MotoDolbyDax3.apk;OVERRIDES=MusicFX|16a795a3ea09740d75740ec2b6ef45176e902c2b
+system_ext/priv-app/MotoDolbyDax3/MotoDolbyDax3.apk;OVERRIDES=MusicFX|e0e37f0179bee14e29467bbd716aed00c59b542a
 system_ext/priv-app/MotorolaSettingsProvider/MotorolaSettingsProvider.apk|25deb5bdb18d55dee1b9bd1de2ba46e353c62780
-system_ext/priv-app/daxService/daxService.apk|c9f688a32c81aace7207bd67d14b926b2662ba98
+system_ext/priv-app/daxService/daxService.apk|239f110bc4578c789491a5174998cc87c0a5b7ad
 vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service|8215768638794162db3bb76e43045926fcbb4b0b
 vendor/etc/init/vendor.dolby.hardware.dms@2.0-service.rc|29296ebfe89b2697fec573be73cc3757fd97bed6
 vendor/lib/soundfx/libswdap.so|810d0e266e4a77f06cba72fe8bdde2e1ede4f9f9
