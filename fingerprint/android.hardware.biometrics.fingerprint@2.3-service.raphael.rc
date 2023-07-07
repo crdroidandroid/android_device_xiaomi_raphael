@@ -2,6 +2,7 @@ service vendor.fps_hal /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.
     class late_start
     user system
     group system input uhid
+    task_profiles ProcessCapacityHigh HighPerformance
 
 on init
     chmod 0666 /dev/goodix_fp
