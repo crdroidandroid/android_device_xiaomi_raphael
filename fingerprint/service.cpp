@@ -63,6 +63,7 @@ int main() {
         return 1;
     }
 
+    android::hardware::setMinSchedulerPolicy(service, SCHED_RR, -20);
     configureRpcThreadpool(1, true /*callerWillJoin*/);
 
     status_t status = service->registerAsSystemService();
