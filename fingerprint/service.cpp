@@ -27,6 +27,7 @@ using android::hardware::configureRpcThreadpool;
 using android::hardware::joinRpcThreadpool;
 
 // Generated HIDL files
+using android::hardware::biometrics::fingerprint::V2_3::IBiometricsFingerprint;
 using android::hardware::biometrics::fingerprint::V2_3::implementation::BiometricsFingerprint;
 
 using android::status_t;
@@ -55,9 +56,8 @@ fail:
 }
 
 int main() {
-    android::sp<BiometricsFingerprint> service = nullptr;
+    android::sp<IBiometricsFingerprint> service = BiometricsFingerprint::getInstance();
 
-    service = new BiometricsFingerprint();
     if (service == nullptr) {
         ALOGE("Instance of BiometricsFingerprint is null");
         return 1;
@@ -66,7 +66,7 @@ int main() {
     android::hardware::setMinSchedulerPolicy(service, SCHED_RR, -20);
     configureRpcThreadpool(1, true /*callerWillJoin*/);
 
-    status_t status = service->registerAsSystemService();
+    status_t status = service->registerAsService();
     if (status != android::OK) {
         ALOGE("Cannot register service for Fingerprint HAL(%d).", status);
         return 1;
