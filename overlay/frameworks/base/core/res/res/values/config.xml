@@ -602,6 +602,9 @@
     <!-- Type of the double tap sensor. Empty if double tap is not supported. -->
      <string name="config_dozeDoubleTapSensorType" translatable="false">org.lineage.sensor.double_tap</string>
 
+    <!-- Type of the tap sensor. Empty if tap is not supported. -->
+    <string name="config_dozeTapSensorType" translatable="false">org.lineage.sensor.single_tap</string>
+
     <!-- Display color inversion availability -->
     <bool name="config_displayInversionAvailable">false</bool>
 
