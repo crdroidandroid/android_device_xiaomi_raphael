@@ -382,6 +382,12 @@ on charger
     setprop persist.sys.usb.config mass_storage
     start vendor.qcom-post-boot
 
+service vendor.power_off_alarm /vendor/bin/power_off_alarm
+    class core
+    group system
+    disabled
+    oneshot
+
 service vendor.audio-hal /vendor/bin/hw/android.hardware.audio.service
     override
     class hal

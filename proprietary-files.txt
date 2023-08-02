@@ -1075,6 +1075,16 @@ vendor/bin/pm-proxy
 vendor/bin/pm-service
 vendor/lib64/libperipheral_client.so
 
+# PowerOffAlarm - From Vayu V14.0.3.0.TJUIDXM
+-product/app/PowerOffAlarm/PowerOffAlarm.apk|8d5f01ef9cc8c67ccb68b6c620d3019f26cf70f7
+system_ext/framework/vendor.qti.hardware.alarm-V1.0-java.jar|b9afec1739e5c14a69013c708a0a094d705ee899
+system_ext/lib64/vendor.qti.hardware.alarm@1.0.so|7cb236ff100cee16ee904831123590bd17d8119c
+vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service|5f8bf423e3c4b56b5f8278eb5bae141d816c791c
+vendor/bin/power_off_alarm|6040b06f9bc850ef69156bed4367f1f8371449d7
+vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc|c9877b6cae0353d5fdea5bc23dba77101b3d6980
+vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so|80fd75eb9a44a1e7e62593855c06e6f219a3c4b3
+vendor/lib64/vendor.qti.hardware.alarm@1.0.so|66d8dc137c36ac32d0f71ceb433167753ffa108f
+
 # QCC VND HAL
 vendor/bin/hw/vendor.qti.hardware.qccvndhal@1.0-service
 vendor/etc/init/vendor.qti.hardware.qccvndhal@1.0-service.rc

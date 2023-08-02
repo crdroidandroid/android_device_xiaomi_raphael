@@ -395,6 +395,10 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.perf@2.2.vendor \
     android.hardware.power-service-qti
 
+# PowerOffAlarm
+PRODUCT_PACKAGES += \
+    PowerOffAlarm
+
 # QTI
 PRODUCT_PACKAGES += \
     libjson \
