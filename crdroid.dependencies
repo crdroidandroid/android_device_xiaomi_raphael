@@ -18,7 +18,7 @@
     "repository":   "crdroidandroid/android_vendor_miuicamera",
     "target_path":  "vendor/xiaomi/miuicamera",
     "remote":       "crdroid-gitlab",
-    "branch":       "leica+miui-raphael"
+    "branch":       "leica-5.0-raphael"
   },
   {
     "repository":   "crdroidandroid/packages_apps_KProfiles",
