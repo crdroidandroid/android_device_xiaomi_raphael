@@ -1,2 +1,8 @@
+# Data files
+/data/vendor/dolby(/.*)?                                                                            u:object_r:vendor_data_file:s0
+
+# HALs
+/vendor/bin/hw/vendor\.dolby\.hardware\.dms@2\.0-service                                            u:object_r:hal_dms_default_exec:s0
+
 # Socker Device
-/dev/socket/audio_hw_socket           u:object_r:audio_socket:s0
+/dev/socket/audio_hw_socket                                                                         u:object_r:audio_socket:s0
