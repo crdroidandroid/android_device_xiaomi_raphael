@@ -28,9 +28,6 @@
 
 <audio_effects_conf version="2.0" xmlns="http://schemas.android.com/audio/audio_effects_conf/v2_0">
     <libraries>
-        <library name="gamedap" path="libswgamedap.so"/>
-        <library name="vqe" path="libswvqe.so"/>
-        <library name="dap" path="libswdap.so"/>
         <library name="bundle" path="libbundlewrapper.so"/>
         <library name="reverb" path="libreverbwrapper.so"/>
         <library name="qcbassboost" path="libqcbassboost.so"/>
@@ -48,9 +45,6 @@
         <library name="audiosphere" path="libasphere.so"/>
     </libraries>
     <effects>
-        <effect name="gamedap" library="gamedap" uuid="3783c334-d3a0-4d13-874f-0032e5fb80e2"/>
-        <effect name="vqe" library="vqe" uuid="64a0f614-7fa4-48b8-b081-d59dc954616f"/>
-        <effect name="dap" library="dap" uuid="9d4921da-8225-4f29-aefa-39537a04bcaa"/>
         <effectProxy name="bassboost" library="proxy" uuid="14804144-a5ee-4d24-aa88-0002a5d5c51b">
             <libsw library="qcbassboost" uuid="23aca180-44bd-11e2-bcfd-0800200c9a66"/>
             <libhw library="offload_bundle" uuid="2c4a8c24-1581-487f-94f6-0002a5d5c51b"/>
@@ -97,17 +91,20 @@
         <effect name="audiosphere" library="audiosphere" uuid="184e62ab-2d19-4364-9d1b-c0a40733866c"/>
     </effects>
     <postprocess>
-        <stream type="system">
-        </stream>
         <stream type="music">
+            <apply effect="music_helper"/>
         </stream>
         <stream type="ring">
+            <apply effect="ring_helper"/>
         </stream>
         <stream type="alarm">
+            <apply effect="alarm_helper"/>
         </stream>
         <stream type="voice_call">
+            <apply effect="voice_helper"/>
         </stream>
         <stream type="notification">
+            <apply effect="notification_helper"/>
         </stream>
     </postprocess>
     <preprocess>
