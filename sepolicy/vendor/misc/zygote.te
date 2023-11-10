@@ -1,0 +1,4 @@
+allow zygote adsprpcd_file:dir { search getattr read };
+allow zygote self:capability kill;
+r_dir_file(zygote, system_file)
+dontaudit zygote proc_cmdline:file r_file_perms;

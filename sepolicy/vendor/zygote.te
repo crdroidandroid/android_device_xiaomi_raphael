@@ -1,3 +1,0 @@
-allow zygote self:capability kill;
-allow zygote system_file:dir write;
-r_dir_file(zygote, system_file)
