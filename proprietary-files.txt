@@ -255,10 +255,6 @@ vendor/lib64/mi.motor.daemon.so
 vendor/bin/batterysecret
 vendor/etc/init/init.batterysecret.rc
 
-# Display
-vendor/etc/qdcm_calib_data_samsung_ea8076_fhd_cmd_dsi_panel.xml
-vendor/etc/qdcm_calib_data_visionox_r66456_fhd_cmd_dsi_panel.xml
-
 # Fingerprint
 vendor/lib64/hw/fingerprint.goodix_fod.so:vendor/lib64/hw/fingerprint.goodix_fod.default.so
 vendor/lib64/libarm_proxy_skel.so
