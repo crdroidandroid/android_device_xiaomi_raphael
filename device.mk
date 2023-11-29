@@ -380,6 +380,7 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libsfplugin_ccodec_utils.vendor \
     libstagefrighthw \
+    libstagefright_foundation-v33 \
     libstagefright_omx.vendor
 
 PRODUCT_COPY_FILES += \
