@@ -188,6 +188,7 @@ vendor.gatekeeper.disable_spu=true
 
 # Graphics
 debug.sdm.support_writeback=0
+debug.sf.latch_unsignaled=1
 debug.sf.auto_latch_unsignaled=true
 debug.sf.disable_backpressure=1
 debug.sf.enable_transaction_tracing=false
