@@ -46,7 +46,8 @@ persist.vendor.ims.disableQXDMLogs=1
 
 # LMKD
 ro.config.low_ram=false
-ro.lmk.log_stats=true
+ro.lmk.kill_heaviest_task=true
+ro.lmk.kill_timeout_ms=15
 
 # Logd buffer size
 ro.logd.size=2M
