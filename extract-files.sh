@@ -59,10 +59,15 @@ function blob_fixup() {
             "${PATCHELF}" --remove-needed "libMegviiFacepp-0.5.2.so" "${2}"
             "${PATCHELF}" --remove-needed "libmegface.so" "${2}"
             "${PATCHELF}" --add-needed "libshim_megvii.so" "${2}"
-            ;;
+        ;;
         vendor/lib64/camera/components/com.qti.node.watermark.so)
             "${PATCHELF}" --add-needed "libwatermark_shim.so" "${2}"
-            ;;
+        ;;
+        vendor/lib/libstagefright_soft_ddpdec.so | vendor/lib/libstagefright_soft_ac4dec.so | \
+        vendor/lib/libstagefrightdolby.so | vendor/lib64/libstagefright_soft_ddpdec.so | \
+        vendor/lib64/libdlbdsservice.so | vendor/lib64/libstagefright_soft_ac4dec.so | vendor/lib64/libstagefrightdolby.so)
+            ${PATCHELF} --replace-needed "libstagefright_foundation.so" "libstagefright_foundation-v33.so" "${2}"
+        ;;
     esac
 }
 
