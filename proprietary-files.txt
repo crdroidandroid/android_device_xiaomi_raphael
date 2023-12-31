@@ -641,7 +641,7 @@ system_ext/framework/com.motorola.motosignature.jar|1607b24909a030ddec7f05b91356
 system_ext/framework/moto-checkin.jar|989119b230c01ba95341d29de45e38120a68f394
 system_ext/framework/moto-settings.jar|0ebdf871ededa1eb9c5186bdb4a9055d89594779
 system_ext/framework/moto.jar|6c797a7f205f2ce5d939c000f21c6625daf0c33f
-system_ext/priv-app/MotoDolbyDax3/MotoDolbyDax3.apk;OVERRIDES=MusicFX|16a795a3ea09740d75740ec2b6ef45176e902c2b
+system_ext/priv-app/MotoDolbyDax3/MotoDolbyDax3.apk;OVERRIDES=MusicFX|d585215e2cc996d8db73cb2c0b3e79211554dc08
 system_ext/priv-app/MotorolaSettingsProvider/MotorolaSettingsProvider.apk|25deb5bdb18d55dee1b9bd1de2ba46e353c62780
 system_ext/priv-app/daxService/daxService.apk|e545398a2c95b49c881988e3655498bc52615519
 vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service|8215768638794162db3bb76e43045926fcbb4b0b
