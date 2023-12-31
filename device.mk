@@ -57,8 +57,8 @@ USE_DEX2OAT_DEBUG := false
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio.service \
-    android.hardware.audio@7.1-impl \
-    android.hardware.audio@7.1-util \
+    android.hardware.audio@7.0-impl \
+    android.hardware.audio@7.0-util \
     android.hardware.audio.effect@7.0-impl
 
 PRODUCT_PACKAGES += \
