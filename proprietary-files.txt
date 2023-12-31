@@ -629,7 +629,7 @@ system_ext/etc/permissions/com.motorola.software.dolbyui.xml|d5c25b2522094346257
 system_ext/etc/permissions/moto-checkin.xml|373f75676a0ac7915f5bc49ec43fd99c38dd9c1b
 system_ext/etc/permissions/moto-settings.xml|f2a2703b62777c88e3a161a0d2a75d72f90d5007
 system_ext/etc/permissions/moto.xml|5521a530e243f6e5e928018320d4e9b819134fbb
-system_ext/etc/permissions/privapp-com.dolby.daxservice.xml|7e83188fe32e6210de8d943b328893a32531c98d
+system_ext/etc/permissions/privapp-com.dolby.daxservice.xml|56da6dd095fba323ddf6951075995ba56c5f3f2f
 system_ext/etc/permissions/privapp-com.motorola.android.providers.settings.xml|44bd70f7309ad6407d43391bcdb5b7e05ae8c363
 system_ext/etc/permissions/privapp-com.motorola.dolby.dolbyui.xml|d7f762731e3302ce553bf22a99aaeec312f65c0a
 system_ext/etc/sysconfig/config-com.dolby.daxservice.xml|f2955d9e3d5f75b40fdc8229243828f0c1c163de
@@ -643,7 +643,7 @@ system_ext/framework/moto-settings.jar|0ebdf871ededa1eb9c5186bdb4a9055d89594779
 system_ext/framework/moto.jar|6c797a7f205f2ce5d939c000f21c6625daf0c33f
 system_ext/priv-app/MotoDolbyDax3/MotoDolbyDax3.apk;OVERRIDES=MusicFX|16a795a3ea09740d75740ec2b6ef45176e902c2b
 system_ext/priv-app/MotorolaSettingsProvider/MotorolaSettingsProvider.apk|25deb5bdb18d55dee1b9bd1de2ba46e353c62780
-system_ext/priv-app/daxService/daxService.apk|c9f688a32c81aace7207bd67d14b926b2662ba98
+system_ext/priv-app/daxService/daxService.apk|e545398a2c95b49c881988e3655498bc52615519
 vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service|8215768638794162db3bb76e43045926fcbb4b0b
 vendor/etc/init/vendor.dolby.hardware.dms@2.0-service.rc|29296ebfe89b2697fec573be73cc3757fd97bed6
 vendor/lib/soundfx/libswdap.so|810d0e266e4a77f06cba72fe8bdde2e1ede4f9f9
