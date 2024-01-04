@@ -1,0 +1,4 @@
+allow vendor_init cgroup:file getattr;
+allow vendor_init future_pm_prop:property_service set;
+allow vendor_init vendor_cnd_prop:property_service set;
+allow vendor_init vendor_ims_prop:property_service set;
