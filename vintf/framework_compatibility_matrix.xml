@@ -15,6 +15,13 @@
             <instance>default</instance>
         </interface>
     </hal>
+    <hal format="aidl" optional="true">
+        <name>android.hardware.audio.sounddose</name>
+        <interface>
+            <name>ISoundDoseFactory</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
     <hal format="hidl" optional="true">
         <name>android.hardware.biometrics.fingerprint</name>
         <version>2.0-3</version>
@@ -33,7 +40,7 @@
     </hal>
     <hal format="aidl" optional="true">
         <name>android.hardware.bluetooth.audio</name>
-        <version>2</version>
+        <version>3</version>
         <interface>
             <name>IBluetoothAudioProviderFactory</name>
             <instance>default</instance>
@@ -42,6 +49,13 @@
     <hal format="hidl" optional="true">
         <name>android.hardware.cas</name>
         <version>1.0-2</version>
+        <interface>
+            <name>IMediaCasService</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>android.hardware.cas</name>
         <interface>
             <name>IMediaCasService</name>
             <instance>default</instance>
@@ -120,6 +134,7 @@
     </hal>
     <hal format="aidl" optional="true">
         <name>android.hardware.light</name>
+        <version>2</version>
         <interface>
             <name>ILights</name>
             <instance>default</instance>
@@ -191,6 +206,7 @@
     </hal>
     <hal format="aidl" optional="true">
         <name>android.hardware.wifi.supplicant</name>
+        <version>2</version>
         <interface>
             <name>ISupplicant</name>
             <instance>default</instance>
@@ -199,6 +215,13 @@
     <hal format="hidl" optional="true">
         <name>android.hardware.wifi</name>
         <version>1.0-6</version>
+        <interface>
+            <name>IWifi</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>android.hardware.wifi</name>
         <interface>
             <name>IWifi</name>
             <instance>default</instance>
