@@ -1,2 +1,4 @@
 # Allow appdomain to get vendor_persist_camera_prop
 get_prop(appdomain, vendor_persist_camera_prop)
+# Lineage Health
+hal_client_domain(platform_app, hal_lineage_health)

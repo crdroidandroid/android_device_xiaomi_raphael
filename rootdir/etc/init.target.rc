@@ -135,6 +135,10 @@ on boot
     chown system system /sys/kernel/qvr_external_sensor/fd
     chown system system /sys/class/thermal/thermal_message/sconfig
 
+    # Lineage Health
+    chmod 0660 /sys/class/power_supply/battery/input_suspend
+    chown system system /sys/class/power_supply/battery/input_suspend
+
 on property:sys.boot_completed=1
     # STOP EATING MY BATTERY AFTER 100H OF UPTIME FUCK YOU
     stop statsd
