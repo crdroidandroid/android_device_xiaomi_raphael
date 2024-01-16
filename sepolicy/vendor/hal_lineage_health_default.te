@@ -1,0 +1,8 @@
+# Allow LineageHealth HAL to write to battery and usb sysfs node
+allow hal_lineage_health_default sysfs_batteryinfo:file rw_file_perms;
+allow hal_lineage_health_default vendor_sysfs_battery_supply:dir search;
+allow hal_lineage_health_default vendor_sysfs_battery_supply:file rw_file_perms;
+allow hal_lineage_health_default vendor_sysfs_usb_supply:dir search;
+allow hal_lineage_health_default vendor_sysfs_usb_supply:file rw_file_perms;
+
+r_dir_file(hal_lineage_health_default, sysfs_batteryinfo)

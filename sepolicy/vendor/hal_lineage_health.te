@@ -1,0 +1,5 @@
+hal_attribute_service(hal_lineage_health, hal_lineage_health_service)
+binder_call(hal_lineage_health_server, servicemanager)
+
+# Allow binder communication with platform_app
+binder_call(hal_lineage_health, platform_app)

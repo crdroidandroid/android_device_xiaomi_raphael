@@ -1,2 +1,3 @@
 # For mount tracefs tracefs /sys/kernel/tracing
 allow init debugfs_tracing_debug:dir mounton;
+set_prop(vendor_init, vendor_power_prop)
