@@ -7,6 +7,10 @@ genfscon sysfs /devices/platform/soc/171c0000.slim/tavil-slim-pgd/wakeup        
 genfscon sysfs /devices/platform/vendor/vendor:extcon_usb1/wakeup                                                                                  u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/virtual/diag/diag/wakeup                                                                                                   u:object_r:sysfs_wakeup:s0
 
+# KProfiles
+genfscon sysfs /module/kprofiles/parameters/auto_kp                                                                                                 u:object_r:sysfs_kprofiles:s0
+genfscon sysfs /kernel/kprofiles/kp_mode                                                                                                            u:object_r:sysfs_kprofiles:s0
+
 # CSC DC Dimming
 genfscon sysfs /devices/platform/soc/soc:qcom,dsi-display-primary/dc_dim                                                                            u:object_r:vendor_sysfs_graphics:s0
 
