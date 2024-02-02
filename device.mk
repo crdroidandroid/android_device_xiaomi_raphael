@@ -110,6 +110,9 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth_le.xml \
     frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration.xml \
 
+# BLUR
+TARGET_ENABLE_BLUR := true
+
 # Board
 PRODUCT_USES_QCOM_HARDWARE := true
 PRODUCT_BOARD_PLATFORM := msmnile
