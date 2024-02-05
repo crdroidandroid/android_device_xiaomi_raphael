@@ -259,6 +259,10 @@ PRODUCT_PACKAGES += \
     f2fs_io \
     check_f2fs
 
+# FUSE passthrough
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.sys.fuse.passthrough.enable=true
+
 # Gatekeeper
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0.vendor
