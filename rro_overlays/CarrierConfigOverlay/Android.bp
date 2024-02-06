@@ -4,7 +4,9 @@
 //
 
 runtime_resource_overlay {
-    name: "SettingsLibRaphael",
-    theme: "SettingsLibRaphael",
+    name: "CarrierConfigOverlay",
+    theme: "CarrierConfigOverlay",
+    sdk_version: "current",
     product_specific: true,
+    aaptflags: ["--keep-raw-values"],
 }

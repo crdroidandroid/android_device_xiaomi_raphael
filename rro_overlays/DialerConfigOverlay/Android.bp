@@ -4,7 +4,7 @@
 //
 
 runtime_resource_overlay {
-    name: "SettingsLibRaphael",
-    theme: "SettingsLibRaphael",
+    name: "DialerConfigOverlay",
+    theme: "DialerConfigOverlay",
     product_specific: true,
 }

@@ -4,11 +4,11 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.android.settingslib.overlay.raphael">
+    package="com.android.dialer.overlay.raphael">
 
     <application android:allowBackup="false"/>
     <overlay
         android:isStatic="true"
         android:priority="750"
-        android:targetPackage="com.android.settingslib" />
+        android:targetPackage="com.android.dialer" />
 </manifest>

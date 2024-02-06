@@ -43,9 +43,21 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.freeform_window_management.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.freeform_window_management.xml
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-lineage
+PRODUCT_ENFORCE_RRO_TARGETS := *
+
+PRODUCT_PACKAGES += \
+    ApertureOverlay \
+    CarrierConfigOverlay \
+    DialerConfigOverlay \
+    FrameworksResRaphael \
+    LineageSDKOverlay \
+    SettingsLibRaphael \
+    SettingsProviderOverlayRaphael \
+    SettingsResRaphael \
+    SystemUIResRaphael \
+    TelephonyResCommon \
+    TetheringConfigOverlay \
+    WifiOverlay
 
 # ANT+
 PRODUCT_PACKAGES += \
@@ -529,8 +541,7 @@ PRODUCT_PACKAGES += \
     qti_telephony_hidl_wrapper_prd.xml \
     qti-telephony-utils \
     qti_telephony_utils.xml \
-    telephony-ext \
-    TelephonyResRaphael
+    telephony-ext
 
 PRODUCT_BOOT_JARS += \
     telephony-ext
@@ -587,8 +598,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.wifi.supplicant@2.0.vendor \
     vendor.qti.hardware.wifi.supplicant@2.1.vendor \
     libwpa_client \
-    TetheringConfigOverlay \
-    WifiOverlay \
     wpa_supplicant \
     wpa_supplicant.conf
 
