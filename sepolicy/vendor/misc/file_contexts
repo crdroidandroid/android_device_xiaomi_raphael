@@ -62,3 +62,7 @@
 
 # Haptic
 /sys/module/qti_haptics/parameters/vmax_mv_override                 u:object_r:sysfs_vibrator:s0
+
+# Perf
+/vendor/bin/hw/android\.hardware\.power-service\.pixel-libperfmgr   u:object_r:hal_power_default_exec:s0
+/vendor/bin/sendhint                                                u:object_r:sendhint_vendor_exec:s0

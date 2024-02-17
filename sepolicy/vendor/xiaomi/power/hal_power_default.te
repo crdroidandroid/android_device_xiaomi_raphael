@@ -1,3 +1,29 @@
 # Allow hal_power_default to write to dt2w nodes
 r_dir_file(hal_power_default, input_device)
 allow hal_power_default input_device:chr_file rw_file_perms;
+
+# Set scheduling info for apps (for adpf)
+allow hal_power_default appdomain:process { getsched setsched };
+allow hal_power_default self:capability sys_nice;
+
+# Set scheduling info for surfaceflinger (for adpf)
+allow hal_power_default surfaceflinger:process setsched;
+
+# Set scheduling info for HWC (for adpf)
+allow hal_power_default hal_graphics_composer_default:process setsched;
+
+# Set scheduling info for system_server (for adpf)
+allow hal_power_default system_server:process setsched;
+
+allow hal_power_default cgroup:file r_file_perms;
+
+# Allow reading proc files for CPU statistics.
+allow hal_power_default proc_stat:file r_file_perms;
+allow hal_power_default proc_vendor_sched:dir r_dir_perms;
+allow hal_power_default proc_vendor_sched:file r_file_perms;
+
+# Allow read/write thermal sysfs and property
+allow hal_power_default sysfs_thermal:dir r_dir_perms;
+allow hal_power_default sysfs_thermal:file rw_file_perms;
+allow hal_power_default sysfs_thermal:lnk_file r_file_perms;
+set_prop(hal_power_default, vendor_thermal_prop)

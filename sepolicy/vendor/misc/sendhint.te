@@ -1,0 +1,8 @@
+# sendhint vendor
+type sendhint_vendor, domain;
+
+type sendhint_vendor_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(sendhint_vendor)
+hal_client_domain(sendhint_vendor, hal_power);
+# sendhint writes directly to kmsg during the boot process
+allow sendhint_vendor kmsg_device:chr_file { getattr w_file_perms };
