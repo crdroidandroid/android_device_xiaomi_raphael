@@ -1487,27 +1487,9 @@ vendor/etc/init/vendor.qti.tftp.rc
 
 # Thermal
 vendor/bin/thermal-engine
-vendor/bin/thermal_factory
 vendor/etc/init/init_thermal-engine.rc
 -vendor/lib/libthermalclient.so
 -vendor/lib64/libthermalclient.so
-
-# Thermal (Xiaomi)
-vendor/bin/mi_thermald
-vendor/etc/init/init.mi_thermald.rc
-vendor/etc/thermal-arvr.conf
-vendor/etc/thermal-camera.conf
-vendor/etc/thermal-chg-only.conf
-vendor/etc/thermal-class0.conf
-vendor/etc/thermal-engine.conf
-vendor/etc/thermal-extreme.conf
-vendor/etc/thermal-map.conf
-vendor/etc/thermal-nolimits.conf
-vendor/etc/thermal-normal.conf
-vendor/etc/thermal-phone.conf
-vendor/etc/thermal-tgame.conf
-vendor/etc/thermal-youtobe.conf
-vendor/etc/thermald-devices.conf
 
 # Time Services
 -vendor/app/TimeService/TimeService.apk
