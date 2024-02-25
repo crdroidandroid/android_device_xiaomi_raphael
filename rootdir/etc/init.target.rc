@@ -27,8 +27,6 @@
 #
 #
 
-import /vendor/etc/init/init.mi_thermald.rc
-
 on early-init
     # Disable EAS
     write /proc/sys/kernel/sched_energy_aware 0
