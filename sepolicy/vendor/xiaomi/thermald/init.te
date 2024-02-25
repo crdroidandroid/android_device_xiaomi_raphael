@@ -1,0 +1,8 @@
+allow init vendor_configs_file:file mounton;
+
+# Allow init to set attribute to sysfs_kprofiles
+allow init sysfs_kprofiles:file { setattr };
+
+# Pixel Thermal
+allow vendor_init thermal_link_device:dir r_dir_perms;
+allow vendor_init thermal_link_device:lnk_file r_file_perms;
