@@ -457,7 +457,6 @@ PRODUCT_COPY_FILES += \
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service.lineage-libperfmgr \
-    vendor.qti.hardware.perf@2.2.vendor \
     libqti-perfd-client
 
 PRODUCT_COPY_FILES += \
