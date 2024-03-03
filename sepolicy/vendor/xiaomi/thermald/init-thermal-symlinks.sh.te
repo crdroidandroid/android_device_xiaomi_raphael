@@ -9,4 +9,6 @@ allow init-thermal-symlinks-sh thermal_link_device:lnk_file create_file_perms;
 allow init-thermal-symlinks-sh sysfs_thermal:dir r_dir_perms;
 allow init-thermal-symlinks-sh sysfs_thermal:file r_file_perms;
 allow init-thermal-symlinks-sh sysfs_thermal:lnk_file r_file_perms;
+allow init-thermal-symlinks-sh init:unix_stream_socket connectto;
+allow init-thermal-symlinks-sh property_socket:sock_file write;
 set_prop(init-thermal-symlinks-sh, vendor_thermal_prop)

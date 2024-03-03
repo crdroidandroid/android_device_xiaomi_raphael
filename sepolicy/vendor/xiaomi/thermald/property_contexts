@@ -1,2 +1,4 @@
-vendor.sys.thermal.                         u:object_r:vendor_thermal_normal_prop:s0
-vendor.thermal.                             u:object_r:vendor_thermal_prop:s0
+vendor.thermal                             u:object_r:vendor_thermal_prop:s0
+vendor.thermal.config                      u:object_r:vendor_thermal_prop:s0
+vendor.thermal.link_ready                  u:object_r:vendor_thermal_prop:s0
+vendor.sys.thermal                         u:object_r:vendor_thermal_normal_prop:s0

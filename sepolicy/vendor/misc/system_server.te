@@ -1,1 +1,2 @@
 allow system_server app_zygote:process { getpgid };
+allow system_server mediaserver_tmpfs:file write;
