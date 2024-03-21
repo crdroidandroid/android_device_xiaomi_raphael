@@ -69,6 +69,9 @@ on init
     chown system system /sys/module/qti_haptics/parameters/vmax_mv_override
     chmod 0664 /sys/module/qti_haptics/parameters/vmax_mv_override
 
+    # Migrate cpuctl tasks once to cpuctl system
+    copy_per_line /dev/cpuctl/tasks /dev/cpuctl/system/tasks
+
 on early-fs
     start vold
 
@@ -193,6 +196,9 @@ on property:sys.boot_completed=1
     write /dev/cpuctl/camera-daemon/cpu.uclamp.max max
     write /dev/cpuctl/camera-daemon/cpu.uclamp.min 50
     write /dev/cpuctl/camera-daemon/cpu.uclamp.latency_sensitive 1
+
+    # Migrate tasks again in case kernel threads are created during boot
+    copy_per_line /dev/cpuctl/tasks /dev/cpuctl/system/tasks
 
     # Runtime fs tuning
     write /sys/block/sda/queue/read_ahead_kb 128
