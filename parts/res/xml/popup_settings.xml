@@ -2,13 +2,13 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/popup_title">
-    <SwitchPreference
+    <SwitchPreferenceCompat
         android:defaultValue="true"
         android:key="popup_led_effect"
         android:summary="@string/popup_led_summary"
         android:title="@string/popup_led_title" />
 
-    <SwitchPreference
+    <SwitchPreferenceCompat
         android:key="always_on_camera_dialog"
         android:title="@string/always_on_camera_dialog_title"
         android:summaryOff="@string/always_on_camera_dialog_summary_off"
