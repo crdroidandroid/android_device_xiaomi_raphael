@@ -6,6 +6,7 @@
 
 TARGET_HAS_UDFPS := true
 TARGET_IS_LEGACY := true
+TARGET_HAS_FM := true
 
 # Inherit from sm8150-common
 $(call inherit-product, device/xiaomi/sm8150-common/msmnile.mk)
