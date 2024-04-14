@@ -283,6 +283,7 @@ Only the three quirks included above are recognized at this point:
              <Limit name="concurrent-instances" max="16" />
              <Limit name="performance-point-1280x720" value="30" />
              <Feature name="can-swap-width-height" required="true" />
+             <Attribute name="software-codec" />
         </MediaCodec>
     </Encoders>
     <Decoders>
