@@ -56,8 +56,6 @@ on init
     chown cameraserver cameraserver /dev/cpuset/camera-daemon/tasks
     chmod 0660 /dev/cpuset/camera-daemon/tasks
     mkdir /dev/stune/camera-daemon
-    mkdir /dev/cpuset/display
-    mkdir /dev/cpuset/game
 
     # Report max frequency to unity tasks
     write /proc/sys/kernel/sched_lib_name "com.miHoYo.,libunity.so,libfb.so"
@@ -127,6 +125,15 @@ on early-boot
     start vendor.sensors
 
 on boot
+# For cpusets initialize for Silver Only first and then Silver + Gold
+# Silver Only configuration cannot work with 0-7
+    write /dev/cpuset/audio-app/cpus 1-2
+    write /dev/cpuset/foreground/cpus 0-6
+    write /dev/cpuset/foreground/boost/cpus 0-6
+    write /dev/cpuset/background/cpus 0-1
+    write /dev/cpuset/system-background/cpus 0-2
+    write /dev/cpuset/top-app/cpus 0-7
+
     chown system system /sys/kernel/hbtp/display_pwr
     chown system system /sys/kernel/qvr_external_sensor/fd
     chown system system /sys/class/thermal/thermal_message/sconfig
@@ -153,23 +160,21 @@ on property:sys.boot_completed=1
 
     # Uclamp tunings
 
-    # dissable default for fix stuck at min freq
     setprop kernel.sched_util_clamp_min_rt_default 0
 
     #top-app
     write /dev/cpuctl/top-app/cpu.uclamp.max max
-    write /dev/cpuctl/top-app/cpu.uclamp.min 15
-    write /dev/cpuctl/top-app/cpu.uclamp.boosted 1
+    write /dev/cpuctl/top-app/cpu.uclamp.min 10
     write /dev/cpuctl/top-app/cpu.uclamp.latency_sensitive 1
 
     #foreground
-    write /dev/cpuctl/foreground/cpu.uclamp.max 70
-    write /dev/cpuctl/foreground/cpu.uclamp.min 15
-    write /dev/cpuctl/foreground/cpu.uclamp.latency_sensitive 1
+    write /dev/cpuctl/foreground/cpu.uclamp.max 80
+    write /dev/cpuctl/foreground/cpu.uclamp.min 20
+    write /dev/cpuctl/foreground/cpu.uclamp.latency_sensitive 0
 
     #background
-    write /dev/cpuctl/background/cpu.uclamp.max 80
-    write /dev/cpuctl/background/cpu.uclamp.min 10
+    write /dev/cpuctl/background/cpu.uclamp.max max
+    write /dev/cpuctl/background/cpu.uclamp.min 20
     write /dev/cpuctl/background/cpu.uclamp.latency_sensitive 0
 
     #system-background
@@ -183,22 +188,9 @@ on property:sys.boot_completed=1
     write /dev/cpuctl/nnapi-hal/cpu.uclamp.latency_sensitive 1
 
     #camera-daemon
-    write /dev/cpuctl/camera-daemon/uclamp.max max
-    write /dev/cpuctl/camera-daemon/uclamp.min 0
-    write /dev/cpuctl/camera-daemon/uclamp.boosted 1
-    write /dev/cpuctl/camera-daemon/uclamp.latency_sensitive 1
-
-    #display
-    write /dev/cpuctl/display/uclamp.max 100
-    write /dev/cpuctl/display/uclamp.min 20
-    write /dev/cpuctl/display/uclamp.boosted 0
-    write /dev/cpuctl/display/uclamp.latency_sensitive 1
-
-    #game
-    write /dev/cpuctl/game/uclamp.max max
-    write /dev/cpuctl/game/uclamp.min 50
-    write /dev/cpuctl/game/uclamp.boosted 1
-    write /dev/cpuctl/game/uclamp.latency_sensitive 1
+    write /dev/cpuctl/camera-daemon/cpu.uclamp.max max
+    write /dev/cpuctl/camera-daemon/cpu.uclamp.min 50
+    write /dev/cpuctl/camera-daemon/cpu.uclamp.latency_sensitive 1
 
     # Runtime fs tuning
     write /sys/block/sda/queue/read_ahead_kb 128
@@ -211,27 +203,6 @@ on property:sys.boot_completed=1
     write /dev/blkio/background/blkio.weight 200
     write /dev/blkio/blkio.group_idle 2000
     write /dev/blkio/background/blkio.group_idle 0
-
-    # Setup cpu.shares to throttle background groups (bg ~ 5% sysbg ~ 10%)
-    write /dev/cpuctl/background/cpu.shares 1024
-    write /dev/cpuctl/system-background/cpu.shares 2048
-    write /dev/cpuctl/system/cpu.shares 20480
-    # We only have system and background groups holding tasks and the groups below are empty
-    write /dev/cpuctl/camera-daemon/cpu.shares 20480
-    write /dev/cpuctl/foreground/cpu.shares 20480
-    write /dev/cpuctl/nnapi-hal/cpu.shares 20480
-    write /dev/cpuctl/rt/cpu.shares 20480
-    write /dev/cpuctl/top-app/cpu.shares 20480
-
-    # First initialize silver only cpus
-    write /dev/cpuset/audio-app/cpus 1-2
-    write /dev/cpuset/background/cpus 0-1
-    write /dev/cpuset/system-background/cpus 0-3
-
-    # And then initialize silver + gold
-    write /dev/cpuset/foreground/cpus 0-6
-    write /dev/cpuset/foreground/boost/cpus 0-6
-    write /dev/cpuset/top-app/cpus 0-7
 
     # palm_sensor
     chown system system /sys/class/touch/touch_dev/palm_sensor
