@@ -224,6 +224,7 @@ VENDOR_SECURITY_PATCH := 2023-02-01
 # Sepolicy
 include device/qcom/sepolicy_vndr/SEPolicy.mk
 include device/xiaomi/raphael/sepolicy/sepolicy.mk
+include device/lineage/sepolicy/libperfmgr/sepolicy.mk
 
 # Vendor init
 TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_raphael

@@ -1,3 +1,9 @@
 # Allow hal_power_default to write to dt2w nodes
 r_dir_file(hal_power_default, input_device)
 allow hal_power_default input_device:chr_file rw_file_perms;
+
+allow hal_power_default sysfs_msm_subsys:dir search;
+allow hal_power_default sysfs_msm_subsys:file rw_file_perms;
+allow hal_power_default sysfs_touchpanel:dir search;
+allow hal_power_default sysfs_touchpanel:file rw_file_perms;
+allow hal_power_default vendor_latency_device:chr_file rw_file_perms;
