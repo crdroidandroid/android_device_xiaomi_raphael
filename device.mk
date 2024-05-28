@@ -36,6 +36,7 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
+    bootable/deprecated-ota \
     hardware/google/interfaces \
     hardware/google/pixel \
     hardware/xiaomi \
