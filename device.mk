@@ -620,6 +620,7 @@ PRODUCT_COPY_FILES += \
 
 # XiaomiParts
 PRODUCT_PACKAGES += \
+    XiaomiDolby \
     XiaomiParts
 
 # Adaptive Suspend
