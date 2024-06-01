@@ -1,0 +1,20 @@
+set_prop(vendor_init, audio_prop)
+set_prop(vendor_init, vendor_alarm_boot_prop)
+set_prop(vendor_init, vendor_bluetooth_prop)
+set_prop(vendor_init, vendor_camera_prop)
+set_prop(vendor_init, vendor_video_prop)
+
+allow vendor_init {
+  proc_dirty
+  proc
+}:file w_file_perms;
+
+allow vendor_init block_device:lnk_file setattr;
+
+# Allow vendor_init to set IPA device node permissions
+allow vendor_init vendor_ipa_dev:file create_file_perms;
+
+allow vendor_init cgroup:file getattr;
+allow vendor_init future_pm_prop:property_service set;
+allow vendor_init vendor_cnd_prop:property_service set;
+allow vendor_init vendor_ims_prop:property_service set;

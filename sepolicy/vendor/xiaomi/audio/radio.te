@@ -1,2 +1,0 @@
-# Allow radio to read vendor audio prop
-get_prop(radio, vendor_audio_prop)

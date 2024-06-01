@@ -1,0 +1,2 @@
+# Allow the radio service to get audio props
+get_prop(radio, vendor_audio_prop)

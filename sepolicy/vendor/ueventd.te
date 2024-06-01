@@ -1,0 +1,2 @@
+# Allow ueventd to load wlan firmware from /mnt/vendor/persist/wlan/
+r_dir_file(ueventd, vendor_persist_wcnss_service_file)

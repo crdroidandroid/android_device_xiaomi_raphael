@@ -1,2 +1,0 @@
-# Camera - Miui
-type hal_camerapostproc_xiaomi_hwservice, hwservice_manager_type;

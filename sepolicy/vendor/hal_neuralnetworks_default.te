@@ -1,0 +1,5 @@
+# Allow access to ADSP
+r_dir_file(vendor_hal_neuralnetworks_default, vendor_public_adsprpcd_file)
+
+# Allow reading ADSP properties
+get_prop(vendor_hal_neuralnetworks_default, vendor_adsprpc_prop)

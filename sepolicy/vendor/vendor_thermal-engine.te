@@ -1,0 +1,12 @@
+# Allow reading thermal data files
+allow vendor_thermal-engine vendor_thermal_data_file:dir r_dir_perms;
+
+# Allow read/write to devfreq nodes
+allow vendor_thermal-engine vendor_sysfs_devfreq:dir r_dir_perms;
+allow vendor_thermal-engine vendor_sysfs_devfreq:file rw_file_perms;
+
+# Rule for vendor_thermal-engine to access init process
+unix_socket_connect(vendor_thermal-engine, property, init);
+
+# Allow setting thermal properties
+set_prop(vendor_thermal-engine, vendor_thermal_normal_prop)

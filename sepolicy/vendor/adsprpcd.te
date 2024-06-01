@@ -1,0 +1,4 @@
+r_dir_file(vendor_adsprpcd, vendor_public_adsprpcd_file)
+
+# Allow adsprpcd to access GPU sysfs nodes
+r_dir_file(vendor_adsprpcd, vendor_sysfs_graphics)

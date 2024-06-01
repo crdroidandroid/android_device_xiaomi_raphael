@@ -1,6 +1,0 @@
-# Livedisplay
-type vendor_sysfs_hbm, sysfs_type, fs_type;
-
-type sysfs_msm_subsys, fs_type, sysfs_type;
-
-type sysfs_touchpanel, fs_type, sysfs_type;

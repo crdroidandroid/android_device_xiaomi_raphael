@@ -1,0 +1,11 @@
+# Allow SoterService to access the vendor HAL
+hal_client_domain(platform_app, vendor_hal_soter)
+binder_call(platform_app, vendor_hal_soter_qti)
+
+# Dolby
+allow platform_app hal_dms_hwservice:hwservice_manager find;
+binder_call(platform_app, hal_dms_default)
+get_prop(platform_app, audio_config_prop)
+
+allow platform_app vendor_audio_prop:file { getattr open };
+allow platform_app vendor_display_prop:file { getattr map open };

@@ -1,0 +1,19 @@
+allow init same_process_hal_file:file execute;
+
+allow init adsprpcd_file:file mounton;
+
+allow init fingerprint_device:chr_file ioctl;
+
+allow init system_server:binder call;
+
+allow init fingerprint_device:chr_file { open read write };
+
+allow init hidl_base_hwservice:hwservice_manager add;
+
+allow init hwservicemanager:binder { call transfer };
+
+allow init ion_device:chr_file { ioctl open read };
+
+allow init self:netlink_socket { bind create read write };
+
+allow init vendor_sysfs_graphics:file { open write };

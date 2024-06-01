@@ -1,4 +1,0 @@
-allow init proc_last_kmsg:file {
-  r_file_perms
-  setattr
-};

@@ -1,3 +1,0 @@
-attribute hal_mlipay;
-attribute hal_mlipay_server;
-attribute hal_mlipay_client;

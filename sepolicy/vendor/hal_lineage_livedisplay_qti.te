@@ -1,0 +1,1 @@
+allow hal_lineage_livedisplay_qti vendor_sysfs_graphics:file { getattr open write };

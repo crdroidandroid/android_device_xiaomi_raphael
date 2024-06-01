@@ -1,0 +1,34 @@
+type devicesettings_app, domain;
+typeattribute devicesettings_app mlstrustedsubject;
+
+app_domain(devicesettings_app)
+
+# Access standard system services
+allow devicesettings_app app_api_service:service_manager find;
+allow devicesettings_app audioserver_service:service_manager find;
+allow devicesettings_app cameraserver_service:service_manager find;
+allow devicesettings_app drmserver_service:service_manager find;
+allow devicesettings_app mediaextractor_service:service_manager find;
+allow devicesettings_app mediametrics_service:service_manager find;
+allow devicesettings_app mediaserver_service:service_manager find;
+
+# Allow reading and writing shared prefs
+allow devicesettings_app system_app_data_file:dir create_dir_perms;
+allow devicesettings_app system_app_data_file:{ file lnk_file } create_file_perms;
+
+# Allow binder communication with gpuservice
+binder_call(devicesettings_app, gpuservice)
+
+# Allow XiaomiParts to write to sysfs_leds
+allow devicesettings_app sysfs_leds:file w_file_perms;
+
+# Allow XiaomiParts to write to sysfs_thermal
+allow devicesettings_app sysfs_thermal:file w_file_perms;
+
+# Allow XiaomiParts to write to sysfs_vibrator
+allow devicesettings_app sysfs_vibrator:file { getattr open write };
+
+# Allow XiaomiParts to communicate with the Xiaomi motor HAL
+hal_client_domain(devicesettings_app, hal_motor)
+binder_call(devicesettings_app, hal_motor)
+binder_call(hal_motor, devicesettings_app)

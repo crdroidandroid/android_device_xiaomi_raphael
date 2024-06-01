@@ -1,0 +1,114 @@
+# Audio
+/dev/socket/audio_hw_socket                                                                         u:object_r:vendor_audio_socket:s0
+
+# AVB
+/avb(/.*)?                                                                                          u:object_r:avb_file:s0
+
+# Bluetooth
+/vendor/bin/init\.mi\.btmac\.sh                                                                     u:object_r:vendor_qti_init_shell_exec:s0
+
+# Block devices
+/dev/block/platform/soc/1d84000.ufshc/by-name/cust                                                  u:object_r:system_block_device:s0
+
+# Camera
+/mnt/vendor/persist/camera(/.*)?                                                                    u:object_r:vendor_camera_persist_file:s0
+/vendor/bin/remosaic_daemon                                                                         u:object_r:vendor_remosaic_daemon_exec:s0
+
+# Camera motor
+/dev/drv8846_dev                                                                                    u:object_r:motor_device:s0
+/dev/ti-drv8846                                                                                     u:object_r:motor_device:s0
+/vendor/bin/hw/vendor\.xiaomi\.hardware\.motor@1.0-service                                          u:object_r:hal_motor_default_exec:s0
+
+# Charger
+/vendor/bin/batterysecret                                                                           u:object_r:vendor_batterysecret_exec:s0
+/system/bin/chargeonlymode                                                                          u:object_r:charger_exec:s0
+
+# CSC DC Dimming
+/sys/devices/platform/soc/soc:qcom,dsi-display-primary/dc_dim                                       u:object_r:vendor_sysfs_graphics:s0
+
+# Dolby
+/data/vendor/dolby(/.*)?                                                                            u:object_r:vendor_data_file:s0
+/(vendor|system/vendor)/bin/hw/vendor\.dolby\.hardware\.dms@2\.0-service                            u:object_r:hal_dms_default_exec:s0
+
+# Double Tap Sensor
+/sys/devices/platform/goodix_ts.0/double_tap_pressed                                                u:object_r:vendor_sysfs_sensors:s0
+/sys/devices/platform/goodix_ts.0/double_tap_enabled                                                u:object_r:vendor_sysfs_sensors:s0
+
+# Fingerprint
+/vendor/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.3-service\.xiaomi                      u:object_r:hal_fingerprint_default_exec:s0
+
+# Fingerprint - devices
+/dev/goodix_fp                                                                                      u:object_r:fingerprint_device:s0
+
+# Fingerprint - data
+/data/gf_data(/.*)?                                                                                 u:object_r:fingerprint_data_file:s0
+/data/vendor/goodix(/.*)?                                                                           u:object_r:fingerprint_vendor_data_file:s0
+/data/vendor/fpc(/.*)?                                                                              u:object_r:fingerprint_vendor_data_file:s0
+/data/vendor/fpdump(/.*)?                                                                           u:object_r:fingerprint_vendor_data_file:s0
+/mnt/vendor/persist/fpc(/.*)?                                                                       u:object_r:vendor_persist_fingerprint_file:s0
+/mnt/vendor/persist/goodix(/.*)?                                                                    u:object_r:vendor_persist_fingerprint_file:s0
+/sys/devices/virtual/touch/tp_dev/fp_state                                                          u:object_r:vendor_sysfs_sensors:s0
+
+# Haptic
+/sys/module/qti_haptics/parameters/vmax_mv_override                                                 u:object_r:sysfs_vibrator:s0
+
+# HBM
+/sys/devices/platform/soc/soc:qcom,dsi-display-primary/hbm                                          u:object_r:vendor_sysfs_graphics:s0
+
+# Hexagon DSP-side executable needed for Halide operation
+# This is labeled as vendor_public_adsprpcd_file as it needs to be read by apps
+# (e.g. Google Camera App)
+/mnt/vendor/dsp/fastrpc_shell_3                                                                     u:object_r:vendor_public_adsprpcd_file:s0
+
+# IR
+/vendor/bin/hw/android\.hardware\.ir@1\.0-service\.xiaomi                                           u:object_r:hal_ir_default_exec:s0
+
+# IR devices
+/dev/ir_spi                                                                                         u:object_r:lirc_device:s0
+/dev/lirc[0-9]+                                                                                     u:object_r:lirc_device:s0
+/dev/spidev[0-9]+\.1                                                                                u:object_r:lirc_device:s0
+
+# LED
+/sys/devices/platform/soc/[a-z0-9]+.qcom,spmi/spmi-[0-9]+/spmi[0-9]+-[0-9]+/[a-z0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]+:qcom,leds@[a-z0-9]+/leds(/.*)?    u:object_r:sysfs_leds:s0
+/sys/devices/platform/soc/[a-z0-9]+.i2c/i2c-[0-9]+/[0-9]+-[0-9]+/leds(/.*)?                         u:object_r:sysfs_leds:s0
+
+# Lights
+/vendor/bin/hw/android\.hardware\.light-service\.xiaomi                                             u:object_r:hal_light_default_exec:s0
+
+# Livedisplay
+/vendor/bin/hw/vendor\.lineage\.livedisplay@2\.1-service\.raphael                                   u:object_r:hal_lineage_livedisplay_qti_exec:s0
+
+# Mlipay
+/vendor/bin/mlipayd@1\.1                                                                            u:object_r:hal_mlipay_default_exec:s0
+
+# NFC
+/vendor/bin/hw/android\.hardware\.nfc_snxxx@1\.2-service                                            u:object_r:hal_nfc_default_exec:s0
+
+# Persist subsystem
+/mnt/vendor/persist/subsys(/.*)?                                                                    u:object_r:vendor_persist_subsys_file:s0
+
+# Sensors
+/dev/akm09970                                                                                       u:object_r:hall_device:s0
+
+# SSR
+/sys/devices(/platform)?/soc/[a-z0-9\.:]+,[a-z0-9\-\_]+/subsys[0-9]+/name                           u:object_r:vendor_sysfs_ssr:s0
+
+# Thermal
+/vendor/bin/mi_thermald                                                                             u:object_r:vendor_mi_thermald_exec:s0
+/data/vendor/thermal(/.*)?                                                                          u:object_r:vendor_thermal_data_file:s0
+
+# UDFPS Sensor
+/sys/devices/platform/goodix_ts.0/udfps_pressed                                                     u:object_r:vendor_sysfs_sensors:s0
+/sys/devices/platform/goodix_ts.0/udfps_enabled                                                     u:object_r:vendor_sysfs_sensors:s0
+
+# Ultrasound devices
+/dev/elliptic[0-9]+                                                                                 u:object_r:ultrasound_device:s0
+/dev/mius(.*)?                                                                                      u:object_r:ultrasound_device:s0
+
+# Wakeup source stats
+/sys/devices/virtual/input/input[0-9]+/wakeup[0-9]+(/.*)?                                           u:object_r:sysfs_wakeup:s0
+
+# Wi-Fi
+/data/vendor/mac_addr(/.*)?                                                                         u:object_r:vendor_wifi_vendor_data_file:s0
+/mnt/vendor/persist/wlan_mac\.bin                                                                   u:object_r:vendor_persist_wcnss_service_file:s0
+/vendor/bin/nv_mac                                                                                  u:object_r:vendor_wcnss_service_exec:s0

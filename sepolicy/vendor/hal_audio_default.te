@@ -1,0 +1,14 @@
+# For interfacing with PowerHAL
+hal_client_domain(hal_audio_default, hal_power)
+
+# Allow hal_audio_default to read vendor_persist_audio_file
+r_dir_file(hal_audio_default, vendor_persist_audio_file)
+
+binder_call(hal_audio_default, system_suspend_server)
+binder_call(hal_audio_default, hal_dms_default)
+
+set_prop(hal_audio_default, vendor_audio_prop)
+
+allow hal_audio_default vendor_audio_socket:sock_file rw_file_perms;
+allow hal_audio_default system_suspend_hwservice:hwservice_manager find;
+allow hal_audio_default hal_dms_hwservice:hwservice_manager find;

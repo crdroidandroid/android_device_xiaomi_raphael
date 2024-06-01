@@ -1,0 +1,61 @@
+# Audio
+audio.offload.                                                                                      u:object_r:vendor_audio_prop:s0
+audio.soundtrigger.debug.urser_id                                                                   u:object_r:vendor_audio_prop:s0
+audio_hal.in_period_size                                                                            u:object_r:vendor_audio_prop:s0
+
+# Bluetooth
+persist.vendor.bt.                                                                                  u:object_r:vendor_bluetooth_prop:s0
+persist.vendor.btstack.                                                                             u:object_r:vendor_bluetooth_prop:s0
+
+# Camera
+camera.                                                                                             u:object_r:vendor_camera_prop:s0
+persist.camera.                                                                                     u:object_r:vendor_camera_prop:s0
+persist.vendor.camera                                                                               u:object_r:vendor_camera_prop:s0
+ro.camera.res.fmq.size                                                                              u:object_r:vendor_camera_prop:s0
+ro.camera.req.fmq.size                                                                              u:object_r:vendor_camera_prop:s0
+ro.vendor.camera.                                                                                   u:object_r:vendor_camera_prop:s0
+vendor.camera.boot_complete                                                                         u:object_r:vendor_camera_prop:s0
+vendor.camera.sensor.                                                                               u:object_r:vendor_camera_prop:s0
+
+# Fingerprint
+gf.debug.                                                                                           u:object_r:vendor_fingerprint_prop:s0
+persist.sys.fp.                                                                                     u:object_r:vendor_fingerprint_prop:s0
+persist.vendor.fpc.                                                                                 u:object_r:vendor_fingerprint_prop:s0
+persist.vendor.sys.fp.                                                                              u:object_r:vendor_fingerprint_prop:s0
+ro.boot.fpsensor                                                                                    u:object_r:vendor_fingerprint_prop:s0
+ro.hardware.fp                                                                                      u:object_r:vendor_fingerprint_prop:s0
+sys.panel.display                                                                                   u:object_r:vendor_fingerprint_prop:s0
+sys.panel.touch_vendor                                                                              u:object_r:vendor_fingerprint_prop:s0
+vendor.fps_hal.                                                                                     u:object_r:vendor_fingerprint_prop:s0
+
+# Global
+ro.boot.factorybuild                                                                                u:object_r:vendor_public_vendor_default_prop:s0
+ro.boot.hwversion                                                                                   u:object_r:vendor_public_vendor_default_prop:s0
+
+# IMEI
+persist.radio.imei                                                                                  u:object_r:vendor_deviceid_prop:s0
+persist.radio.meid                                                                                  u:object_r:vendor_deviceid_prop:s0
+ro.ril.miui.imei                                                                                    u:object_r:vendor_deviceid_prop:s0
+ro.ril.oem.imei                                                                                     u:object_r:vendor_deviceid_prop:s0
+ro.ril.oem.meid                                                                                     u:object_r:vendor_deviceid_prop:s0
+ro.vendor.oem.imei                                                                                  u:object_r:vendor_deviceid_prop:s0
+ro.vendor.oem.psno                                                                                  u:object_r:vendor_deviceid_prop:s0
+ro.vendor.oem.sno                                                                                   u:object_r:vendor_deviceid_prop:s0
+
+# Mlipay
+persist.vendor.sys.pay                                                                              u:object_r:vendor_tee_listener_prop:s0
+
+# Motor
+persist.vendor.motor.                                                                               u:object_r:vendor_motor_prop:s0
+
+# RIL
+ro.vendor.ril                                                                                       u:object_r:vendor_public_vendor_default_prop:s0
+
+# Sensor
+invn.hal.                                                                                           u:object_r:vendor_sensors_prop:s0
+persist.sensor.                                                                                     u:object_r:vendor_sensors_prop:s0
+
+# Thermal
+persist.sys.thermal.config                                                                          u:object_r:vendor_thermal_normal_prop:s0
+sys.thermal.                                                                                        u:object_r:vendor_thermal_normal_prop:s0
+vendor.sys.thermal.                                                                                 u:object_r:vendor_thermal_normal_prop:s0

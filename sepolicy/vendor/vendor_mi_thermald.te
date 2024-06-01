@@ -1,0 +1,40 @@
+type vendor_mi_thermald, domain;
+type vendor_mi_thermald_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(vendor_mi_thermald)
+
+allow vendor_mi_thermald self:capability { chown fowner fsetid };
+
+# Allow vendor_mi_thermald to read vendor_thermal_data_file
+allow vendor_mi_thermald vendor_thermal_data_file:dir rw_dir_perms;
+allow vendor_mi_thermald vendor_thermal_data_file:file create_file_perms;
+
+# Allow read/write to sysfs_battery_supply
+allow vendor_mi_thermald sysfs_battery_supply:dir r_dir_perms;
+allow vendor_mi_thermald sysfs_battery_supply:file rw_file_perms;
+
+# Allow read/write to sysfs_devices_system_cpu
+allow vendor_mi_thermald sysfs_devices_system_cpu:dir r_dir_perms;
+allow vendor_mi_thermald sysfs_devices_system_cpu:file rw_file_perms;
+
+# Allow read/write to vendor_sysfs_graphics
+allow vendor_mi_thermald vendor_sysfs_graphics:dir r_dir_perms;
+allow vendor_mi_thermald vendor_sysfs_graphics:file rw_file_perms;
+
+# Allow read/write to vendor_sysfs_kgsl
+allow vendor_mi_thermald vendor_sysfs_kgsl:dir r_dir_perms;
+allow vendor_mi_thermald vendor_sysfs_kgsl:file rw_file_perms;
+
+# Allow read/write to sysfs_leds
+allow vendor_mi_thermald sysfs_leds:dir r_dir_perms;
+allow vendor_mi_thermald sysfs_leds:file rw_file_perms;
+
+# Allow read/write to sysfs_thermal
+allow vendor_mi_thermald sysfs_thermal:dir r_dir_perms;
+allow vendor_mi_thermald sysfs_thermal:file rw_file_perms;
+
+# Allow setting thermal properties
+set_prop(vendor_mi_thermald, vendor_thermal_normal_prop)
+
+# mi_thermald wants to read /sys/class, needless to say we can't relabel that
+allow vendor_mi_thermald sysfs:dir r_dir_perms;

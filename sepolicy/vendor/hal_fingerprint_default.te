@@ -1,0 +1,51 @@
+typeattribute hal_fingerprint_default data_between_core_and_vendor_violators;
+
+# Allow the fingerprint HAL to access the fingerprint data files
+allow hal_fingerprint_default fingerprint_data_file:dir rw_dir_perms;
+allow hal_fingerprint_default fingerprint_data_file:file create_file_perms;
+
+# Allow the fingerprint HAL to access the fingerprint persist files
+allow hal_fingerprint_default vendor_persist_fingerprint_file:dir rw_dir_perms;
+allow hal_fingerprint_default vendor_persist_fingerprint_file:file create_file_perms;
+
+# Allow the fingerprint HAL to use fingerprint devices
+allow hal_fingerprint_default fingerprint_device:chr_file rw_file_perms;
+
+# Allow the fingerprint HAL to use the input devices
+allow hal_fingerprint_default input_device:dir r_dir_perms;
+allow hal_fingerprint_default input_device:chr_file rw_file_perms;
+
+# Allow the fingerprint HAL to use the TEE devices
+allow hal_fingerprint_default tee_device:chr_file rw_file_perms;
+
+# Allow the fingerprint HAL to use the UHID devices
+allow hal_fingerprint_default uhid_device:chr_file rw_file_perms;
+
+# Allow the fingerprint HAL to access the fingerprint sysfs files
+allow hal_fingerprint_default vendor_sysfs_fingerprint:dir r_dir_perms;
+allow hal_fingerprint_default vendor_sysfs_fingerprint:file rw_file_perms;
+
+# Allow the fingerprint HAL to create sockets
+allow hal_fingerprint_default self:netlink_socket create_socket_perms_no_ioctl;
+
+# Allow the fingerprint HAL to access the graphics sysfs files
+allow hal_fingerprint_default vendor_sysfs_graphics:dir r_dir_perms;
+allow hal_fingerprint_default vendor_sysfs_graphics:file rw_file_perms;
+
+# Allow the fingerprint HAL to access the firmware files
+r_dir_file(hal_fingerprint_default, firmware_file)
+
+# Allow the fingerprint HAL to set fingerprint properties
+set_prop(hal_fingerprint_default, vendor_fingerprint_prop)
+
+# Allow the fingerprint HAL to access the SPSS sysfs files
+allow hal_fingerprint_default vendor_sysfs_spss:dir r_dir_perms;
+allow hal_fingerprint_default vendor_sysfs_spss:file r_file_perms;
+
+# Allow the fingerprint HAL to access the touchpanel sysfs files
+allow hal_fingerprint_default sysfs_touchpanel:dir r_dir_perms;
+allow hal_fingerprint_default sysfs_touchpanel:file rw_file_perms;
+
+# ADSP access
+allow hal_fingerprint_default vendor_xdsp_device:chr_file rw_file_perms;
+get_prop(hal_fingerprint_default, vendor_adsprpc_prop)

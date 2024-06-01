@@ -1,0 +1,9 @@
+type vendor_remosaic_daemon, domain;
+type vendor_remosaic_daemon_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(vendor_remosaic_daemon)
+
+vndbinder_use(vendor_remosaic_daemon)
+
+# Allow the remosaic daemon to register itself on binder
+allow vendor_remosaic_daemon vendor_remosaic_daemon_service:service_manager add;

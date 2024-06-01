@@ -1,1 +1,0 @@
-allow ueventd metadata_file:dir search;

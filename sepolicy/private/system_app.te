@@ -1,0 +1,2 @@
+# Allow IFAAService access to Mlipay HAL
+hal_client_domain(system_app, hal_mlipay)

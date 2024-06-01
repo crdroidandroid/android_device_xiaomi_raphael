@@ -1,0 +1,33 @@
+# For interfacing with PowerHAL
+hal_client_domain(hal_camera_default, hal_power)
+
+# Allow hal_camera_default to read to vendor_sysfs_kgsl
+r_dir_file(hal_camera_default, vendor_sysfs_kgsl)
+
+# Allow hal_camera_default to read to /mnt/vendor/persist/camera
+r_dir_file(hal_camera_default, vendor_camera_persist_file)
+
+# Allow hal_camera_default to read to /mnt/vendor/persist/sensors
+r_dir_file(hal_camera_default, vendor_persist_sensors_file)
+
+# Allow hal_camera_default to access Xiaomi remosaic daemon
+allow hal_camera_default vendor_remosaic_daemon_service:service_manager find;
+
+# Allow setting camera properties
+set_prop(hal_camera_default, vendor_camera_prop)
+
+# Allow access to non-labeled sockets
+allow hal_camera_default socket_device:sock_file write;
+
+# Allow the camera HAL to access CDSP
+allow hal_camera_default vendor_public_adsprpcd_file:file r_file_perms;
+allow hal_camera_default vendor_xdsp_device:chr_file r_file_perms;
+
+# Allow access to /proc/meminfo
+allow hal_camera_default proc_meminfo:file r_file_perms;
+
+# Allow access to /proc/stat
+allow hal_camera_default proc_stat:file r_file_perms;
+
+# Camera HAL wants to search on /mnt/vendor
+allow hal_camera_default mnt_vendor_file:dir search;

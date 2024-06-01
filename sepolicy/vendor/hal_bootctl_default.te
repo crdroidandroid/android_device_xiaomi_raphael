@@ -1,0 +1,2 @@
+# Edit the attributes stored in the GPT.
+allow hal_bootctl_default vendor_uefi_block_device:blk_file getattr;

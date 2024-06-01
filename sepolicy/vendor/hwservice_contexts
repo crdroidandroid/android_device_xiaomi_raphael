@@ -1,0 +1,16 @@
+# Dolby
+vendor.dolby.hardware.dms::IDms                                                                     u:object_r:hal_dms_hwservice:s0
+
+# Fingerprint
+com.fingerprints.extension::IFingerprintNavigation                                                  u:object_r:hal_fingerprint_hwservice:s0
+com.fingerprints.extension::IFingerprintSensorTest                                                  u:object_r:hal_fingerprint_hwservice:s0
+vendor.goodix.hardware.biometrics.fingerprint::IGoodixFingerprintDaemon                             u:object_r:hal_fingerprint_hwservice:s0
+
+# Mlipay
+vendor.xiaomi.hardware.mlipay::IMlipayService                                                       u:object_r:hal_mlipay_hwservice:s0
+
+# Motor
+vendor.xiaomi.hardware.motor::IMotor                                                                u:object_r:hal_motor_hwservice:s0
+
+# NFC
+vendor.nxp.nxpnfc::INxpNfc                                                                          u:object_r:hal_nfc_hwservice:s0

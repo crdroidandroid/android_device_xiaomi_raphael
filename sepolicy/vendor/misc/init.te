@@ -1,7 +1,0 @@
-# Allow init to read and write to vendor_sysfs_graphics
-allow init vendor_sysfs_graphics:dir search;
-allow init vendor_sysfs_graphics:file rw_file_perms;
-
-# Allow init to read and write to sysfs_vibrator
-allow init sysfs_vibrator:dir search;
-allow init sysfs_vibrator:file rw_file_perms;
