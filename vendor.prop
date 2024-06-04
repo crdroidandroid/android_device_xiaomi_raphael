@@ -1,0 +1,3 @@
+# Camera
+persist.vendor.camera.logInfoMask=false
+persist.vendor.camera.perflock.enable=0

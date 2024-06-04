@@ -24,5 +24,10 @@ TARGET_RECOVERY_DEVICE_MODULES := init_xiaomi_raphael
 # Kernel
 TARGET_KERNEL_CONFIG += vendor/xiaomi/raphael.config
 
+# Sepolicy
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
+SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/public
+BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
+
 # Inherit from the proprietary version
 include vendor/xiaomi/raphael/BoardConfigVendor.mk
