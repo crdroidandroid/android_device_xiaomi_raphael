@@ -89,7 +89,6 @@ persist.radio.multisim.config=dsds
 persist.radio.NO_STAPA=1
 persist.radio.VT_HYBRID_ENABLE=1
 ril.subscription.types=NV,RUIM
-rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
 ro.telephony.default_cdma_sub=0
 ro.telephony.default_network=22,22
 telephony.lteOnCdmaDevice=1
