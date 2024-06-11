@@ -64,3 +64,14 @@
 /vendor/lib(64)?/libmialgo_video_colourkeeping\.so                                  u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libmialgo_video_seg\.so                                            u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libvideoBokeh\.so                                                  u:object_r:same_process_hal_file:s0
+
+# Udfps
+/sys/devices/virtual/touch/tp_dev/fp_state                                          u:object_r:vendor_sysfs_sensors:s0
+
+# UDFPS Sensor
+/sys/devices/platform/goodix_ts.0/udfps_pressed                                     u:object_r:vendor_sysfs_sensors:s0
+/sys/devices/platform/goodix_ts.0/udfps_enabled                                     u:object_r:vendor_sysfs_sensors:s0
+
+# Double Tap Sensor
+/sys/devices/platform/goodix_ts.0/double_tap_pressed                                u:object_r:vendor_sysfs_sensors:s0
+/sys/devices/platform/goodix_ts.0/double_tap_enabled                                u:object_r:vendor_sysfs_sensors:s0
