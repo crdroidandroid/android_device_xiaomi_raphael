@@ -7,3 +7,45 @@ hidl_package_root {
     name: "vendor.goodix",
     path: "device/xiaomi/raphael/interfaces",
 }
+
+soong_config_module_type {
+    name: "xiaomi_msmnile_install_symlink",
+    module_type: "install_symlink",
+    config_namespace: "XIAOMI_MSMNILE_ROOTDIR",
+    variables: ["PARTITION_SCHEME"],
+    properties: ["symlink_target"],
+}
+
+soong_config_string_variable {
+    name: "PARTITION_SCHEME",
+    values: ["dynamic", "legacy", "vab"],
+}
+
+install_symlink {
+    name: "firmware_WCNSS_qcom_cfg.ini_symlink",
+    vendor: true,
+    installed_location: "firmware/wlan/qca_cld/WCNSS_qcom_cfg.ini",
+    symlink_target: "/vendor/etc/wifi/WCNSS_qcom_cfg.ini",
+}
+
+xiaomi_msmnile_install_symlink {
+    name: "firmware_wlan_mac.bin_symlink",
+    vendor: true,
+    installed_location: "firmware/wlan/qca_cld/wlan_mac.bin",
+    soong_config_variables: {
+        PARTITION_SCHEME: {
+            dynamic: {
+                symlink_target: "/mnt/vendor/persist/wlan_mac.bin",
+            },
+            legacy: {
+                symlink_target: "/mnt/vendor/persist/wlan_mac.bin",
+            },
+            vab: {
+                symlink_target: "/mnt/vendor/persist/wlan/wlan_mac.bin",
+            },
+            conditions_default: {
+                symlink_target: "/mnt/vendor/persist/wlan_mac.bin",
+            },
+        },
+    },
+}
