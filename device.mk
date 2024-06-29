@@ -146,6 +146,7 @@ PRODUCT_PACKAGES += \
     libcamera2ndk_vendor \
     libdng_sdk.vendor \
     libgui_vendor \
+    libpiex_shim \
     libshim_megvii \
     libstdc++_vendor \
     libwatermark_shim \
