@@ -1,4 +1,4 @@
-<compatibility-matrix version="2.0" type="framework">
+<compatibility-matrix version="2.0" type="framework" target-level="5">
     <hal format="hidl" optional="true">
         <name>android.hardware.audio.effect</name>
         <version>7.0</version>
@@ -30,6 +30,14 @@
             <instance>default</instance>
         </interface>
     </hal>
+	<hal format="hidl" optional="true">
+   	 <name>android.hardware.bluetooth</name>
+   	 <version>1.0</version>
+  	  <interface>
+  	      <name>IBluetoothHci</name>
+	        <instance>default</instance>
+	    </interface>
+	</hal>
     <hal format="hidl" optional="true">
         <name>android.hardware.bluetooth.audio</name>
         <version>2.0-1</version>
@@ -40,12 +48,28 @@
     </hal>
     <hal format="aidl" optional="true">
         <name>android.hardware.bluetooth.audio</name>
-        <version>3</version>
+        <version>4</version>
         <interface>
             <name>IBluetoothAudioProviderFactory</name>
             <instance>default</instance>
         </interface>
     </hal>
+	<hal format="hidl" optional="true">
+	    <name>android.hardware.camera.provider</name>
+	    <version>2.0-4</version>
+	    <interface>
+	        <name>ICameraProvider</name>
+	        <instance>legacy/0</instance>
+	    </interface>
+	</hal>
+	<hal format="hidl" optional="true">
+	    <name>android.hardware.gatekeeper</name>
+	    <version>1.0</version>
+	    <interface>
+	        <name>IGatekeeper</name>
+	        <instance>default</instance>
+	    </interface>
+	</hal>
     <hal format="hidl" optional="true">
         <name>android.hardware.cas</name>
         <version>1.0-2</version>
@@ -139,6 +163,34 @@
             <instance>default</instance>
         </interface>
     </hal>
+	<hal format="hidl" optional="true">
+	    <name>android.hardware.media.c2</name>
+	    <version>1.0</version>
+	    <interface>
+	        <name>IComponentStore</name>
+	        <instance>default</instance>
+	    </interface>
+	</hal>
+	<hal format="hidl" optional="true">
+	    <name>android.hardware.media.omx</name>
+	    <version>1.0</version>
+	    <interface>
+	        <name>IOmx</name>
+	        <instance>default</instance>
+	    </interface>
+	    <interface>
+	        <name>IOmxStore</name>
+	        <instance>default</instance>
+	    </interface>
+	</hal>
+	<hal format="hidl" optional="true">
+	    <name>android.hardware.memtrack</name>
+	    <version>1.0</version>
+	    <interface>
+	        <name>IMemtrack</name>
+	        <instance>default</instance>
+	    </interface>
+	</hal>
     <hal format="hidl" optional="true">
         <name>android.hardware.neuralnetworks</name>
         <version>1.0-3</version>
@@ -150,6 +202,14 @@
             <instance>qti-hta</instance>
         </interface>
     </hal>
+	<hal format="hidl" optional="true">
+	    <name>android.hardware.nfc</name>
+	    <version>1.0-2</version>
+	    <interface>
+	        <name>INfc</name>
+	        <instance>default</instance>
+	    </interface>
+	</hal>
     <hal format="aidl" optional="true">
         <name>android.hardware.power</name>
         <version>4</version>
@@ -171,6 +231,7 @@
         <version>1.0-5</version>
         <interface>
             <name>ISap</name>
+            <instance>slot1</instance>
             <instance>slot2</instance>
         </interface>
         <interface>
@@ -188,6 +249,38 @@
             <instance>SIM2</instance>
         </interface>
     </hal>
+	<hal format="hidl" optional="true">
+	    <name>android.hardware.sensors</name>
+	    <version>1.0</version>
+	    <interface>
+	        <name>ISensors</name>
+	        <instance>default</instance>
+	    </interface>
+	</hal>
+	<hal format="hidl" optional="true">
+	    <name>android.hardware.soundtrigger</name>
+	    <version>2.2</version>
+	    <interface>
+	        <name>ISoundTriggerHw</name>
+	        <instance>default</instance>
+	    </interface>
+	</hal>
+	<hal format="hidl" optional="true">
+	    <name>android.hardware.tetheroffload.config</name>
+	    <version>1.0</version>
+	    <interface>
+	        <name>IOffloadConfig</name>
+ 	       <instance>default</instance>
+	    </interface>
+	</hal>
+	<hal format="hidl" optional="true">
+	    <name>android.hardware.tetheroffload.control</name>
+	    <version>1.0</version>
+	    <interface>
+	        <name>IOffloadControl</name>
+ 	       <instance>default</instance>
+	    </interface>
+	</hal>
     <hal format="hidl" optional="true">
         <name>android.hardware.usb</name>
         <version>1.0-3</version>
@@ -206,6 +299,7 @@
     </hal>
     <hal format="aidl" optional="true">
         <name>android.hardware.wifi.hostapd</name>
+        <version>2</version>
         <interface>
             <name>IHostapd</name>
             <instance>default</instance>
@@ -213,7 +307,7 @@
     </hal>
     <hal format="aidl" optional="true">
         <name>android.hardware.wifi.supplicant</name>
-        <version>2</version>
+        <version>3</version>
         <interface>
             <name>ISupplicant</name>
             <instance>default</instance>
@@ -229,6 +323,7 @@
     </hal>
     <hal format="aidl" optional="true">
         <name>android.hardware.wifi</name>
+        <version>2</version>
         <interface>
             <name>IWifi</name>
             <instance>default</instance>
