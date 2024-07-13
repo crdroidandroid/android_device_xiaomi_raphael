@@ -183,14 +183,6 @@
 	        <instance>default</instance>
 	    </interface>
 	</hal>
-	<hal format="hidl" optional="true">
-	    <name>android.hardware.memtrack</name>
-	    <version>1.0</version>
-	    <interface>
-	        <name>IMemtrack</name>
-	        <instance>default</instance>
-	    </interface>
-	</hal>
     <hal format="hidl" optional="true">
         <name>android.hardware.neuralnetworks</name>
         <version>1.0-3</version>
