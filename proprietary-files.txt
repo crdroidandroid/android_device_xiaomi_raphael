@@ -125,7 +125,7 @@ vendor/lib64/soundfx/libqcvirt.so
 vendor/lib/hw/audio.primary.msmnile.so
 
 # Bluetooth
-vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
+vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti|323c931eb367ed303d71f435c407cfcbc96d079c
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
 vendor/lib/hw/android.hardware.bluetooth@1.0-impl-qti.so
 vendor/lib/hw/vendor.qti.hardware.bluetooth_sar@1.1-impl.so
@@ -135,7 +135,7 @@ vendor/lib/libbt-hidlclient.so
 vendor/lib/libbtnv.so
 vendor/lib/vendor.qti.hardware.bluetooth_sar@1.0.so
 vendor/lib/vendor.qti.hardware.bluetooth_sar@1.1.so
-vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
+vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so|547e4359452c56d93d27d5c450aa120678f994e7
 vendor/lib64/hw/vendor.qti.hardware.bluetooth_sar@1.1-impl.so
 vendor/lib64/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so
 vendor/lib64/hw/vendor.qti.hardware.btconfigstore@2.0-impl.so
