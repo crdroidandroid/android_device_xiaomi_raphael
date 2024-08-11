@@ -634,4 +634,7 @@
          manager will disable alpha trasformation in animations where not
          strictly needed. -->
     <bool name="config_sf_limitedAlpha">true</bool>
+
+    <!-- Default component for QR code scanner -->
+    <string name="config_defaultQrCodeComponent">com.xiaomi.scanner/com.xiaomi.scanner.app.ScanActivity</string>
 </resources>
