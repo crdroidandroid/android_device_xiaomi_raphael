@@ -179,7 +179,6 @@ dalvik.vm.dex2oat-threads=8
 dalvik.vm.dex2oat64.enabled=true
 
 # Display
-ro.surface_flinger.has_wide_color_display=true
 ro.surface_flinger.has_HDR_display=true
 ro.surface_flinger.use_color_management=true
 ro.surface_flinger.wcg_composition_dataspace=143261696
