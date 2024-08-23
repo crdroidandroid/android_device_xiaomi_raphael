@@ -1,6 +1,0 @@
-# HwBinder IPC from client to server, and callbacks
-binder_call(hal_dms_client, hal_dms_server)
-binder_call(hal_dms_server, hal_dms_client)
-
-add_hwservice(hal_dms_server, hal_dms_hwservice)
-allow hal_dms_client hal_dms_hwservice:hwservice_manager find;
