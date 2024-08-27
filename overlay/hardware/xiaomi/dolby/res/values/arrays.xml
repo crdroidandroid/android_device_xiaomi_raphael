@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2023-24 Paranoid Android
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+
+    <!-- Dolby Atmos -->
+    <string-array name="dolby_profile_entries">
+        <item>@string/dolby_profile_dynamic</item>
+        <item>@string/dolby_profile_video</item>
+        <item>@string/dolby_profile_music</item>
+        <item>@string/dolby_profile_game</item>
+        <item>@string/dolby_profile_voice</item>
+    </string-array>
+
+    <string-array name="dolby_profile_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>8</item>
+        <item>9</item>
+    </string-array>
+</resources>
