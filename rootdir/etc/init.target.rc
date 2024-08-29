@@ -70,6 +70,15 @@ on init
     # Migrate cpuctl tasks once to cpuctl system
     copy_per_line /dev/cpuctl/tasks /dev/cpuctl/system/tasks
 
+on late-init
+    chown system system /sys/devices/virtual/thermal/tz-by-name/sdm-therm-monitor/trip_point_0_temp
+    chown system system /sys/devices/virtual/thermal/tz-by-name/sdm-therm-monitor/trip_point_0_hyst
+    chown system system /sys/devices/virtual/thermal/tz-by-name/usbc-therm-monitor/trip_point_0_temp
+    chown system system /sys/devices/virtual/thermal/tz-by-name/usbc-therm-monitor/trip_point_0_hyst
+    chown system system /sys/devices/virtual/thermal/tz-by-name/soc/mode
+    chown system system /sys/devices/virtual/thermal/tz-by-name/bcl-virt-monitor/trip_point_0_temp
+    chown system system /sys/devices/virtual/thermal/tz-by-name/bcl-virt-monitor/trip_point_0_hyst
+
 on early-fs
     start vold
 
@@ -266,14 +275,10 @@ on charger
     chown system system /sys/class/leds/green/brightness
     write /sys/class/leds/green/brightness 255
 
-service vendor.thermal-engine /vendor/bin/thermal-engine
-   class main
-   user root
-   socket thermal-send-client stream 0666 system system
-   socket thermal-recv-client stream 0660 system system
-   socket thermal-recv-passive-client stream 0666 system system
-   socket thermal-send-rule stream 0660 system system
-   group root
+service vendor.thermal-engine /vendor/bin/thermal-engine -c /vendor/etc/thermal-engine-msmnile-normal_mode.conf
+    class main
+    user root
+    group root
 
 service nv_mac /vendor/bin/nv_mac
     class late_start

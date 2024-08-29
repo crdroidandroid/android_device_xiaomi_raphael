@@ -1439,9 +1439,10 @@ vendor/bin/ssr_setup
 vendor/bin/tftp_server
 vendor/etc/init/vendor.qti.tftp.rc
 
+# Thermal - from coral-user-12-SQ1A.220105.002-7961164-release-keys
+vendor/bin/thermal-engine|01cb7dc998c39016b54089c18921ad7d65b3c675
+
 # Thermal
-vendor/bin/thermal-engine
-vendor/etc/init/init_thermal-engine.rc
 -vendor/lib/libthermalclient.so
 -vendor/lib64/libthermalclient.so
 
