@@ -570,14 +570,7 @@
     <!-- Enable dual LTE capability support-->
     <bool name="config_dual_LTE_capability">true</bool>
 
-     <!-- The properties of a UDFPS sensor in pixels, in the order listed below: -->
-    <integer-array name="config_udfps_sensor_props" translatable="false" >
-        <item>540</item>  <!-- <item>sensorLocationX</item> -->
-        <item>2026</item> <!-- <item>sensorLocationY</item> -->
-        <item>95</item>   <!-- <item>sensorRadius</item> -->
-    </integer-array>
-
-     <!-- Type of the udfps long press sensor. Empty if long press is not supported. -->
+    <!-- Type of the udfps long press sensor. Empty if long press is not supported. -->
     <string name="config_dozeUdfpsLongPressSensorType" translatable="false">org.lineage.sensor.udfps</string>
 
     <!-- Whether devices suports in-display fingerprint when screen is off -->

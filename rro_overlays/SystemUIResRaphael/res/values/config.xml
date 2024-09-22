@@ -74,4 +74,7 @@
 
     <!-- The CPU temperature divider, if needed -->
     <integer name="config_cpuTempDivider" translatable="false">1000</integer>
+
+    <!-- Pixel pitch of the device. um/px -->
+    <item name="pixel_pitch" format="float" type="dimen">59.1</item>
 </resources>
