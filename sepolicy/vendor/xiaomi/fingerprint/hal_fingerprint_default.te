@@ -38,3 +38,6 @@ add_hwservice(hal_fingerprint_default, hal_xiaomi_fingerprint_hwservice)
 
 # Allow hal_fingerprint_default to read and write to fod sysfs
 allow hal_fingerprint_default vendor_sysfs_fod:file rw_file_perms;
+
+allow hal_fingerprint_default sysfs_touchpanel:dir search;
+allow hal_fingerprint_default sysfs_touchpanel:file rw_file_perms;
