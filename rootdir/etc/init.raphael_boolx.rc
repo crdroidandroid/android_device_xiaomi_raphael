@@ -8,8 +8,3 @@ on post-fs-data
 on property:sys.boot_completed=1
     copy_per_line /dev/cpuctl/tasks /dev/cpuctl/system/tasks
 
-    # IRQ Tuning
-    # IRQ 8: msm_drm
-    # IRQ 518: kgsl-3d0
-    write /proc/irq/8/smp_affinity_list 2
-    write /proc/irq/518/smp_affinity_list 1
