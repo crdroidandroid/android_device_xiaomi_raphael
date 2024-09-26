@@ -8,7 +8,6 @@ cc_library_static {
     name: "librecovery_updater_raphael",
     include_dirs: [
         "bootable/recovery",
-        "bootable/recovery/edify/include",
         "bootable/recovery/otautil/include",
     ],
     srcs: ["recovery_updater.cpp"],
