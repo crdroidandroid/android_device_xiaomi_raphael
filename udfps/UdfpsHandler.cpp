@@ -4,29 +4,34 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-#define LOG_TAG "UdfpsHandler.xiaomi_msmnile"
+#define LOG_TAG "UdfpsHandler.raphael"
+
+#include <android-base/logging.h>
+
+#include <fcntl.h>
+#include <fstream>
+#include <poll.h>
+#include <thread>
 
 #include "UdfpsHandler.h"
 
-#include <android-base/logging.h>
-#include <fcntl.h>
-#include <poll.h>
-#include <thread>
-#include <unistd.h>
-
+// Fingerprint hwmodule commands
 #define COMMAND_NIT 10
-#define PARAM_NIT_FOD 1
+#define PARAM_NIT_UDFPS 1
 #define PARAM_NIT_NONE 0
 
-static const char* kFodUiPaths[] = {
-        "/sys/devices/platform/soc/soc:qcom,dsi-display-primary/fod_ui",
-        "/sys/devices/platform/soc/soc:qcom,dsi-display/fod_ui",
-};
+// Touchscreen and HBM
+#define FOD_STATUS_PATH "/sys/devices/virtual/touch/tp_dev/fod_status"
+#define FOD_UI_PATH "/sys/devices/platform/soc/soc:qcom,dsi-display-primary/fod_ui"
 
-static const char* kFodStatusPaths[] = {
-        "/sys/touchpanel/fod_status",
-        "/sys/devices/virtual/touch/tp_dev/fod_status",
-};
+#define FOD_STATUS_OFF 0
+#define FOD_STATUS_ON 1
+
+template <typename T>
+static void set(const std::string& path, const T& value) {
+    std::ofstream file(path);
+    file << value;
+}
 
 static bool readBool(int fd) {
     char c;
@@ -47,35 +52,20 @@ static bool readBool(int fd) {
     return c != '0';
 }
 
-class XiaomiMsmnileUdfpsHandler : public UdfpsHandler {
+class RaphaelUdfpsHandler : public UdfpsHandler {
   public:
-    void init(fingerprint_device_t *device) {
+    void init(fingerprint_device_t* device) {
         mDevice = device;
 
         std::thread([this]() {
-            int fodUiFd;
-            for (auto& path : kFodUiPaths) {
-                fodUiFd = open(path, O_RDONLY);
-                if (fodUiFd >= 0) {
-                    break;
-                }
-            }
-
-            if (fodUiFd < 0) {
-                LOG(ERROR) << "failed to open fd, err: " << fodUiFd;
+            int fd = open(FOD_UI_PATH, O_RDONLY);
+            if (fd < 0) {
+                LOG(ERROR) << "failed to open fd, err: " << fd;
                 return;
             }
 
-            int fodStatusFd;
-            for (auto& path : kFodStatusPaths) {
-                fodStatusFd = open(path, O_WRONLY);
-                if (fodStatusFd >= 0) {
-                    break;
-                }
-            }
-
             struct pollfd fodUiPoll = {
-                    .fd = fodUiFd,
+                    .fd = fd,
                     .events = POLLERR | POLLPRI,
                     .revents = 0,
             };
@@ -87,47 +77,51 @@ class XiaomiMsmnileUdfpsHandler : public UdfpsHandler {
                     continue;
                 }
 
-                bool fodUi = readBool(fodUiFd);
-
-                mDevice->extCmd(mDevice, COMMAND_NIT, fodUi ? PARAM_NIT_FOD : PARAM_NIT_NONE);
-                if (fodStatusFd >= 0) {
-                    write(fodStatusFd, fodUi ? "1" : "0", 1);
-                }
+                mDevice->extCmd(mDevice, COMMAND_NIT, readBool(fd) ? PARAM_NIT_UDFPS : PARAM_NIT_NONE);
             }
         }).detach();
     }
 
     void onFingerDown(uint32_t /*x*/, uint32_t /*y*/, float /*minor*/, float /*major*/) {
-        // nothing
+        set(FOD_STATUS_PATH, FOD_STATUS_ON);
     }
 
     void onFingerUp() {
-        // nothing
+        set(FOD_STATUS_PATH, FOD_STATUS_OFF);
     }
 
-    void preEnroll() {
-        // nothing
-    }
-    void enroll() {
-        // nothing
-    }
-    void postEnroll() {
-        // nothing
-    }
-
-    void onAcquired(int32_t /*result*/, int32_t /*vendorCode*/) {
-        // nothing
+    void onAcquired(int32_t result, int32_t vendorCode) {
+        if (result == FINGERPRINT_ACQUIRED_GOOD) {
+            set(FOD_STATUS_PATH, FOD_STATUS_OFF);
+        } else if (vendorCode == 21 || vendorCode == 23) {
+            /*
+             * vendorCode = 21 waiting for fingerprint authentication
+             * vendorCode = 23 waiting for fingerprint enroll
+             */
+            set(FOD_STATUS_PATH, FOD_STATUS_ON);
+        }
     }
 
     void cancel() {
-        // nothing
+        set(FOD_STATUS_PATH, FOD_STATUS_OFF);
     }
+
+    void preEnroll() {
+        LOG(DEBUG) << __func__;
+    }
+    void enroll() {
+        LOG(DEBUG) << __func__;
+    }
+    void postEnroll() {
+        LOG(DEBUG) << __func__;
+    }
+
   private:
-    fingerprint_device_t *mDevice;
+    fingerprint_device_t* mDevice;
 };
 
 static UdfpsHandler* create() {
-    return new XiaomiMsmnileUdfpsHandler();
+    return new RaphaelUdfpsHandler();
 }
 
 static void destroy(UdfpsHandler* handler) {
@@ -135,6 +129,6 @@ static void destroy(UdfpsHandler* handler) {
 }
 
 extern "C" UdfpsHandlerFactory UDFPS_HANDLER_FACTORY = {
-    .create = create,
-    .destroy = destroy,
+        .create = create,
+        .destroy = destroy,
 };
