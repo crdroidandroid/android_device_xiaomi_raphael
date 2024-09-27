@@ -6,3 +6,6 @@ allow hal_thermal_default self:netlink_kobject_uevent_socket create_socket_perms
 
 # read thermal_config
 get_prop(hal_thermal_default, vendor_thermal_prop)
+
+# Allow init to set attribute to sysfs_kprofiles
+allow init sysfs_kprofiles:file { setattr };
