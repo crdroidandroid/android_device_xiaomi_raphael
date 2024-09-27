@@ -36,16 +36,18 @@ function performance {
         echo "2227200" > /sys/module/cpu_input_boost/parameters/input_boost_freq_prime
         echo "1785600" > /sys/module/cpu_input_boost/parameters/max_boost_freq_little
         echo "2419200" > /sys/module/cpu_input_boost/parameters/max_boost_freq_big
-		echo "2956800" > /sys/module/cpu_input_boost/parameters/max_boost_freq_prime
-		#echo "58" > /sys/module/devfreq_boost/parameters/input_boost_duration
-		echo "Y" > /sys/module/cpu_input_boost/parameters/input_boost_enable
-		#gpu
-		echo "0" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/throttling
-	    echo "0" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/max_pwrlevel
-	    echo "6" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/min_pwrlevel
-	    echo "6" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/default_pwrlevel
-		echo "770000000" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/devfreq/2c00000.qcom,kgsl-3d0/max_freq
+	echo "2956800" > /sys/module/cpu_input_boost/parameters/max_boost_freq_prime
+	#echo "58" > /sys/module/devfreq_boost/parameters/input_boost_duration
+	echo "Y" > /sys/module/cpu_input_boost/parameters/input_boost_enable
+	#gpu
+	echo "0" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/throttling
+	echo "0" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/max_pwrlevel
+	echo "6" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/min_pwrlevel
+	echo "6" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/default_pwrlevel
+	echo "770000000" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/devfreq/2c00000.qcom,kgsl-3d0/max_freq
         echo "770" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/max_clock_mhz
+	echo "150000000" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/devfreq/2c00000.qcom,kgsl-3d0/max_freq
+        echo "150" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/max_clock_mhz
         #touch
         echo "1 0 0 0" > /sys/devices/platform/goodix_ts.0/game_mode
         #cpu
@@ -62,13 +64,13 @@ function performance {
         echo "825600" > /sys/devices/system/cpu/cpufreq/policy7/scaling_min_freq
         echo "2841600" > /sys/devices/system/cpu/cpufreq/policy7/scaling_max_freq
         echo "performance" > /sys/class/devfreq/soc:qcom,cpu-llcc-ddr-bw/governor
-echo "performance" > /sys/class/devfreq/soc:qcom,cpu4-llcc-ddr-lat/governor
-echo "performance" > /sys/class/devfreq/soc:qcom,cpu4-cpu-llcc-lat/governor
-echo "performance" > /sys/class/devfreq/soc:qcom,cpu4-cpu-ddr-latfloor/governor
-echo "performance" > /sys/class/devfreq/soc:qcom,cpu0-llcc-ddr-lat/governor
-echo "performance" > /sys/class/devfreq/soc:qcom,cpu0-cpu-llcc-lat/governor
-echo "performance" > /sys/class/devfreq/soc:qcom,cpu-cpu-llcc-bw/governor
-echo "performance" > /sys/class/devfreq/soc:qcom,npu-npu-ddr-bw/governor
+	echo "performance" > /sys/class/devfreq/soc:qcom,cpu4-llcc-ddr-lat/governor
+	echo "performance" > /sys/class/devfreq/soc:qcom,cpu4-cpu-llcc-lat/governor
+	echo "performance" > /sys/class/devfreq/soc:qcom,cpu4-cpu-ddr-latfloor/governor
+	echo "performance" > /sys/class/devfreq/soc:qcom,cpu0-llcc-ddr-lat/governor
+	echo "performance" > /sys/class/devfreq/soc:qcom,cpu0-cpu-llcc-lat/governor
+	echo "performance" > /sys/class/devfreq/soc:qcom,cpu-cpu-llcc-bw/governor
+	echo "performance" > /sys/class/devfreq/soc:qcom,npu-npu-ddr-bw/governor
 		
 }
 function ballance {
@@ -94,21 +96,21 @@ function ballance {
         echo "0" > /dev/cpuctl/system-background/cpu.uclamp.boosted
         echo "0" > /dev/cpuctl/system-background/cpu.uclamp.latency_sensitive
         #defvreq_input_boost
-		echo "1036800" > /sys/module/cpu_input_boost/parameters/input_boost_freq_little
+	echo "1036800" > /sys/module/cpu_input_boost/parameters/input_boost_freq_little
         echo "1056000" > /sys/module/cpu_input_boost/parameters/input_boost_freq_big
         echo "1401600" > /sys/module/cpu_input_boost/parameters/input_boost_freq_prime
         echo "1785600" > /sys/module/cpu_input_boost/parameters/max_boost_freq_little
         echo "1612800" > /sys/module/cpu_input_boost/parameters/max_boost_freq_big
-		echo "1920000" > /sys/module/cpu_input_boost/parameters/max_boost_freq_prime
-		#echo "1000" > /sys/module/devfreq_boost/parameters/input_boost_duration
-		echo "Y" > /sys/module/cpu_input_boost/parameters/input_boost_enable
-		#gpu
-	    echo "1" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/throttling
-	    echo "2" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/max_pwrlevel
-	    #echo "2" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/thermal_pwrlevel
-	    echo "7" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/min_pwrlevel
-	    echo "7" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/default_pwrlevel
-		echo "615000000" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/devfreq/2c00000.qcom,kgsl-3d0/max_freq
+	echo "1920000" > /sys/module/cpu_input_boost/parameters/max_boost_freq_prime
+	#echo "1000" > /sys/module/devfreq_boost/parameters/input_boost_duration
+	echo "Y" > /sys/module/cpu_input_boost/parameters/input_boost_enable
+	#gpu
+	echo "1" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/throttling
+	echo "2" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/max_pwrlevel
+	#echo "2" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/thermal_pwrlevel
+	echo "6" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/min_pwrlevel
+	echo "6" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/default_pwrlevel
+	echo "615000000" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/devfreq/2c00000.qcom,kgsl-3d0/max_freq
         echo "615" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/max_clock_mhz
         #touch
         echo "0 0 0 1" > /sys/devices/platform/goodix_ts.0/game_mode
@@ -126,13 +128,13 @@ function ballance {
         echo "825600" > /sys/devices/system/cpu/cpufreq/policy7/scaling_min_freq
         echo "2841600" > /sys/devices/system/cpu/cpufreq/policy7/scaling_max_freq
         echo "bw_hwmon" > /sys/class/devfreq/soc:qcom,cpu-llcc-ddr-bw/governor
-echo "simple_ondemand" > /sys/class/devfreq/soc:qcom,cpu4-llcc-ddr-lat/governor
-echo "simple_ondemand" > /sys/class/devfreq/soc:qcom,cpu4-cpu-llcc-lat/governor
-echo "simple_ondemand" > /sys/class/devfreq/soc:qcom,cpu4-cpu-ddr-latfloor/governor
-echo "simple_ondemand" > /sys/class/devfreq/soc:qcom,cpu0-llcc-ddr-lat/governor
-echo "simple_ondemand" > /sys/class/devfreq/soc:qcom,cpu0-cpu-llcc-lat/governor
-echo "simple_ondemand" > /sys/class/devfreq/soc:qcom,cpu-cpu-llcc-bw/governor
-echo "simple_ondemand" > /sys/class/devfreq/soc:qcom,npu-npu-ddr-bw/governor
+	echo "simple_ondemand" > /sys/class/devfreq/soc:qcom,cpu4-llcc-ddr-lat/governor
+	echo "simple_ondemand" > /sys/class/devfreq/soc:qcom,cpu4-cpu-llcc-lat/governor
+	echo "simple_ondemand" > /sys/class/devfreq/soc:qcom,cpu4-cpu-ddr-latfloor/governor
+	echo "simple_ondemand" > /sys/class/devfreq/soc:qcom,cpu0-llcc-ddr-lat/governor
+	echo "simple_ondemand" > /sys/class/devfreq/soc:qcom,cpu0-cpu-llcc-lat/governor
+	echo "simple_ondemand" > /sys/class/devfreq/soc:qcom,cpu-cpu-llcc-bw/governor
+	echo "simple_ondemand" > /sys/class/devfreq/soc:qcom,npu-npu-ddr-bw/governor
 }
 function battery {
         #uclamptuning
@@ -157,21 +159,21 @@ function battery {
         echo "0" > /dev/cpuctl/system-background/cpu.uclamp.boosted
         echo "0" > /dev/cpuctl/system-background/cpu.uclamp.latency_sensitive
         #defvreq_input_boost
-		echo "576000" > /sys/module/cpu_input_boost/parameters/input_boost_freq_little
+	echo "576000" > /sys/module/cpu_input_boost/parameters/input_boost_freq_little
         echo "710400" > /sys/module/cpu_input_boost/parameters/input_boost_freq_big
         echo "825600" > /sys/module/cpu_input_boost/parameters/input_boost_freq_prime
         echo "1036000" > /sys/module/cpu_input_boost/parameters/max_boost_freq_little
         echo "1401000" > /sys/module/cpu_input_boost/parameters/max_boost_freq_big
-		echo "1804000" > /sys/module/cpu_input_boost/parameters/max_boost_freq_prime
-		#echo "58" > /sys/module/devfreq_boost/parameters/input_boost_duration
-		echo "N" > /sys/module/cpu_input_boost/parameters/input_boost_enable
-		#gpu
-		echo "1" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/throttling
-	    echo "4" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/max_pwrlevel
-	    #echo "2" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/thermal_pwrlevel
-	    echo "7" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/min_pwrlevel
-	    echo "7" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/default_pwrlevel
-		echo "515000000" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/devfreq/2c00000.qcom,kgsl-3d0/max_freq
+	echo "1804000" > /sys/module/cpu_input_boost/parameters/max_boost_freq_prime
+	#echo "58" > /sys/module/devfreq_boost/parameters/input_boost_duration
+	echo "N" > /sys/module/cpu_input_boost/parameters/input_boost_enable
+	#gpu
+	echo "1" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/throttling
+	echo "4" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/max_pwrlevel
+	#echo "2" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/thermal_pwrlevel
+	echo "6" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/min_pwrlevel
+	echo "6" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/default_pwrlevel
+	echo "515000000" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/devfreq/2c00000.qcom,kgsl-3d0/max_freq
         echo "515" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/max_clock_mhz
         #touch
         echo "0 0 0 1" > /sys/devices/platform/goodix_ts.0/game_mode
@@ -189,13 +191,13 @@ function battery {
         echo "825600" > /sys/devices/system/cpu/cpufreq/policy7/scaling_min_freq
         echo "2649600" > /sys/devices/system/cpu/cpufreq/policy7/scaling_max_freq
         echo "powersave" > /sys/class/devfreq/soc:qcom,cpu-llcc-ddr-bw/governor
-echo "powersave" > /sys/class/devfreq/soc:qcom,cpu4-llcc-ddr-lat/governor
-echo "powersave" > /sys/class/devfreq/soc:qcom,cpu4-cpu-llcc-lat/governor
-echo "powersave" > /sys/class/devfreq/soc:qcom,cpu4-cpu-ddr-latfloor/governor
-echo "powersave" > /sys/class/devfreq/soc:qcom,cpu0-llcc-ddr-lat/governor
-echo "powersave" > /sys/class/devfreq/soc:qcom,cpu0-cpu-llcc-lat/governor
-echo "powersave" > /sys/class/devfreq/soc:qcom,cpu-cpu-llcc-bw/governor
-echo "powersave" > /sys/class/devfreq/soc:qcom,npu-npu-ddr-bw/governor
+	echo "powersave" > /sys/class/devfreq/soc:qcom,cpu4-llcc-ddr-lat/governor
+	echo "powersave" > /sys/class/devfreq/soc:qcom,cpu4-cpu-llcc-lat/governor
+	echo "powersave" > /sys/class/devfreq/soc:qcom,cpu4-cpu-ddr-latfloor/governor
+	echo "powersave" > /sys/class/devfreq/soc:qcom,cpu0-llcc-ddr-lat/governor
+	echo "powersave" > /sys/class/devfreq/soc:qcom,cpu0-cpu-llcc-lat/governor
+	echo "powersave" > /sys/class/devfreq/soc:qcom,cpu-cpu-llcc-bw/governor
+	echo "powersave" > /sys/class/devfreq/soc:qcom,npu-npu-ddr-bw/governor
 }
 function none {
         #uclamptuning
@@ -220,23 +222,23 @@ function none {
         echo "0" > /dev/cpuctl/system-background/cpu.uclamp.boosted
         echo "0" > /dev/cpuctl/system-background/cpu.uclamp.latency_sensitive
         #defvreq_input_boost
-		echo "1036800" > /sys/module/cpu_input_boost/parameters/input_boost_freq_little
+	echo "1036800" > /sys/module/cpu_input_boost/parameters/input_boost_freq_little
         echo "1056000" > /sys/module/cpu_input_boost/parameters/input_boost_freq_big
         echo "1401600" > /sys/module/cpu_input_boost/parameters/input_boost_freq_prime
         echo "1708800" > /sys/module/cpu_input_boost/parameters/max_boost_freq_little
         echo "1804800" > /sys/module/cpu_input_boost/parameters/max_boost_freq_big
-		echo "1920000" > /sys/module/cpu_input_boost/parameters/max_boost_freq_prime
-		#echo "58" > /sys/module/devfreq_boost/parameters/input_boost_duration
-		echo "N" > /sys/module/cpu_input_boost/parameters/input_boost_enable
-		#gpu
-		echo "1" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/throttling
-	    echo "0" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/max_pwrlevel
-	    echo "7" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/min_pwrlevel
-	    echo "7" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/default_pwrlevel
-		echo "770000000" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/devfreq/2c00000.qcom,kgsl-3d0/max_freq
+	echo "1920000" > /sys/module/cpu_input_boost/parameters/max_boost_freq_prime
+	#echo "58" > /sys/module/devfreq_boost/parameters/input_boost_duration
+	echo "Y" > /sys/module/cpu_input_boost/parameters/input_boost_enable
+	#gpu
+	echo "0" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/throttling
+	echo "0" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/max_pwrlevel
+	echo "6" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/min_pwrlevel
+	echo "6" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/default_pwrlevel
+	echo "770000000" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/devfreq/2c00000.qcom,kgsl-3d0/max_freq
         echo "770" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/max_clock_mhz
         #touch
-        echo "1 0 0 0" > /sys/devices/platform/goodix_ts.0/game_mode
+        echo "0 0 0 1" > /sys/devices/platform/goodix_ts.0/game_mode
         #cpu
         echo "2000" > /sys/devices/system/cpu/cpufreq/policy0/schedutil/down_rate_limit_us
         echo "700" > /sys/devices/system/cpu/cpufreq/policy4/schedutil/down_rate_limit_us
@@ -251,13 +253,13 @@ function none {
         echo "825600" > /sys/devices/system/cpu/cpufreq/policy7/scaling_min_freq
         echo "2841600" > /sys/devices/system/cpu/cpufreq/policy7/scaling_max_freq
         echo "simple_ondemand" > /sys/class/devfreq/soc:qcom,cpu-llcc-ddr-bw/governor
-echo "simple_ondemand" > /sys/class/devfreq/soc:qcom,cpu4-llcc-ddr-lat/governor
-echo "simple_ondemand" > /sys/class/devfreq/soc:qcom,cpu4-cpu-llcc-lat/governor
-echo "simple_ondemand" > /sys/class/devfreq/soc:qcom,cpu4-cpu-ddr-latfloor/governor
-echo "simple_ondemand" > /sys/class/devfreq/soc:qcom,cpu0-llcc-ddr-lat/governor
-echo "simple_ondemand" > /sys/class/devfreq/soc:qcom,cpu0-cpu-llcc-lat/governor
-echo "simple_ondemand" > /sys/class/devfreq/soc:qcom,cpu-cpu-llcc-bw/governor
-echo "simple_ondemand" > /sys/class/devfreq/soc:qcom,npu-npu-ddr-bw/governor
+	echo "simple_ondemand" > /sys/class/devfreq/soc:qcom,cpu4-llcc-ddr-lat/governor
+	echo "simple_ondemand" > /sys/class/devfreq/soc:qcom,cpu4-cpu-llcc-lat/governor
+	echo "simple_ondemand" > /sys/class/devfreq/soc:qcom,cpu4-cpu-ddr-latfloor/governor
+	echo "simple_ondemand" > /sys/class/devfreq/soc:qcom,cpu0-llcc-ddr-lat/governor
+	echo "simple_ondemand" > /sys/class/devfreq/soc:qcom,cpu0-cpu-llcc-lat/governor
+	echo "simple_ondemand" > /sys/class/devfreq/soc:qcom,cpu-cpu-llcc-bw/governor
+	echo "simple_ondemand" > /sys/class/devfreq/soc:qcom,npu-npu-ddr-bw/governor
 }
 function kprofiles {
 	#read kprofiles mode
