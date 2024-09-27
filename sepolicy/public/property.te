@@ -1,2 +1,4 @@
 # IMEI
 type deviceid_prop, property_type;
+
+type vendor_kprofiles_plus, property_type;

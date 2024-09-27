@@ -1,2 +1,5 @@
 # Sensors
 persist.sensor.sardisable  u:object_r:vendor_sensors_prop:s0
+
+# Kprofiles plus
+vendor.boolx.prop          u:object_r:vendor_kprofiles_plus:s0
