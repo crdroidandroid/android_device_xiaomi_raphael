@@ -507,10 +507,6 @@ PRODUCT_PACKAGES += \
     librmnetctl \
     libxml2
 
-# Recovery
-PRODUCT_PACKAGES += \
-    librecovery_updater_raphael
-
 # Seccomp
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/seccomp/,$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy)
