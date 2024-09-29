@@ -114,6 +114,10 @@ persist.vendor.ssr.enable_ramdumps=1
 persist.vendor.ssr.restart_level=ALL_ENABLE
 
 # SurfaceFlinger
+debug.sf.auto_latch_unsignaled=false
+debug.sf.disable_client_composition_cache=1
+debug.sf.enable_gl_backpressure=0
+debug.sf.enable_transaction_tracing=false
 debug.sf.use_phase_offsets_as_durations=1
 debug.sf.late.sf.duration=10500000
 debug.sf.late.app.duration=16600000
@@ -121,6 +125,8 @@ debug.sf.early.sf.duration=16600000
 debug.sf.early.app.duration=16600000
 debug.sf.earlyGl.sf.duration=16600000
 debug.sf.earlyGl.app.duration=16600000
+ro.surface_flinger.enable_frame_rate_override=false
+ro.surface_flinger.enable_layer_caching=false
 
 # Vendor
 ro.vendor.qti.va_aosp.support=1
@@ -134,3 +140,6 @@ config.disable_rtt=true
 # Transcoding related property.
 debug.media.transcoding.codec_max_operating_rate_720P=240
 debug.media.transcoding.codec_max_operating_rate_1080P=120
+
+# Zygote HideCrash Fix
+ro.zygote.disable_gl_preload=true

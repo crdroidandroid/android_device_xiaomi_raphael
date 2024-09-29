@@ -223,6 +223,7 @@ ro.apk_verity.mode=2
 vendor.gatekeeper.disable_spu=true
 
 # Graphics
+debug.renderengine.backend=skiaglthreaded
 debug.sdm.support_writeback=0
 debug.sf.latch_unsignaled=1
 debug.sf.auto_latch_unsignaled=0
@@ -230,13 +231,17 @@ debug.sf.disable_backpressure=1
 debug.sf.enable_gl_backpressure=0
 debug.sf.enable_transaction_tracing=false
 debug.sf.predict_hwc_composition_strategy=0
+debug.sf.treat_170m_as_sRGB=1
+renderthread.skia.reduceopstasksplitting=true
+ro.config.avoid_gfx_accel=true
+ro.egl.blobcache.multifile=true
+ro.egl.blobcache.multifile_limit=33554432
 ro.hardware.egl=adreno
 ro.hardware.vulkan=adreno
 ro.opengles.version=196610
+vendor.display.vds_allow_hwc=1
 vendor.gralloc.disable_ubwc=0
-debug.sf.treat_170m_as_sRGB=1
-debug.renderengine.backend=skiaglthreaded
-renderthread.skia.reduceopstasksplitting=true
+vendor.hwc.dpp.downscale=4
 
 # HWUI
 debug.hwui.renderer=skiagl
