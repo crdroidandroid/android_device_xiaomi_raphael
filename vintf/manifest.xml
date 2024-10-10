@@ -163,6 +163,16 @@
         <fqname>@1.0::IFmHci/default</fqname>
     </hal>
     <hal format="hidl">
+        <name>vendor.qti.hardware.iop</name>
+        <transport>hwbinder</transport>
+        <fqname>@2.0::IIop/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.qti.hardware.perf</name>
+        <transport>hwbinder</transport>
+        <fqname>@2.2::IPerf/default</fqname>
+    </hal>
+    <hal format="hidl">
         <name>vendor.qti.hardware.qccvndhal</name>
         <transport>hwbinder</transport>
         <fqname>@1.0::IQccvndhal/qccvndhal</fqname>
@@ -277,6 +287,11 @@
         <name>vendor.qti.imsrtpservice</name>
         <transport>hwbinder</transport>
         <fqname>@3.0::IRTPService/imsrtpservice</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.qti.power.pasrmanager</name>
+        <transport>hwbinder</transport>
+        <fqname>@1.0::IPasrManager/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.xiaomi.hardware.motor</name>
