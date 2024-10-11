@@ -1,3 +1,5 @@
+type hal_fingerprint_service_xiaomi, vndservice_manager_type;
+
 # Allow fingerprint HAL to create files in /data/vendor/fingerprint/
 allow hal_fingerprint_default vendor_fingerprint_data_file:dir rw_dir_perms;
 allow hal_fingerprint_default vendor_fingerprint_data_file:file create_file_perms;
@@ -29,6 +31,7 @@ hal_client_domain(hal_fingerprint_default, vendor_hal_perf)
 
 # Allow hal_fingerprint_default to set fingerprint properties
 set_prop(hal_fingerprint_default, vendor_fp_prop)
+get_prop(hal_fingerprint_default, vendor_fp_prop)
 
 # Allow hal_fingerprint_default to read adsprpc properties
 get_prop(hal_fingerprint_default, vendor_adsprpc_prop)
@@ -38,3 +41,6 @@ add_hwservice(hal_fingerprint_default, hal_xiaomi_fingerprint_hwservice)
 
 # Allow hal_fingerprint_default to read and write to fod sysfs
 allow hal_fingerprint_default vendor_sysfs_fod:file rw_file_perms;
+
+allow hal_fingerprint_default hal_fingerprint_hwservice:hwservice_manager find;
+add_service(hal_fingerprint_default, hal_fingerprint_service_xiaomi)

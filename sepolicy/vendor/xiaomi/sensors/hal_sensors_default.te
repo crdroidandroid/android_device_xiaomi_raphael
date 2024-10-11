@@ -1,2 +1,3 @@
 # For QCOM diag port access
 allow hal_sensors_default vendor_diag_device:chr_file rw_file_perms;
+allow hal_sensors_default vendor_sysfs_fod:file rw_file_perms;
