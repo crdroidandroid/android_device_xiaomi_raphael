@@ -3,4 +3,4 @@
 /sys/devices/virtual/touch/tp_dev/fod_status                                                           u:object_r:vendor_sysfs_fod:s0
 
 # FOD HAL
-/vendor/bin/hw/android\.hardware\.biometrics\.fingerprint@2.3-service\.raphael                         u:object_r:hal_fingerprint_default_exec:s0
+/vendor/bin/hw/android\.hardware\.biometrics\.fingerprint-service\.xiaomi                         u:object_r:hal_fingerprint_default_exec:s0

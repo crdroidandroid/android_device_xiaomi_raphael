@@ -210,6 +210,12 @@ ro.vendor.display.sensortype=2
 # DRM
 drm.service.enabled=true
 
+# Fingerprint
+persist.vendor.fingerprint.type=udfps_optical
+persist.vendor.fingerprint.sensor_location=540|2026|95
+persist.vendor.fingerprint.sensor_modules=goodix_fod
+persist.vendor.fingerprint.udfps.control_illumination=true
+
 # FM
 vendor.hw.fm.init=0
 
