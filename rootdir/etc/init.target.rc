@@ -298,12 +298,3 @@ service remosaic_daemon /vendor/bin/remosaic_daemon
    user camera
    group camera
 
-service dcvs-sh /vendor/bin/init.qti.dcvs.sh
-    class late_start
-    user root
-    group root system
-    disabled
-    oneshot
-
-on property:vendor.dcvs.prop=1
-   start dcvs-sh
