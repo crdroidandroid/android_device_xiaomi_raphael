@@ -249,8 +249,9 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.3-service.raphael \
-    vendor.xiaomi.hardware.fingerprintextension@1.0.vendor
+    android.hardware.biometrics.fingerprint-service.xiaomi \
+    vendor.goodix.hardware.biometrics.fingerprint@2.1.vendor \
+    libudfpshandler
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
@@ -526,7 +527,8 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     sensors.raphael_udfps \
-    sensors.raphael_double_tap
+    sensors.raphael_double_tap \
+    sensors.xiaomi.v2
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf

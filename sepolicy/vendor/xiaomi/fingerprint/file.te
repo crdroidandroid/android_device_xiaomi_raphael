@@ -1,2 +1,3 @@
 # Fingerprint data
 type vendor_fingerprint_data_file, data_file_type, file_type, vendor_persist_type;
+type vendor_sysfs_fod, sysfs_type, fs_type;

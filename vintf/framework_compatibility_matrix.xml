@@ -22,11 +22,11 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <hal format="hidl" optional="true">
+    <hal format="aidl" optional="true">
         <name>android.hardware.biometrics.fingerprint</name>
-        <version>2.0-3</version>
+        <version>4</version>
         <interface>
-            <name>IBiometricsFingerprint</name>
+            <name>IFingerprint</name>
             <instance>default</instance>
         </interface>
     </hal>
