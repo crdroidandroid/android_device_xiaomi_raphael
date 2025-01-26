@@ -36,8 +36,8 @@
 system							                        /system     			 ext4	 ro                     						      wait,logical,first_stage_mount
 system_ext                      						/system_ext     		 ext4	 ro                     						      wait,logical,first_stage_mount
 product                     							/product        		 ext4	 ro                     						      wait,logical,first_stage_mount
-vendor							                        /vendor     			 ext4	 ro                     						      wait,logical,first_stage_mount
-odm                         							/odm        			 ext4	 ro                         					      wait,logical,first_stage_mount
+vendor							                        /vendor     			 erofs	 ro                     						      wait,logical,first_stage_mount
+odm                         							/odm        			 erofs	 ro                         					      wait,logical,first_stage_mount
 /dev/block/bootdevice/by-name/cache                     /cache                   ext4    nosuid,noatime,nodev,barrier=1                       wait
 /dev/block/bootdevice/by-name/metadata                  /metadata                ext4    noatime,nosuid,nodev,discard                         wait,check,formattable,first_stage_mount
 /dev/block/bootdevice/by-name/userdata                  /data                    f2fs    noatime,nosuid,nodev,discard,background_gc=sync,gc_merge,atgc,checkpoint_merge,compress_algorithm=lz4,compress_extension=apk,compress_extension=apex,compress_extension=so,fsync_mode=nobarrier,inlinecrypt latemount,wait,check,fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized+wrappedkey_v0,metadata_encryption=aes-256-xts:wrappedkey_v0,keydirectory=/metadata/vold/metadata_encryption,quota,fscompress,checkpoint=fs
