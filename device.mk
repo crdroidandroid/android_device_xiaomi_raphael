@@ -395,28 +395,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Media
 PRODUCT_PACKAGES += \
-    android.hardware.media.omx@1.0-service \
-    libc2dcolorconvert \
-    libcodec2_vndk.vendor \
     libavservices_minijail \
-    libavservices_minijail.vendor \
     libavservices_minijail_vendor \
+    libc2dcolorconvert \
     libcodec2_hidl@1.0.vendor \
     libcodec2_soft_common.vendor \
     libcodec2_vndk.vendor \
-    libmm-omxcore \
-    libOmxAacEnc \
-    libOmxAmrEnc \
-    libOmxCore \
-    libOmxEvrcEnc \
-    libOmxG711Enc \
-    libOmxQcelp13Enc \
-    libOmxVdec \
-    libOmxVenc \
-    libsfplugin_ccodec_utils.vendor \
-    libstagefrighthw \
-    libstagefright_foundation-v33 \
-    libstagefright_omx.vendor
+    libsfplugin_ccodec_utils.vendor
 
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/media/,$(TARGET_COPY_OUT_VENDOR)/etc)
