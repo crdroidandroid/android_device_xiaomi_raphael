@@ -26,7 +26,7 @@ static const variant_info raphaelin_info = {
     .sku_value = "",
 
     .brand = "Xiaomi",
-    .device = "raphaelin",
+    .device = "raphael",
     .marketname = "",
     .model = "Redmi K20 Pro",
     .build_fingerprint = FINGERPRINT,

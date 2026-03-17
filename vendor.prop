@@ -1,6 +1,9 @@
 # Audio hardware
 ro.hardware.audio.primary=raphael
 
+# Camera
+ro.product.mod_device=raphael_global
+
 # Fingerprint
 persist.vendor.fingerprint.sensor_location=540|2026|95
 persist.vendor.fingerprint.type=udfps_optical
