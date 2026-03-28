@@ -88,11 +88,9 @@
       "Paths": "/sys/class/kgsl/kgsl-3d0/devfreq/max_freq",
       "Values": [
         "770000000",
-        "715000000",
-        "692000000",
-        "615000000",
+        "675000000",
         "585000000",
-        "515000000",
+        "499200000",
         "427000000"
       ],
       "DefaultIndex": 0,
@@ -102,9 +100,9 @@
       "Name": "GPUMinFreq",
       "Paths": "/sys/class/kgsl/kgsl-3d0/devfreq/min_freq",
       "Values": [
-        "515000000",
         "427000000",
-        "340000000"
+        "345000000",
+        "257000000"
       ],
       "DefaultIndex": 2,
       "ResetOnInit": true
@@ -535,7 +533,7 @@
       "PowerHint": "EXPENSIVE_RENDERING",
       "Node": "GPUMinFreq",
       "Duration": 0,
-      "Value": "340000000"
+      "Value": "257000000"
     },
     {
       "PowerHint": "EXPENSIVE_RENDERING",
