@@ -47,6 +47,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.xiaomi.hardware.motor@1.0.vendor
 
+# Dolby
+TARGET_USES_DOLBY := true
+$(call inherit-product, vendor/xiaomi/dolby/config.mk)
+
+PRODUCT_PACKAGES += \
+    DSPVolumeSynchronizer
+
 # Init
 $(call soong_config_set,xiaomi_msmnile,variant_lib,//$(LOCAL_PATH):libvariant_xiaomi_raphael)
 
